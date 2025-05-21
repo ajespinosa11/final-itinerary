@@ -38,9 +38,8 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
 
   const plazaHotelDetails = {
     name: "The Plaza Hotel - Balanga",
-    imageSrc: "https://placehold.co/600x400.png",
+    imageSrc: "https://pix8.agoda.net/hotelImages/665/665955/665955_14070310130020134512.jpg?ca=2&ce=1&s=1024x",
     imageAlt: "The Plaza Hotel in Balanga City",
-    dataAiHint: "hotel building",
     description: "The Plaza Hotel Balanga is a prominent landmark in Balanga City, Bataan, known for its distinctive European-inspired architecture. Centrally located, it offers convenient access to key city attractions like the St. Joseph Cathedral and the Balanga City Hall. The hotel provides comfortable accommodations, dining options, and event facilities, making it a popular choice for both tourists and business travelers.",
     features: [
       "Elegant European-inspired facade",
@@ -88,7 +87,6 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                       alt={plazaHotelDetails.imageAlt}
                       layout="fill"
                       objectFit="cover"
-                      data-ai-hint={plazaHotelDetails.dataAiHint}
                     />
                   </div>
                   <div className="space-y-3">

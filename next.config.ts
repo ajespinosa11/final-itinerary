@@ -28,6 +28,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'pix8.agoda.net',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };
