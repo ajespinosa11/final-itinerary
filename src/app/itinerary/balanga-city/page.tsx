@@ -320,53 +320,66 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
           </div>
 
           {/* Attractions Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="shadow-xl">
-              <div className="relative h-56 w-full rounded-t-lg overflow-hidden">
-                <Image
-                  src="https://images.hive.blog/1200x630/https://files.peakd.com/file/peakd-hive/sassy.cebuana/23ywu7UzS7NTTmYqA9YuScFYoNibzLfEy1kZ3NQDedrE9hvsCcq8fAwJTDLq3kbpbpmvi.png"
-                  alt="Bataan World War II Museum"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-t-lg"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="text-xl font-semibold text-primary flex items-center">
-                  <Landmark className="mr-3 h-6 w-6" />
-                  Bataan World War II Museum
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm">
-                  Located in Balanga City, this museum houses artifacts and exhibits detailing Bataan's pivotal role and the heroic stand of Filipino and American soldiers during World War II. It offers a poignant look into the events of the Bataan Death March and the Battle of Bataan.
-                </p>
-              </CardContent>
-            </Card>
+          <Card className="shadow-xl w-full">
+            <CardHeader>
+              <CardTitle className="text-2xl font-semibold text-primary flex items-center">
+                <MapPin className="mr-3 h-7 w-7 text-accent" /> {/* Using MapPin icon, can be changed */}
+                Places to go in Balanga
+              </CardTitle>
+              <CardDescription className="text-muted-foreground">
+                Explore these notable attractions in Balanga City.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <Card className="shadow-xl">
+                  <div className="relative h-56 w-full rounded-t-lg overflow-hidden">
+                    <Image
+                      src="https://images.hive.blog/1200x630/https://files.peakd.com/file/peakd-hive/sassy.cebuana/23ywu7UzS7NTTmYqA9YuScFYoNibzLfEy1kZ3NQDedrE9hvsCcq8fAwJTDLq3kbpbpmvi.png"
+                      alt="Bataan World War II Museum"
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-t-lg"
+                    />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-xl font-semibold text-primary flex items-center">
+                      <Landmark className="mr-3 h-6 w-6" />
+                      Bataan World War II Museum
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground text-sm">
+                      Located in Balanga City, this museum houses artifacts and exhibits detailing Bataan's pivotal role and the heroic stand of Filipino and American soldiers during World War II. It offers a poignant look into the events of the Bataan Death March and the Battle of Bataan.
+                    </p>
+                  </CardContent>
+                </Card>
 
-            <Card className="shadow-xl">
-              <div className="relative h-56 w-full rounded-t-lg overflow-hidden">
-                <Image
-                  src="https://dgfi96202bcqs.cloudfront.net/1a79e29a-eb07-44d7-99c8-940a8bfaa6be.jpg"
-                  alt="Plaza Mayor De Ciudad de Balanga"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-t-lg"
-                />
+                <Card className="shadow-xl">
+                  <div className="relative h-56 w-full rounded-t-lg overflow-hidden">
+                    <Image
+                      src="https://dgfi96202bcqs.cloudfront.net/1a79e29a-eb07-44d7-99c8-940a8bfaa6be.jpg"
+                      alt="Plaza Mayor De Ciudad de Balanga"
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-t-lg"
+                    />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-xl font-semibold text-primary flex items-center">
+                      <Footprints className="mr-3 h-6 w-6" />
+                      Plaza Mayor De Ciudad de Balanga
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground text-sm">
+                      The city's main square, known for its European-inspired architecture, featuring the City Hall and St. Joseph's Cathedral. It's a vibrant hub for locals and tourists, often hosting events and offering a picturesque spot for leisurely strolls.
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
-              <CardHeader>
-                <CardTitle className="text-xl font-semibold text-primary flex items-center">
-                  <Footprints className="mr-3 h-6 w-6" />
-                  Plaza Mayor De Ciudad de Balanga
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm">
-                  The city's main square, known for its European-inspired architecture, featuring the City Hall and St. Joseph's Cathedral. It's a vibrant hub for locals and tourists, often hosting events and offering a picturesque spot for leisurely strolls.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+            </CardContent>
+          </Card>
 
           {/* Placeholder for Day 2, Day 3, etc. */}
           <div className="p-8 bg-secondary/30 rounded-lg shadow-xl text-center">
