@@ -7,27 +7,16 @@ import {
   BedDouble,
   CalendarClock,
   CheckCircle2,
-  ChevronRight,
-  Clock,
-  Dog,
-  Flame,
   Info,
-  MapPin,
-  ParkingCircle,
+  MapPin, // Kept for general use, can be removed if not needed for maps
   Salad, // For food/meals
-  ShieldAlert, // For rules/warnings
   ShoppingBag,
-  Sparkles, // For special offers or highlights
-  Sun,
   Utensils,
   Waves, // For beach/pool
   Wifi,
-  XCircle, // For NOT ALLOWED
   Users,
   Wind, // For Air-conditioned
-  GlassWater,
-  Briefcase,
-  Ban
+  Map // Added for map sections
 } from 'lucide-react';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
@@ -58,23 +47,7 @@ export default function MorongItineraryPage() {
       price: "PHP 6,000",
       features: ["One double bed", "Free breakfast for 2"],
     },
-    rules: [
-      { text: "NO PETS ALLOWED", icon: Dog, type: "disallowed" as const },
-      { text: "NO SMOKING INSIDE THE ROOMS", icon: Ban, type: "disallowed" as const },
-      { text: "NOT ALLOWED - COOKED FOOD", icon: Flame, type: "disallowed" as const },
-      { text: "NOT ALLOWED - COOKING", icon: Flame, type: "disallowed" as const },
-      { text: "DO NOT USE BATH TOWEL ON THE FLOOR", icon: Info, type: "info" as const },
-      { text: "NO MAONGS / COTTONS - WEAR PROPER SWIMMING ATTIRE", icon: Waves, type: "info" as const },
-      { text: "ALLOWED (Bread, Chips, Water)", icon: CheckCircle2, type: "allowed" as const },
-      { text: "WE HAVE IN-HOUSE RESTAURANT - 7 a.m. to 8 p.m.", icon: Utensils, type: "info" as const },
-      { text: "DAY TOUR is allowed; limited slots on weekends", icon: Sun, type: "info" as const },
-    ],
-    rebookingPolicy: [
-      "You can re-book within the span of 60 days, starting from your original reservation date.",
-      "Must inform 72 hours prior to your reservation date, in order to avoid being charged.",
-      "If you re-book on the day of your reservation date, you will be charged a 15% re-booking fee from the total value of your reserved rooms.",
-      "\"FORFEITED RESERVATION AND DOWN PAYMENT\" (no refund) will apply if a customer is NO SHOW or CANCELLED their reservation on the day without giving notice.",
-    ],
+    // Rules and rebooking policy removed as per request
   };
 
   const morongstarDetails = {
@@ -107,13 +80,6 @@ export default function MorongItineraryPage() {
     ],
     corkage: "Outside food & Alcoholic drinks - 100 pesos/head",
   };
-
-  const getRuleIcon = (type: 'disallowed' | 'allowed' | 'info', SpecificIcon: any) => {
-    if (type === 'disallowed') return <Ban className="h-4 w-4 mr-2 text-destructive" />;
-    if (type === 'allowed') return <CheckCircle2 className="h-4 w-4 mr-2 text-green-600" />;
-    return <SpecificIcon className="h-4 w-4 mr-2 text-primary" />;
-  };
-
 
   return (
     <>
@@ -160,31 +126,30 @@ export default function MorongItineraryPage() {
                   </ul>
                 </div>
               </div>
+              
+              <Separator />
 
               <div>
                 <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center">
-                  <ShieldAlert className="mr-2 h-5 w-5 text-accent" /> Resort Rules
+                  <Map className="mr-2 h-5 w-5 text-accent" /> Location Map
                 </h3>
-                <ul className="space-y-2 text-sm">
-                  {verzeAzulDetails.rules.map((rule, idx) => (
-                    <li key={idx} className={`flex items-center p-2 rounded-md ${rule.type === 'disallowed' ? 'bg-destructive/10 text-destructive' : rule.type === 'allowed' ? 'bg-green-500/10 text-green-700' : 'bg-blue-500/10 text-blue-700'}`}>
-                      {getRuleIcon(rule.type, rule.icon)}
-                      <span>{rule.text}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="relative aspect-[1/1] w-full rounded-lg overflow-hidden shadow-md">
+                  <iframe
+                    src="https://maps.google.com/maps?q=Verze%20Azul%20Leisure%20Resort%2C%20Morong%2C%20Bataan&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border:0 }}
+                    allowFullScreen={false}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Verze Azul Leisure Resort Location"
+                  ></iframe>
+                </div>
+                <p className="mt-2 text-sm text-muted-foreground text-center">
+                  Map showing the location of {verzeAzulDetails.name}.
+                </p>
               </div>
 
-              <div>
-                <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center">
-                  <CalendarClock className="mr-2 h-5 w-5 text-accent" /> Rebooking Policy Only
-                </h3>
-                <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                  {verzeAzulDetails.rebookingPolicy.map((policy, idx) => (
-                    <li key={idx}>{policy}</li>
-                  ))}
-                </ul>
-              </div>
             </CardContent>
           </Card>
 
@@ -229,6 +194,30 @@ export default function MorongItineraryPage() {
                 </h3>
                 <p className="text-sm text-muted-foreground p-2 bg-secondary/30 rounded-md">{morongstarDetails.corkage}</p>
               </div>
+
+              <Separator />
+
+              <div>
+                <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center">
+                  <Map className="mr-2 h-5 w-5 text-accent" /> Location Map
+                </h3>
+                <div className="relative aspect-[1/1] w-full rounded-lg overflow-hidden shadow-md">
+                  <iframe
+                    src="https://maps.google.com/maps?q=Morongstar%20Hotel%20and%20Resort%2C%20Morong%2C%20Bataan&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border:0 }}
+                    allowFullScreen={false}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Morongstar Hotel and Resort Location"
+                  ></iframe>
+                </div>
+                <p className="mt-2 text-sm text-muted-foreground text-center">
+                  Map showing the location of {morongstarDetails.name}.
+                </p>
+              </div>
+
             </CardContent>
           </Card>
         </div>
@@ -251,3 +240,4 @@ export default function MorongItineraryPage() {
   );
 }
 
+    
