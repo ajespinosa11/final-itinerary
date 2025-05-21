@@ -153,7 +153,7 @@ export default function MorongItineraryPage() {
                 </h3>
                 <ul className="space-y-2 text-sm">
                   {verzeAzulDetails.rules.map((rule, idx) => (
-                    <li key={idx} className={`flex items-center p-2 rounded-md ${rule.type === 'disallowed' ? 'bg-destructive/10 text-destructive-foreground' : rule.type === 'allowed' ? 'bg-green-500/10 text-green-700' : 'bg-blue-500/10 text-blue-700'}`}>
+                    <li key={idx} className={`flex items-center p-2 rounded-md ${rule.type === 'disallowed' ? 'bg-destructive/10 text-destructive' : rule.type === 'allowed' ? 'bg-green-500/10 text-green-700' : 'bg-blue-500/10 text-blue-700'}`}>
                       {getRuleIcon(rule.type, rule.icon)}
                       <span>{rule.text}</span>
                     </li>
