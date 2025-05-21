@@ -18,9 +18,9 @@ import {
   Users,
   Wind,
   Map,
-  Clock, // Added for schedule card title
-  Car,   // Added for schedule
-  Home as HomeIcon // Added for schedule (aliased to avoid conflict if 'Home' is used elsewhere)
+  Clock, 
+  Car,   
+  Home as HomeIcon 
 } from 'lucide-react';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
@@ -120,27 +120,50 @@ export default function MorongItineraryPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-             <div className="space-y-4">
-                <p className="text-sm text-muted-foreground">
-                  Your timeline for arrival and initial activities in Morong.
-                </p>
-                <div className="relative pl-2 space-y-6">
-                  <div className="absolute left-[7px] top-1/2 -translate-y-1/2 h-full w-0.5 bg-primary/30"></div> {/* Vertical line */}
-                  {day1MorongSchedule.map((item, index) => (
-                    <div key={index} className="relative flex items-center gap-4">
-                      <div className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
-                      <div className="w-40 text-sm font-medium text-muted-foreground shrink-0 pl-6">
-                        {item.time}
+             <div className="flex flex-col md:flex-row gap-8">
+                <div className="md:w-3/5 space-y-4">
+                  <p className="text-sm text-muted-foreground">
+                    Your timeline for arrival and initial activities in Morong.
+                  </p>
+                  <div className="relative pl-2 space-y-6">
+                    <div className="absolute left-[7px] top-1/2 -translate-y-1/2 h-full w-0.5 bg-primary/30"></div> {/* Vertical line */}
+                    {day1MorongSchedule.map((item, index) => (
+                      <div key={index} className="relative flex items-center gap-4">
+                        <div className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
+                        <div className="w-40 text-sm font-medium text-muted-foreground shrink-0 pl-6">
+                          {item.time}
+                        </div>
+                        <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
+                          <item.icon className="h-5 w-5 text-primary" />
+                        </div>
+                        <div className="flex-grow">
+                          <p className="font-medium text-foreground">{item.activity}</p>
+                          {item.description && <p className="text-xs text-muted-foreground">{item.description}</p>}
+                        </div>
                       </div>
-                      <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
-                        <item.icon className="h-5 w-5 text-primary" />
-                      </div>
-                      <div className="flex-grow">
-                        <p className="font-medium text-foreground">{item.activity}</p>
-                        {item.description && <p className="text-xs text-muted-foreground">{item.description}</p>}
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+                </div>
+                <div className="md:w-2/5 space-y-4">
+                  <h3 className="text-lg font-semibold text-foreground flex items-center">
+                    <Map className="mr-2 h-5 w-5 text-primary" />
+                    Route from Balanga to Morong
+                  </h3>
+                  <div className="relative aspect-[1/1] w-full rounded-lg overflow-hidden shadow-md">
+                    <iframe
+                      src="https://maps.google.com/maps?q=Balanga%2C%20Bataan%20to%20Morong%2C%20Bataan&t=&z=11&ie=UTF8&iwloc=&output=embed"
+                      width="100%"
+                      height="100%"
+                      style={{ border:0 }}
+                      allowFullScreen={false}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Route from Balanga to Morong, Bataan"
+                    ></iframe>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Live map showing the route from Balanga City to Morong Municipality, Bataan.
+                  </p>
                 </div>
               </div>
             </CardContent>
@@ -308,6 +331,3 @@ export default function MorongItineraryPage() {
     </>
   );
 }
-
-
-    
