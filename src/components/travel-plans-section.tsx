@@ -1,6 +1,7 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { CalendarDays, Users, Sun } from 'lucide-react';
+import { CalendarDays, Sun } from 'lucide-react';
 import Image from 'next/image';
 
 const travelPlans = [
@@ -68,7 +69,7 @@ export default function TravelPlansSection() {
               </CardContent>
               <CardFooter className="flex justify-between items-center">
                 <p className="text-lg font-semibold text-primary">{plan.price} <span className="text-xs text-muted-foreground">/ person</span></p>
-                <Button variant="outline" className="border-primary text-primary hover:bg-primary/10 transition-transform hover:scale-105">
+                <Button variant="outline" className="border-primary text-primary hover:bg-accent hover:text-accent-foreground transition-transform hover:scale-105">
                   Learn More
                 </Button>
               </CardFooter>
@@ -84,3 +85,5 @@ export default function TravelPlansSection() {
     </section>
   );
 }
+
+    
