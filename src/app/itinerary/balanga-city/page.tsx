@@ -79,8 +79,8 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
   const roomPricing = {
     discountBadge: "54% OFF TODAY",
     originalPrice: "PHP 5,800.00",
-    ourPrice: "PHP 3,342.56", 
-    instantDiscount: "PHP 774.36", 
+    ourPrice: "PHP 3,342.56",
+    instantDiscount: "PHP 774.36",
     roomPrice: "PHP 2,568.20",
     taxesAndFees: "PHP 565.00",
     bookingFees: "FREE",
@@ -271,7 +271,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                   </h3>
                   <div className="relative aspect-[1/1] w-full rounded-lg overflow-hidden shadow-md">
                     <iframe
-                      src="https://maps.google.com/maps?q=Robinson%20Starmills%20Pampanga%2C%20San%20Fernando%20to%20Balanga%2C%20Bataan&t=&z=10&ie=UTF8&iwloc=&output=embed"
+                      src="https://maps.google.com/maps?q=Robinson%20Starmills%20Pampanga%2C%20San%20Fernando%20to%20Balanga%2C%20Bataan&t=&z=9&ie=UTF8&iwloc=&output=embed"
                       width="100%"
                       height="100%"
                       style={{ border:0 }}
@@ -498,5 +498,3 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
     </>
   );
 }
-
-    
