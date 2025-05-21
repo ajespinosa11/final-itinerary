@@ -90,7 +90,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
   const day1Schedule = [
     { time: "8:00 AM", activity: "Depart from Manila", description: "Begin your journey to Bataan.", icon: Car },
     { time: "10:00 AM", subtext: "(Max)", activity: "Arrive at Robinson San Fernando, Pampanga", description: "Transit point for Bataan.", icon: MapPin },
-    { time: "~10:15 AM", activity: "Board Bataan Transit", description: "Located at Robinson Terminal.", icon: Bus },
+    { time: "10:15 AM", activity: "Board Bataan Transit", description: "Located at Robinson Terminal.", icon: Bus },
     { time: "12:30 PM", subtext: "(Max)", activity: "Arrive in Balanga City", description: "Welcome to the capital of Bataan!", icon: MapPin },
     { time: "12:30 PM - 2:00 PM", activity: "Quick Stroll in City Proper", description: "Explore the nearby areas before check-in.", icon: Footprints },
     { time: "2:00 PM", activity: `Check-in at ${plazaHotelDetails.name}`, description: "Settle into your accommodation.", icon: HomeIcon },
