@@ -1,6 +1,7 @@
 
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ArrowLeft,
   BedDouble,
@@ -48,6 +49,8 @@ export default function MorongItineraryPage() {
 
   const verzeAzulDetails = {
     name: "Verze Azul Leisure Resort",
+    imageSrc: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/31/50/e3/this-resort-is-a-hidden.jpg?w=1400&h=-1&s=1",
+    imageAlt: "Verze Azul Leisure Resort",
     checkIn: "2:00 PM",
     checkOut: "12:00 PM",
     room: {
@@ -76,6 +79,8 @@ export default function MorongItineraryPage() {
 
   const morongstarDetails = {
     name: "Morongstar Hotel and Resort",
+    imageSrc: "https://i.ytimg.com/vi/gMIC8zyyr34/maxresdefault.jpg",
+    imageAlt: "Morongstar Hotel and Resort",
     checkIn: "2:00 PM",
     checkOut: "12:00 NN",
     packages: [
@@ -133,6 +138,15 @@ export default function MorongItineraryPage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
+              <div className="relative h-64 w-full rounded-lg overflow-hidden shadow-md mb-6">
+                <Image
+                  src={verzeAzulDetails.imageSrc}
+                  alt={verzeAzulDetails.imageAlt}
+                  fill
+                  style={{objectFit: 'cover'}}
+                  className="rounded-lg"
+                />
+              </div>
               <div>
                 <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center">
                   <BedDouble className="mr-2 h-5 w-5 text-accent" /> Available Room
@@ -182,6 +196,15 @@ export default function MorongItineraryPage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
+              <div className="relative h-64 w-full rounded-lg overflow-hidden shadow-md mb-6">
+                <Image
+                  src={morongstarDetails.imageSrc}
+                  alt={morongstarDetails.imageAlt}
+                  fill
+                  style={{objectFit: 'cover'}}
+                  className="rounded-lg"
+                />
+              </div>
               {morongstarDetails.packages.map((pkg, idx) => (
                 <div key={idx}>
                   <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center">
@@ -226,5 +249,3 @@ export default function MorongItineraryPage() {
     </>
   );
 }
-
-    

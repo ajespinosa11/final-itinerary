@@ -64,6 +64,12 @@ const nextConfig: NextConfig = {
         hostname: 'bataan.gov.ph',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.ytimg.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
