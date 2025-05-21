@@ -127,7 +127,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                 {day1Schedule.map((item, index) => (
                   <div key={index} className="relative flex items-start gap-4">
                     <div className="absolute left-0 top-1.5 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
-                    <div className="w-40 text-sm font-medium text-muted-foreground shrink-0 pt-1"> {/* Increased width */}
+                    <div className="w-40 text-sm font-medium text-muted-foreground shrink-0 pt-1 pl-6"> {/* Time column with pl-6 */}
                       {item.time}
                       {item.subtext && <span className="block text-xs">{item.subtext}</span>}
                     </div>
