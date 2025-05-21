@@ -1,6 +1,8 @@
+
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { summarizeReviews, type SummarizeReviewsInput } from '@/ai/flows/summarize-reviews';
 import { Button } from '@/components/ui/button';
@@ -137,7 +139,7 @@ export default function DestinationCard({ destination }: DestinationCardProps) {
       </CardContent>
       <CardFooter>
         <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105">
-          <a href={`#itinerary?destination=${destination.id}`}>Add to Itinerary</a>
+          <Link href={`/itinerary/${destination.id}`}>Check Itinerary</Link>
         </Button>
       </CardFooter>
     </Card>
