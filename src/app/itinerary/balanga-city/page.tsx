@@ -3,7 +3,8 @@ import type { Metadata } from 'next';
 import {
   ArrowLeft, MapPin, Building, Utensils,
   Clock, Luggage, BedSingle, CheckCircle2, CalendarCheck2,
-  BellRing, Coffee, Zap, GlassWater, Wifi, Info, Users, Ruler
+  BellRing, Coffee, Zap, GlassWater, Wifi, Info, Users, Ruler,
+  Car, Bus, Footprints, Home as HomeIcon, // Added HomeIcon to avoid conflict if Home component exists
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -72,7 +73,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
       { text: "Hurry! Our last room for your dates at this price", icon: BellRing, colorClass: "text-accent" },
       { text: "Coffee & tea", icon: Coffee, colorClass: "text-green-600" },
       { text: "Express check-in", icon: Zap, colorClass: "text-green-600" },
-      { text: "Free WiFi", icon: CheckCircle2, colorClass: "text-green-600" }, // Using CheckCircle2 for confirmed feature
+      { text: "Free WiFi", icon: Wifi, colorClass: "text-green-600" }, // Changed to Wifi icon
       { text: "Drinking water", icon: GlassWater, colorClass: "text-green-600" },
     ]
   };
@@ -88,10 +89,19 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
     finalPrice: "6,549.23"
   };
 
+  const day1Schedule = [
+    { time: "8:00 AM", activity: "Depart from Manila", description: "Begin your journey to Bataan.", icon: Car },
+    { time: "10:00 AM", subtext: "(Max)", activity: "Arrive at Robinson San Fernando, Pampanga", description: "Transit point for Bataan.", icon: MapPin },
+    { time: "~10:15 AM", activity: "Board Bataan Transit", description: "Located at Robinson Terminal.", icon: Bus },
+    { time: "12:30 PM", subtext: "(Max)", activity: "Arrive in Balanga City", description: "Welcome to the capital of Bataan!", icon: MapPin },
+    { time: "12:30 PM - 2:00 PM", activity: "Quick Stroll in City Proper", description: "Explore the nearby areas before check-in.", icon: Footprints },
+    { time: "2:00 PM", activity: `Check-in at ${plazaHotelDetails.name}`, description: "Settle into your accommodation.", icon: HomeIcon },
+  ];
+
   return (
     <>
       <Header />
-      <main className="flex-grow container mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8"> {/* Adjusted max-w for wider layout */}
+      <main className="flex-grow container mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <Button variant="outline" asChild className="mb-6 transition-transform hover:scale-105">
           <Link href="/#highlights">
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -107,7 +117,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
             <Card className="shadow-xl md:w-1/2">
               <CardHeader>
                 <CardTitle className="text-2xl font-semibold text-primary flex items-center">
-                  <Info className="mr-3 h-7 w-7" /> Day 1: Arrival and City Exploration
+                  <Info className="mr-3 h-7 w-7" /> Day 1: Arrival and City Exploration (June 14)
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
                   Settle in and get acquainted with the heart of Balanga City. Standard Check-in: {plazaHotelDetails.checkInTime}.
@@ -119,7 +129,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     <Building className="mr-2 h-5 w-5 text-accent" />
                     Accommodation: {plazaHotelDetails.name}
                   </h3>
-                  <div className="grid md:grid-cols-2 gap-6 items-start"> {/* Changed items-center to items-start */}
+                  <div className="grid md:grid-cols-2 gap-6 items-start">
                     <div className="relative h-64 w-full rounded-lg overflow-hidden shadow-md">
                       <Image
                         src={plazaHotelDetails.imageSrc}
@@ -145,7 +155,37 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     </div>
                   </div>
                 </div>
+                
                 <Separator className="my-6" />
+
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center">
+                    <Clock className="mr-2 h-5 w-5 text-accent" />
+                    Day 1 Schedule
+                  </h3>
+                  <div className="relative pl-2 space-y-6">
+                    <div className="absolute left-[7px] top-2 bottom-2 w-0.5 bg-primary/30"></div> {/* Vertical line */}
+                    {day1Schedule.map((item, index) => (
+                      <div key={index} className="relative flex items-start gap-4">
+                        <div className="absolute left-0 top-1.5 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
+                        <div className="w-28 text-sm font-medium text-muted-foreground shrink-0 pt-1">
+                          {item.time}
+                          {item.subtext && <span className="block text-xs">{item.subtext}</span>}
+                        </div>
+                        <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
+                          <item.icon className="h-5 w-5 text-primary" />
+                        </div>
+                        <div className="flex-grow pt-1">
+                          <p className="font-medium text-foreground">{item.activity}</p>
+                          {item.description && <p className="text-xs text-muted-foreground">{item.description}</p>}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <Separator className="my-6" />
+                
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center">
                     <Utensils className="mr-2 h-5 w-5 text-accent" />
@@ -164,7 +204,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-col sm:flex-row gap-4 items-start">
-                  <div className="relative w-full sm:w-1/3 md:w-2/5 aspect-[16/9] rounded-lg overflow-hidden shadow-md flex-shrink-0"> {/* Adjusted md width */}
+                  <div className="relative w-full sm:w-1/3 md:w-2/5 aspect-[16/9] rounded-lg overflow-hidden shadow-md flex-shrink-0">
                     <Image
                       src={suggestedRoomDetails.imageSrc}
                       alt={suggestedRoomDetails.imageAlt}
@@ -246,7 +286,6 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     <span className="text-xl font-bold text-primary">₱ {roomPricing.finalPrice}</span>
                   </div>
                 </div>
-
               </CardContent>
             </Card>
           </div>
