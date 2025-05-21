@@ -4,7 +4,7 @@ import {
   ArrowLeft, MapPin, Building, Utensils,
   Clock, Luggage, BedSingle, CheckCircle2, CalendarCheck2,
   BellRing, Coffee, Zap, GlassWater, Wifi, Info, Users, Ruler,
-  Car, Bus, Footprints, Home as HomeIcon, // Added HomeIcon to avoid conflict if Home component exists
+  Car, Bus, Footprints, Home as HomeIcon,
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -17,14 +17,12 @@ import { Badge } from '@/components/ui/badge';
 
 interface ItineraryPageProps {
   params: {
-    // destinationId is not reliably populated from params for this static page
-    // but the prop structure might be expected by Next.js
     destinationId?: string;
   };
 }
 
 export async function generateMetadata({ params }: ItineraryPageProps): Promise<Metadata> {
-  const destinationId = "balanga-city"; // Hardcode for this specific page
+  const destinationId = "balanga-city"; 
   const destinationName = destinationId
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
@@ -36,11 +34,11 @@ export async function generateMetadata({ params }: ItineraryPageProps): Promise<
 }
 
 export default function ItineraryPage({ params }: ItineraryPageProps) {
-  const destinationId = "balanga-city"; // Hardcode for this specific page
+  const destinationId = "balanga-city"; 
   const destinationName = destinationId
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' '); // e.g., "Balanga City"
+    .join(' '); 
 
   const plazaHotelDetails = {
     name: "The Plaza Hotel - Balanga",
@@ -123,35 +121,36 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                   Settle in and get acquainted with the heart of Balanga City. Standard Check-in: {plazaHotelDetails.checkInTime}.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center">
-                    <Clock className="mr-2 h-5 w-5 text-accent" />
-                    Day 1 Schedule (June 14)
-                  </h3>
-                  <div className="relative pl-2 space-y-6">
-                    <div className="absolute left-[7px] top-2 bottom-2 w-0.5 bg-primary/30"></div> {/* Vertical line */}
-                    {day1Schedule.map((item, index) => (
-                      <div key={index} className="relative flex items-start gap-4">
-                        <div className="absolute left-0 top-1.5 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
-                        <div className="w-28 text-sm font-medium text-muted-foreground shrink-0 pt-1"> {/* Increased width from w-24 to w-28 */}
-                          {item.time}
-                          {item.subtext && <span className="block text-xs">{item.subtext}</span>}
-                        </div>
-                        <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
-                          <item.icon className="h-5 w-5 text-primary" />
-                        </div>
-                        <div className="flex-grow pt-1">
-                          <p className="font-medium text-foreground">{item.activity}</p>
-                          {item.description && <p className="text-xs text-muted-foreground">{item.description}</p>}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
 
-                <Separator className="my-6" />
-                
+              <div className="px-6 pb-6"> {/* Schedule section with padding */}
+                <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center">
+                  <Clock className="mr-2 h-5 w-5 text-accent" />
+                  Day 1 Schedule (June 14)
+                </h3>
+                <div className="relative pl-2 space-y-6">
+                  <div className="absolute left-[7px] top-2 bottom-2 w-0.5 bg-primary/30"></div> {/* Vertical line */}
+                  {day1Schedule.map((item, index) => (
+                    <div key={index} className="relative flex items-start gap-4">
+                      <div className="absolute left-0 top-1.5 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
+                      <div className="w-28 text-sm font-medium text-muted-foreground shrink-0 pt-1">
+                        {item.time}
+                        {item.subtext && <span className="block text-xs">{item.subtext}</span>}
+                      </div>
+                      <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
+                        <item.icon className="h-5 w-5 text-primary" />
+                      </div>
+                      <div className="flex-grow pt-1">
+                        <p className="font-medium text-foreground">{item.activity}</p>
+                        {item.description && <p className="text-xs text-muted-foreground">{item.description}</p>}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <Separator className="mx-6" /> {/* Separator between schedule and main content */}
+              
+              <CardContent className="pt-6 space-y-6"> {/* Added pt-6 for spacing, maintain space-y-6 for children */}
                 <div>
                   <h3 className="text-xl font-semibold text-foreground mb-3 flex items-center">
                     <Building className="mr-2 h-5 w-5 text-accent" />
