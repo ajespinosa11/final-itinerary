@@ -150,16 +150,19 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     Route Overview
                   </h3>
                   <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden shadow-md">
-                    <Image
-                      src="https://placehold.co/600x450.png"
-                      alt="Route map from Robinsons Starmills Pampanga to Balanga City"
-                      layout="fill"
-                      objectFit="cover"
-                      data-ai-hint="pampanga balanga map"
-                    />
+                    <iframe
+                      src="https://maps.google.com/maps?q=Robinson%20Starmills%20Pampanga%2C%20San%20Fernando%20to%20Balanga%2C%20Bataan&t=&z=10&ie=UTF8&iwloc=&output=embed"
+                      width="100%"
+                      height="100%"
+                      style={{ border:0 }}
+                      allowFullScreen={false}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Route from Robinson Starmills Pampanga to Balanga, Bataan"
+                    ></iframe>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Illustrative map showing the route from Robinsons Starmills Pampanga to Balanga City.
+                    Live map showing the route from Robinsons Starmills Pampanga, San Fernando to Balanga City, Bataan.
                   </p>
                 </div>
               </div>
