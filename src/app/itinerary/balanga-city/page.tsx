@@ -22,7 +22,7 @@ interface ItineraryPageProps {
 }
 
 export async function generateMetadata({ params }: ItineraryPageProps): Promise<Metadata> {
-  const destinationId = "balanga-city"; 
+  const destinationId = "balanga-city";
   const destinationName = destinationId
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
@@ -34,11 +34,11 @@ export async function generateMetadata({ params }: ItineraryPageProps): Promise<
 }
 
 export default function ItineraryPage({ params }: ItineraryPageProps) {
-  const destinationId = "balanga-city"; 
+  const destinationId = "balanga-city";
   const destinationName = destinationId
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' '); 
+    .join(' ');
 
   const plazaHotelDetails = {
     name: "The Plaza Hotel - Balanga",
@@ -71,7 +71,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
       { text: "Hurry! Our last room for your dates at this price", icon: BellRing, colorClass: "text-accent" },
       { text: "Coffee & tea", icon: Coffee, colorClass: "text-green-600" },
       { text: "Express check-in", icon: Zap, colorClass: "text-green-600" },
-      { text: "Free WiFi", icon: Wifi, colorClass: "text-green-600" }, 
+      { text: "Free WiFi", icon: Wifi, colorClass: "text-green-600" },
       { text: "Drinking water", icon: GlassWater, colorClass: "text-green-600" },
     ]
   };
@@ -111,50 +111,55 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
         </h1>
 
         <div className="space-y-8">
+          {/* Schedule Card (Full Width) */}
+          <Card className="shadow-xl w-full">
+            <CardHeader>
+              <CardTitle className="text-2xl font-semibold text-primary flex items-center">
+                <Clock className="mr-3 h-7 w-7 text-accent" /> Day 1 Schedule (June 14)
+              </CardTitle>
+              <CardDescription className="text-muted-foreground">
+                Your timeline for arrival and initial activities in Balanga City.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="relative pl-2 space-y-6">
+                <div className="absolute left-[7px] top-2 bottom-2 w-0.5 bg-primary/30"></div> {/* Vertical line */}
+                {day1Schedule.map((item, index) => (
+                  <div key={index} className="relative flex items-start gap-4">
+                    <div className="absolute left-0 top-1.5 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
+                    <div className="w-28 text-sm font-medium text-muted-foreground shrink-0 pt-1">
+                      {item.time}
+                      {item.subtext && <span className="block text-xs">{item.subtext}</span>}
+                    </div>
+                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
+                      <item.icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <div className="flex-grow pt-1">
+                      <p className="font-medium text-foreground">{item.activity}</p>
+                      {item.description && <p className="text-xs text-muted-foreground">{item.description}</p>}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Accommodation and Suggested Room Cards (Side-by-Side) */}
           <div className="flex flex-col md:flex-row gap-8">
             <Card className="shadow-xl md:w-1/2">
               <CardHeader>
                 <CardTitle className="text-2xl font-semibold text-primary flex items-center">
-                  <Info className="mr-3 h-7 w-7" /> Day 1: Arrival and City Exploration
+                  <Building className="mr-3 h-7 w-7" /> Your Stay: {plazaHotelDetails.name}
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
                   Settle in and get acquainted with the heart of Balanga City. Standard Check-in: {plazaHotelDetails.checkInTime}.
                 </CardDescription>
               </CardHeader>
-
-              <div className="px-6 pb-6"> {/* Schedule section with padding */}
-                <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center">
-                  <Clock className="mr-2 h-5 w-5 text-accent" />
-                  Day 1 Schedule (June 14)
-                </h3>
-                <div className="relative pl-2 space-y-6">
-                  <div className="absolute left-[7px] top-2 bottom-2 w-0.5 bg-primary/30"></div> {/* Vertical line */}
-                  {day1Schedule.map((item, index) => (
-                    <div key={index} className="relative flex items-start gap-4">
-                      <div className="absolute left-0 top-1.5 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
-                      <div className="w-28 text-sm font-medium text-muted-foreground shrink-0 pt-1">
-                        {item.time}
-                        {item.subtext && <span className="block text-xs">{item.subtext}</span>}
-                      </div>
-                      <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
-                        <item.icon className="h-5 w-5 text-primary" />
-                      </div>
-                      <div className="flex-grow pt-1">
-                        <p className="font-medium text-foreground">{item.activity}</p>
-                        {item.description && <p className="text-xs text-muted-foreground">{item.description}</p>}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <Separator className="mx-6" /> {/* Separator between schedule and main content */}
-              
-              <CardContent className="pt-6 space-y-6"> {/* Added pt-6 for spacing, maintain space-y-6 for children */}
+              <CardContent className="space-y-6">
                 <div>
                   <h3 className="text-xl font-semibold text-foreground mb-3 flex items-center">
-                    <Building className="mr-2 h-5 w-5 text-accent" />
-                    Accommodation: {plazaHotelDetails.name}
+                     {/* Icon removed as it's in CardTitle now */}
+                    Accommodation Details
                   </h3>
                   <div className="grid md:grid-cols-2 gap-6 items-start">
                     <div className="relative h-64 w-full rounded-lg overflow-hidden shadow-md">
@@ -182,9 +187,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     </div>
                   </div>
                 </div>
-                
-                <Separator className="my-6" />
-                
+                <Separator />
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center">
                     <Utensils className="mr-2 h-5 w-5 text-accent" />
