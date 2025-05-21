@@ -79,7 +79,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
   const roomPricing = {
     discountBadge: "54% OFF TODAY",
     originalPrice: "PHP 5,800.00",
-    ourPrice: "PHP 3,342.56",
+    ourPrice: "PHP 3,342.56", // This value is typically not displayed, but kept for data consistency
     instantDiscount: "PHP 774.36",
     roomPrice: "PHP 2,568.20",
     taxesAndFees: "PHP 565.00",
@@ -135,7 +135,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                 <Card className="shadow-xl">
                   <div className="relative h-56 w-full rounded-t-lg overflow-hidden">
                     <Image
@@ -475,14 +475,14 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                   </h3>
                   <div className="relative aspect-[1/1] w-full rounded-lg overflow-hidden shadow-md">
                     <iframe
-                      src="https://maps.google.com/maps?q=The%20Plaza%20Hotel%20Balanga%20City%2C%20JP%20Rizal%20St%2C%20Balanga%2C%202100%20Bataan%20to%20Balanga%20Wetland%20and%20Nature%20Park%2C%20MHV8%252BR9G%2C%20Brgy%2C%20Balanga%2C%20Bataan&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                      src="https://maps.google.com/maps?q=The%20Plaza%20Hotel%20Balanga%20City%20to%20Balanga%20Wetland%20and%20Nature%20Park&t=&z=13&ie=UTF8&iwloc=&output=embed"
                       width="100%"
                       height="100%"
                       style={{ border:0 }}
                       allowFullScreen={false}
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      title="Route from The Plaza Hotel Balanga to Balanga Wetland and Nature Park"
+                      title="Route from The Plaza Hotel Balanga City to Balanga Wetland and Nature Park"
                     ></iframe>
                   </div>
                   <p className="text-sm text-muted-foreground">
@@ -498,3 +498,5 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
     </>
   );
 }
+
+    
