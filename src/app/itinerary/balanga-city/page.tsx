@@ -127,7 +127,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                 {day1Schedule.map((item, index) => (
                   <div key={index} className="relative flex items-start gap-4">
                     <div className="absolute left-0 top-1.5 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
-                    <div className="w-28 text-sm font-medium text-muted-foreground shrink-0 pt-1">
+                    <div className="w-32 text-sm font-medium text-muted-foreground shrink-0 pt-1"> {/* Increased width from w-28 to w-32 */}
                       {item.time}
                       {item.subtext && <span className="block text-xs">{item.subtext}</span>}
                     </div>
@@ -158,7 +158,6 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
               <CardContent className="space-y-6">
                 <div>
                   <h3 className="text-xl font-semibold text-foreground mb-3 flex items-center">
-                     {/* Icon removed as it's in CardTitle now */}
                     Accommodation Details
                   </h3>
                   <div className="grid md:grid-cols-2 gap-6 items-start">
