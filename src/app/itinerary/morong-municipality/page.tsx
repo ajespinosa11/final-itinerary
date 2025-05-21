@@ -26,7 +26,6 @@ import {
   Wind, // For Air-conditioned
   GlassWater,
   Briefcase,
-  Smoking,
   Ban
 } from 'lucide-react';
 import Header from '@/components/layout/header';
@@ -58,7 +57,7 @@ export default function MorongItineraryPage() {
     },
     rules: [
       { text: "NO PETS ALLOWED", icon: Dog, type: "disallowed" as const },
-      { text: "NO SMOKING INSIDE THE ROOMS", icon: Smoking, type: "disallowed" as const },
+      { text: "NO SMOKING INSIDE THE ROOMS", icon: Ban, type: "disallowed" as const },
       { text: "NOT ALLOWED - COOKED FOOD", icon: Flame, type: "disallowed" as const },
       { text: "NOT ALLOWED - COOKING", icon: Flame, type: "disallowed" as const },
       { text: "DO NOT USE BATH TOWEL ON THE FLOOR", icon: Info, type: "info" as const },
