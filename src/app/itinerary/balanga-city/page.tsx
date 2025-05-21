@@ -335,6 +335,30 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                 <Card className="shadow-xl">
                   <div className="relative h-56 w-full rounded-t-lg overflow-hidden">
                     <Image
+                      src="https://placehold.co/600x400.png"
+                      alt="SM City Bataan"
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-t-lg"
+                      data-ai-hint="shopping mall"
+                    />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-xl font-semibold text-primary flex items-center">
+                      <ShoppingBag className="mr-3 h-6 w-6" />
+                      SM City Bataan
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground text-sm">
+                      A major shopping mall in Balanga City, offering a wide range of retail stores, dining options, entertainment facilities, and essential services for locals and tourists alike.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="shadow-xl">
+                  <div className="relative h-56 w-full rounded-t-lg overflow-hidden">
+                    <Image
                       src="https://images.hive.blog/1200x630/https://files.peakd.com/file/peakd-hive/sassy.cebuana/23ywu7UzS7NTTmYqA9YuScFYoNibzLfEy1kZ3NQDedrE9hvsCcq8fAwJTDLq3kbpbpmvi.png"
                       alt="Bataan World War II Museum"
                       layout="fill"
@@ -398,30 +422,6 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                   <CardContent>
                     <p className="text-muted-foreground text-sm">
                       The official hub for tourist information, assistance, and local products in Bataan. A good starting point for visitors to plan their exploration of the province.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="shadow-xl">
-                  <div className="relative h-56 w-full rounded-t-lg overflow-hidden">
-                    <Image
-                      src="https://placehold.co/600x400.png"
-                      alt="SM City Bataan"
-                      layout="fill"
-                      objectFit="cover"
-                      className="rounded-t-lg"
-                      data-ai-hint="shopping mall"
-                    />
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="text-xl font-semibold text-primary flex items-center">
-                      <ShoppingBag className="mr-3 h-6 w-6" />
-                      SM City Bataan
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground text-sm">
-                      A major shopping mall in Balanga City, offering a wide range of retail stores, dining options, entertainment facilities, and essential services for locals and tourists alike.
                     </p>
                   </CardContent>
                 </Card>
