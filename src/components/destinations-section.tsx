@@ -6,9 +6,8 @@ const destinations: Destination[] = [
   {
     id: 'balanga-city',
     name: 'Balanga City',
-    imageSrc: 'https://placehold.co/600x400.png',
+    imageSrc: 'https://runningpinoy.com/wp-content/uploads/2023/04/img_2125.jpeg?w=1366',
     imageAlt: 'Overview of Balanga City',
-    dataAiHint: 'cityscape historical',
     shortDescription: 'The capital of Bataan, offering a blend of historical significance, urban development, and natural spots.',
     details: '<p>Balanga City serves as the vibrant capital of Bataan province. It is a hub of commerce, education, and governance, while also preserving its rich history. Visitors can explore historical landmarks like the Balanga Cathedral and the Bataan World War II Museum. The city is known for its efforts in environmentalism and has several parks and public spaces. It\'s a convenient base for exploring other attractions in Bataan due to its central location and accessibility.</p>',
     reviews: [
@@ -21,9 +20,8 @@ const destinations: Destination[] = [
   {
     id: 'morong-municipality',
     name: 'Morong',
-    imageSrc: 'https://placehold.co/600x400.png',
+    imageSrc: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/a1/53/0c/playa-la-caleta-1.jpg?w=1400&h=1400&s=1',
     imageAlt: 'Coastal view of Morong',
-    dataAiHint: 'coastal town',
     shortDescription: 'A coastal municipality known for its beautiful beaches, resorts, and the Pawikan Conservation Center.',
     details: '<p>Morong is a charming coastal town in Bataan, popular for its serene beaches like Sabang Beach and a growing number of resorts catering to tourists. It is also home to the Pawikan Conservation Center, dedicated to protecting marine turtles. Beyond the beaches, Morong offers opportunities for eco-tourism, with natural landscapes and a more laid-back atmosphere compared to urban centers. It\'s an ideal destination for those seeking relaxation and a connection with nature.</p>',
     reviews: [
