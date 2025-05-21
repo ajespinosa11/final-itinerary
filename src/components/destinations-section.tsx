@@ -3,33 +3,33 @@ import { MapPin } from 'lucide-react';
 
 const destinations: Destination[] = [
   {
-    id: 'samat',
-    name: 'Mount Samat National Shrine',
+    id: 'balanga-cathedral',
+    name: 'Balanga Cathedral (St. Joseph Cathedral)',
     imageSrc: 'https://placehold.co/600x400.png',
-    imageAlt: 'Mount Samat National Shrine',
-    dataAiHint: 'monument shrine',
-    shortDescription: 'A historical landmark offering panoramic views and a glimpse into Bataan\'s valiant past.',
-    details: '<p>The Mount Samat National Shrine, also known as Dambana ng Kagitingan (Shrine of Valor), is a memorial complex built atop Mount Samat in Pilar, Bataan. The shrine commemorates the bravery of Filipino and American soldiers who fought during World War II.</p><p>Key features include a towering Memorial Cross and a colonnade with a museum. Visitors can take an elevator to the viewing gallery in the arms of the cross for breathtaking 360-degree views of Bataan Peninsula.</p>',
+    imageAlt: 'Balanga Cathedral',
+    dataAiHint: 'cathedral church',
+    shortDescription: 'A historic cathedral in the heart of Balanga City, known for its beautiful architecture and religious significance.',
+    details: '<p>The Balanga Cathedral, formally known as the Diocesan Shrine and Cathedral Parish of St. Joseph, is a significant religious and historical landmark in Balanga City, Bataan. Originally built in 1739, it has undergone several reconstructions and renovations, especially after damages from wars and natural calamities. The cathedral features a beautiful facade and interiors, serving as a central place of worship and a testament to the resilient faith of the Bataeños. It played a role during World War II, serving as an artillery emplacement during the Japanese invasion.</p>',
     reviews: [
-      "A very historic place with immense significance.",
-      "The views from the top of the cross are absolutely amazing!",
-      "Learned a lot about Philippine history. A must-visit for everyone.",
-      "The museum provides a lot of context. It was a solemn and educational experience."
+      "A peaceful and solemn place for prayer and reflection.",
+      "The architecture is stunning, especially the stained glass windows.",
+      "Centrally located and easy to visit. A must-see in Balanga.",
+      "Rich in history and a beautiful structure."
     ],
   },
   {
-    id: 'lascasas',
-    name: 'Las Casas Filipinas de Acuzar',
+    id: 'sabang-beach',
+    name: 'Sabang Beach',
     imageSrc: 'https://placehold.co/600x400.png',
-    imageAlt: 'Las Casas Filipinas de Acuzar',
-    dataAiHint: 'heritage houses',
-    shortDescription: 'Step back in time in this stunning resort featuring restored Spanish-Filipino colonial houses.',
-    details: '<p>Las Casas Filipinas de Acuzar is an open-air museum and heritage resort in Bagac, Bataan. It showcases a collection of meticulously restored Spanish colonial-era houses, some of which were transported brick-by-brick from different parts of the Philippines.</p><p>Guests can take guided tours, ride a kalesa, or even stay in one of the heritage houses. The resort aims to preserve Filipino heritage and craftsmanship.</p>',
+    imageAlt: 'Sabang Beach in Morong',
+    dataAiHint: 'beach resort',
+    shortDescription: 'A popular beach destination in Morong, offering fine sands, clear waters, and various water activities.',
+    details: '<p>Sabang Beach in Morong, Bataan, is a well-known coastal destination favored for its stretch of fine, grayish sand and relatively calm, clear waters, making it suitable for swimming and family outings. The beach is lined with various resorts and accommodations catering to different budgets. Visitors can enjoy activities like kayaking, banana boat rides, or simply relaxing by the shore. It\'s a great spot to unwind and enjoy Bataan\'s natural coastal beauty.</p>',
     reviews: [
-      "Beautifully restored heritage houses, truly a sight to behold.",
-      "Felt like I was transported back to the Spanish colonial era. The attention to detail is incredible.",
-      "It's on the pricier side, but definitely worth it for the unique experience and historical immersion.",
-      "The river cruise was a highlight. Staff were knowledgeable and friendly."
+      "Great place for a family getaway. The kids loved the beach!",
+      "Clean shoreline and the water is good for swimming.",
+      "Lots of resorts to choose from. We found a nice affordable one.",
+      "Peaceful atmosphere, perfect for relaxing."
     ],
   },
 ];
