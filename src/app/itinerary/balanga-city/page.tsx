@@ -475,7 +475,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                   </h3>
                   <div className="relative aspect-[1/1] w-full rounded-lg overflow-hidden shadow-md">
                     <iframe
-                      src="https://maps.google.com/maps?q=The%20Plaza%20Hotel%2C%20Balanga%2C%20Bataan%20to%20Balanga%20Wetland%20and%20Nature%20Park%2C%20Balanga%2C%20Bataan&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                      src="https://maps.google.com/maps?q=The%20Plaza%20Hotel%20Balanga%20City%2C%20JP%20Rizal%20St%2C%20Balanga%2C%202100%20Bataan%20to%20Balanga%20Wetland%20and%20Nature%20Park%2C%20MHV8%252BR9G%2C%20Brgy%2C%20Balanga%2C%20Bataan&t=&z=13&ie=UTF8&iwloc=&output=embed"
                       width="100%"
                       height="100%"
                       style={{ border:0 }}
