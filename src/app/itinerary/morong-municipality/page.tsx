@@ -5,19 +5,22 @@ import Image from 'next/image';
 import {
   ArrowLeft,
   BedDouble,
-  CalendarClock, // Added back
+  CalendarClock,
   CheckCircle2,
   Info,
   MapPin,
-  Salad, 
-  ShieldAlert, // Added back
+  Salad,
+  ShieldAlert,
   ShoppingBag,
   Utensils,
-  Waves, 
+  Waves,
   Wifi,
   Users,
-  Wind, 
-  Map 
+  Wind,
+  Map,
+  Clock, // Added for schedule card title
+  Car,   // Added for schedule
+  Home as HomeIcon // Added for schedule (aliased to avoid conflict if 'Home' is used elsewhere)
 } from 'lucide-react';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
@@ -30,17 +33,25 @@ export async function generateMetadata(): Promise<Metadata> {
   const destinationName = "Morong Municipality";
   return {
     title: `Itinerary for ${destinationName} | Bataan Explorer`,
-    description: `Plan your trip to ${destinationName}, featuring accommodation options like Verde Azul Leisure Resort and Morongstar Hotel and Resort.`,
+    description: `Plan your trip to ${destinationName}, featuring a day 1 schedule and accommodation options like Verde Azul Leisure Resort and Morongstar Hotel and Resort.`,
   };
 }
 
 export default function MorongItineraryPage() {
   const destinationName = "Morong";
 
+  const day1MorongSchedule = [
+    { time: "12:00 PM", activity: "Depart from The Plaza Hotel - Balanga", description: "Begin your journey to Morong.", icon: Car },
+    { time: "12:00 PM - 1:30 PM", activity: "Travel to Morong, Bataan", description: "Expected arrival in Morong.", icon: MapPin },
+    { time: "1:30 PM - 2:00 PM", activity: "Arrival and Check-in at Chosen Resort", description: "Settle into your accommodation in Morong.", icon: HomeIcon },
+    { time: "2:00 PM - 3:00 PM", activity: "Rest and Light Meal at Resort", description: "Unpack and have a quick bite.", icon: BedDouble },
+    { time: "3:00 PM - 6:00 PM", activity: "Beach Stroll & Picture Taking", description: "Enjoy the coastline and capture memories.", icon: Waves },
+  ];
+
   const verdeAzulDetails = {
-    name: "Verde Azul Leisure Resort", // Corrected spelling
+    name: "Verde Azul Leisure Resort",
     imageSrc: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/31/50/e3/this-resort-is-a-hidden.jpg?w=1400&h=-1&s=1",
-    imageAlt: "Verde Azul Leisure Resort", // Corrected spelling
+    imageAlt: "Verde Azul Leisure Resort",
     checkIn: "2:00 PM",
     checkOut: "12:00 PM",
     room: {
@@ -98,9 +109,46 @@ export default function MorongItineraryPage() {
           </Link>
         </Button>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-8">
-          Suggested Accommodation in {destinationName}, Bataan
+          Itinerary for {destinationName}, Bataan
         </h1>
 
+        {/* Day 1 Schedule Card */}
+        <Card className="shadow-xl w-full mb-8">
+           <CardHeader>
+             <CardTitle className="text-2xl font-semibold text-primary flex items-center">
+                <Clock className="mr-3 h-7 w-7 text-accent" /> Day 1 Schedule (June 15) - Morong Arrival & Beach
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+             <div className="space-y-4">
+                <p className="text-sm text-muted-foreground">
+                  Your timeline for arrival and initial activities in Morong.
+                </p>
+                <div className="relative pl-2 space-y-6">
+                  <div className="absolute left-[7px] top-1/2 -translate-y-1/2 h-full w-0.5 bg-primary/30"></div> {/* Vertical line */}
+                  {day1MorongSchedule.map((item, index) => (
+                    <div key={index} className="relative flex items-center gap-4">
+                      <div className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
+                      <div className="w-40 text-sm font-medium text-muted-foreground shrink-0 pl-6">
+                        {item.time}
+                      </div>
+                      <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
+                        <item.icon className="h-5 w-5 text-primary" />
+                      </div>
+                      <div className="flex-grow">
+                        <p className="font-medium text-foreground">{item.activity}</p>
+                        {item.description && <p className="text-xs text-muted-foreground">{item.description}</p>}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+        <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl mb-8 text-center">
+          Suggested Accommodation in {destinationName}
+        </h2>
         <div className="flex flex-col md:flex-row gap-8">
           <Card className="shadow-lg md:w-1/2">
             <CardHeader>
@@ -156,14 +204,14 @@ export default function MorongItineraryPage() {
                 </h3>
                 <div className="relative aspect-[1/1] w-full rounded-lg overflow-hidden shadow-md">
                   <iframe
-                    src="https://maps.google.com/maps?q=Verde%20Azul%20Leisure%20Resort%2C%20Morong%2C%20Bataan&t=&z=15&ie=UTF8&iwloc=&output=embed" // Kept Verze for map query robustness, Google often handles slight misspellings
+                    src="https://maps.google.com/maps?q=Verde%20Azul%20Leisure%20Resort%2C%20Morong%2C%20Bataan&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border:0 }}
                     allowFullScreen={false}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Verde Azul Leisure Resort Location" // Corrected title
+                    title="Verde Azul Leisure Resort Location"
                   ></iframe>
                 </div>
                 <p className="mt-2 text-sm text-muted-foreground text-center">
@@ -260,4 +308,6 @@ export default function MorongItineraryPage() {
     </>
   );
 }
+
+
     
