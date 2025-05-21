@@ -77,14 +77,14 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
   };
 
   const roomPricing = {
-    discountBadge: "54% OFF TODAY",
-    originalPrice: "11,600.00",
-    ourPrice: "6,633.85",
-    instantDiscount: "1,265.62",
-    roomPrice: "5,368.23",
-    taxesAndFees: "1,181.00",
+    discountBadge: "56% OFF TODAY",
+    originalPrice: "5,800.00",
+    ourPrice: "3,342.56",
+    instantDiscount: "774.36",
+    roomPrice: "2,568.20",
+    taxesAndFees: "565.00",
     bookingFees: "FREE",
-    finalPrice: "6,549.23"
+    finalPrice: "3,133.20"
   };
 
   const day1Schedule = [
@@ -132,8 +132,8 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     <Image
                       src="https://www.bworldonline.com/wp-content/uploads/2023/06/SM-City-Bataan-facade.jpg"
                       alt="SM City Bataan"
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      style={{objectFit: 'cover'}}
                       className="rounded-t-lg"
                     />
                   </div>
@@ -155,8 +155,8 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     <Image
                       src="https://images.hive.blog/1200x630/https://files.peakd.com/file/peakd-hive/sassy.cebuana/23ywu7UzS7NTTmYqA9YuScFYoNibzLfEy1kZ3NQDedrE9hvsCcq8fAwJTDLq3kbpbpmvi.png"
                       alt="Bataan World War II Museum"
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      style={{objectFit: 'cover'}}
                       className="rounded-t-lg"
                     />
                   </div>
@@ -178,8 +178,8 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     <Image
                       src="https://dgfi96202bcqs.cloudfront.net/1a79e29a-eb07-44d7-99c8-940a8bfaa6be.jpg"
                       alt="Plaza Mayor De Ciudad de Balanga"
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      style={{objectFit: 'cover'}}
                       className="rounded-t-lg"
                     />
                   </div>
@@ -201,8 +201,8 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     <Image
                       src="https://beholdbataan.ph/wp-content/uploads/2024/06/btc1-1024x576.jpg"
                       alt="Bataan Tourism Center"
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      style={{objectFit: 'cover'}}
                       className="rounded-t-lg"
                     />
                   </div>
@@ -224,13 +224,13 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
           
           {/* Schedule Card (Full Width) */}
           <Card className="shadow-xl w-full">
-            <CardHeader>
-              <CardTitle className="text-2xl font-semibold text-primary flex items-center">
+           <CardHeader>
+             <CardTitle className="text-2xl font-semibold text-primary flex items-center">
                 <Clock className="mr-3 h-7 w-7 text-accent" /> Day 1 Schedule (June 14)
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-col md:flex-row gap-8">
+             <div className="flex flex-col md:flex-row gap-8">
                 <div className="md:w-3/5 space-y-4">
                    <p className="text-sm text-muted-foreground">
                     Your timeline for arrival and initial activities in Balanga City.
@@ -301,8 +301,8 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                       <Image
                         src={plazaHotelDetails.imageSrc}
                         alt={plazaHotelDetails.imageAlt}
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        style={{objectFit: 'cover'}}
                       />
                     </div>
                     <div className="space-y-3">
@@ -345,8 +345,8 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     <Image
                       src={suggestedRoomDetails.imageSrc}
                       alt={suggestedRoomDetails.imageAlt}
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      style={{objectFit: 'cover'}}
                     />
                   </div>
                   <div className="flex-grow space-y-1 mt-4 sm:mt-0">
@@ -391,7 +391,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                   </div>
                   <div className="space-y-1 text-sm text-muted-foreground">
                     <div className="flex justify-between">
-                      <span>Original price (1 room x 2 nights)</span>
+                      <span>Original price (1 room x 1 night)</span>
                       <span className="line-through">₱ {roomPricing.originalPrice}</span>
                     </div>
                     <div className="flex justify-between">
@@ -403,7 +403,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                       <span className="text-green-600 font-medium">-₱ {roomPricing.instantDiscount}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Room price (1 room x 2 nights)</span>
+                      <span>Room price (1 room x 1 night)</span>
                       <span>₱ {roomPricing.roomPrice}</span>
                     </div>
                     <div className="flex justify-between">
