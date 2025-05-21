@@ -77,10 +77,10 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
   };
 
   const roomPricing = {
-    discountBadge: "56% OFF TODAY",
+    discountBadge: "54% OFF TODAY",
     originalPrice: "PHP 5,800.00",
-    ourPrice: "PHP 3,342.56",
-    instantDiscount: "PHP 774.36",
+    ourPrice: "PHP 3,342.56", //This is not directly shown in the image, but calculated for consistency if needed elsewhere
+    instantDiscount: "PHP 774.36", // This is not directly shown in the image
     roomPrice: "PHP 2,568.20",
     taxesAndFees: "PHP 565.00",
     bookingFees: "FREE",
@@ -208,8 +208,8 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                 <Card className="shadow-xl">
                   <div className="relative h-56 w-full rounded-t-lg overflow-hidden">
                     <Image
-                      src="https://beholdbataan.ph/wp-content/uploads/2024/06/btc1-1024x576.jpg"
-                      alt="Bataan Tourism Center"
+                      src="https://bataan.gov.ph/wp-content/smush-webp/2021/09/wetlandpark.jpg.webp"
+                      alt="Balanga Wetland and Nature Park"
                       fill
                       style={{objectFit: 'cover'}}
                       className="rounded-t-lg"
@@ -217,13 +217,13 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                   </div>
                   <CardHeader>
                     <CardTitle className="text-xl font-semibold text-primary flex items-center">
-                      <Building className="mr-3 h-6 w-6" />
-                      Bataan Tourism Center
+                      <Bird className="mr-3 h-6 w-6" />
+                      Balanga Wetland and Nature Park
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground text-sm">
-                      The official hub for tourist information, assistance, and local products in Bataan. A good starting point for visitors to plan their exploration of the province.
+                      A sanctuary for migratory birds and a haven for nature lovers. This park offers boardwalks, birdwatching towers, and mangrove forests, promoting ecotourism and biodiversity conservation.
                     </p>
                   </CardContent>
                 </Card>
@@ -471,6 +471,3 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
     </>
   );
 }
-
-
-    

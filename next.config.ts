@@ -59,6 +59,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'bataan.gov.ph',
+        port: '',
+        pathname: '/**',
+      }
     ],
   },
 };
