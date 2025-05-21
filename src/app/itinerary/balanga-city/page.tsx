@@ -149,7 +149,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     <Map className="mr-2 h-5 w-5 text-primary" />
                     Route Overview
                   </h3>
-                  <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden shadow-md">
+                  <div className="relative aspect-[1/1] w-full rounded-lg overflow-hidden shadow-md">
                     <iframe
                       src="https://maps.google.com/maps?q=Robinson%20Starmills%20Pampanga%2C%20San%20Fernando%20to%20Balanga%2C%20Bataan&t=&z=10&ie=UTF8&iwloc=&output=embed"
                       width="100%"
