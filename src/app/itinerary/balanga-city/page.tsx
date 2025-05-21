@@ -79,8 +79,8 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
   const roomPricing = {
     discountBadge: "54% OFF TODAY",
     originalPrice: "PHP 5,800.00",
-    ourPrice: "PHP 3,342.56", //This is not directly shown in the image, but calculated for consistency if needed elsewhere
-    instantDiscount: "PHP 774.36", // This is not directly shown in the image
+    ourPrice: "PHP 3,342.56", 
+    instantDiscount: "PHP 774.36", 
     roomPrice: "PHP 2,568.20",
     taxesAndFees: "PHP 565.00",
     bookingFees: "FREE",
@@ -444,24 +444,51 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="relative pl-2 space-y-6">
-                <div className="absolute left-[7px] top-1/2 -translate-y-1/2 h-full w-0.5 bg-primary/30"></div> {/* Vertical line */}
-                {day2Schedule.map((item, index) => (
-                  <div key={index} className="relative flex items-center gap-4">
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
-                    <div className="w-40 text-sm font-medium text-muted-foreground shrink-0 pl-6">
-                      {item.time}
-                      {/* item.subtext is not used for day 2, but kept for consistency if needed */}
-                    </div>
-                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
-                      <item.icon className="h-5 w-5 text-primary" />
-                    </div>
-                    <div className="flex-grow">
-                      <p className="font-medium text-foreground">{item.activity}</p>
-                      {item.description && <p className="text-xs text-muted-foreground">{item.description}</p>}
-                    </div>
+              <div className="flex flex-col md:flex-row gap-8">
+                <div className="md:w-3/5 space-y-4">
+                  <p className="text-sm text-muted-foreground">
+                    Timeline for your second day, focusing on nature and departure.
+                  </p>
+                  <div className="relative pl-2 space-y-6">
+                    <div className="absolute left-[7px] top-1/2 -translate-y-1/2 h-full w-0.5 bg-primary/30"></div> {/* Vertical line */}
+                    {day2Schedule.map((item, index) => (
+                      <div key={index} className="relative flex items-center gap-4">
+                        <div className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
+                        <div className="w-40 text-sm font-medium text-muted-foreground shrink-0 pl-6">
+                          {item.time}
+                        </div>
+                        <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
+                          <item.icon className="h-5 w-5 text-primary" />
+                        </div>
+                        <div className="flex-grow">
+                          <p className="font-medium text-foreground">{item.activity}</p>
+                          {item.description && <p className="text-xs text-muted-foreground">{item.description}</p>}
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
+                <div className="md:w-2/5 space-y-4">
+                  <h3 className="text-lg font-semibold text-foreground flex items-center">
+                    <Map className="mr-2 h-5 w-5 text-primary" />
+                    Route to Balanga Wetland and Nature Park
+                  </h3>
+                  <div className="relative aspect-[1/1] w-full rounded-lg overflow-hidden shadow-md">
+                    <iframe
+                      src="https://maps.google.com/maps?q=The%20Plaza%20Hotel%20Balanga%20City%2C%20JP%20Rizal%20St%2C%20Balanga%2C%202100%20Bataan%20to%20Balanga%20Wetland%20and%20Nature%20Park%2C%20MHV8%2BR9G%2C%20Brgy%2C%20Balanga%2C%20Bataan&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                      width="100%"
+                      height="100%"
+                      style={{ border:0 }}
+                      allowFullScreen={false}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Route from The Plaza Hotel Balanga to Balanga Wetland and Nature Park"
+                    ></iframe>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Live map showing the route from The Plaza Hotel to Balanga Wetland and Nature Park.
+                  </p>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -471,3 +498,5 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
     </>
   );
 }
+
+    
