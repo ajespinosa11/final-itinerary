@@ -1,10 +1,10 @@
 
 import type { Metadata } from 'next';
 import {
-  ArrowLeft, MapPin, Building, Utensils,
+  ArrowLeft, MapPin, Building, Utensils, // Added Utensils
   Clock, Luggage, BedSingle, CheckCircle2, CalendarCheck2,
   BellRing, Coffee, Zap, GlassWater, Wifi, Info, Users, Ruler,
-  Car, Bus, Footprints, Home as HomeIcon, Map
+  Car, Bus, Footprints, Home as HomeIcon, Map, Landmark // Added Landmark
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -92,8 +92,11 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
     { time: "10:00 AM", subtext: "(Max)", activity: "Arrive at Robinson San Fernando, Pampanga", description: "Transit point for Bataan.", icon: MapPin },
     { time: "10:15 AM", activity: "Board Bataan Transit", description: "Located at Robinson Terminal.", icon: Bus },
     { time: "12:30 PM", subtext: "(Max)", activity: "Arrive in Balanga City", description: "Welcome to the capital of Bataan!", icon: MapPin },
-    { time: "12:30 PM - 2:00 PM", activity: "Quick Stroll in City Proper", description: "Explore the nearby areas before check-in.", icon: Footprints },
+    { time: "12:30 PM - 2:00 PM", activity: "Lunch at SM City Bataan", description: "Enjoy a meal before hotel check-in.", icon: Utensils },
     { time: "2:00 PM", activity: `Check-in at ${plazaHotelDetails.name}`, description: "Settle into your accommodation.", icon: HomeIcon },
+    { time: "2:00 PM - 3:00 PM", activity: "Quick rest and prepare", description: "Unpack and freshen up at the hotel.", icon: HomeIcon },
+    { time: "3:00 PM - 5:00 PM", activity: "Visit Bataan World War II Museum", description: "Explore local history.", icon: Landmark },
+    { time: "5:00 PM - 6:00 PM", activity: "Stroll at Plaza Mayor De Ciudad de Balanga", description: "Experience the city center.", icon: Footprints },
   ];
 
   return (
@@ -121,7 +124,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
             <CardContent>
               <div className="flex flex-col md:flex-row gap-8">
                 <div className="md:w-3/5 space-y-4">
-                  <p className="text-sm text-muted-foreground">
+                   <p className="text-sm text-muted-foreground">
                     Your timeline for arrival and initial activities in Balanga City.
                   </p>
                   <div className="relative pl-2 space-y-6">
@@ -332,3 +335,5 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
   );
 }
 
+
+    
