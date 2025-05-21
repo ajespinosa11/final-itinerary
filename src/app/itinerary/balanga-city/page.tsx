@@ -1,10 +1,10 @@
 
 import type { Metadata } from 'next';
 import {
-  ArrowLeft, MapPin, Building, Utensils, // Added Utensils
+  ArrowLeft, MapPin, Building, Utensils,
   Clock, Luggage, BedSingle, CheckCircle2, CalendarCheck2,
   BellRing, Coffee, Zap, GlassWater, Wifi, Info, Users, Ruler,
-  Car, Bus, Footprints, Home as HomeIcon, Map, Landmark // Added Landmark
+  Car, Bus, Footprints, Home as HomeIcon, Map, Landmark
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -319,6 +319,41 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
             </Card>
           </div>
 
+          {/* Attractions Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="shadow-xl">
+              <CardHeader>
+                <CardTitle className="text-xl font-semibold text-primary flex items-center">
+                  <Landmark className="mr-3 h-6 w-6" />
+                  Bataan World War II Museum
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Explore the historical exhibits and learn about Bataan's significant role during World War II.
+                  More details coming soon.
+                </p>
+                {/* Placeholder for image and more details */}
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-xl">
+              <CardHeader>
+                <CardTitle className="text-xl font-semibold text-primary flex items-center">
+                  <Footprints className="mr-3 h-6 w-6" />
+                  Plaza Mayor De Ciudad de Balanga
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Experience the charm of Balanga's city center, often likened to Spanish plazas.
+                  More details coming soon.
+                </p>
+                {/* Placeholder for image and more details */}
+              </CardContent>
+            </Card>
+          </div>
+
           {/* Placeholder for Day 2, Day 3, etc. */}
           <div className="p-8 bg-secondary/30 rounded-lg shadow-xl text-center">
             <p className="text-xl text-foreground font-medium">
@@ -334,6 +369,3 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
     </>
   );
 }
-
-
-    
