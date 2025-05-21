@@ -77,6 +77,17 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
     ]
   };
 
+  const roomPricing = {
+    discountBadge: "54% OFF TODAY",
+    originalPrice: "11,600.00",
+    ourPrice: "6,633.85",
+    instantDiscount: "1,265.62",
+    roomPrice: "5,368.23",
+    taxesAndFees: "1,181.00",
+    bookingFees: "FREE",
+    finalPrice: "6,549.23"
+  };
+
   return (
     <>
       <Header />
@@ -192,6 +203,50 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     ))}
                   </ul>
                 </div>
+
+                <Separator className="my-6" />
+
+                <div>
+                  <div className="flex justify-end mb-2">
+                    <Badge variant="destructive" className="bg-accent text-accent-foreground text-xs">
+                      {roomPricing.discountBadge}
+                    </Badge>
+                  </div>
+                  <div className="space-y-1 text-sm text-muted-foreground">
+                    <div className="flex justify-between">
+                      <span>Original price (1 room x 2 nights)</span>
+                      <span className="line-through">₱ {roomPricing.originalPrice}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Our price</span>
+                      <span className="line-through">₱ {roomPricing.ourPrice}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-green-600 font-medium">Instant discount</span>
+                      <span className="text-green-600 font-medium">-₱ {roomPricing.instantDiscount}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Room price (1 room x 2 nights)</span>
+                      <span>₱ {roomPricing.roomPrice}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Taxes and fees</span>
+                      <span>₱ {roomPricing.taxesAndFees}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-green-600 font-medium">Booking fees</span>
+                      <span className="text-green-600 font-medium">{roomPricing.bookingFees}</span>
+                    </div>
+                  </div>
+                  <Separator className="my-4 border-dashed" />
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center text-lg font-semibold text-foreground">
+                      Price <Info className="ml-1 h-4 w-4 text-muted-foreground cursor-pointer" title="Total price for the stay" />
+                    </div>
+                    <span className="text-xl font-bold text-primary">₱ {roomPricing.finalPrice}</span>
+                  </div>
+                </div>
+
               </CardContent>
             </Card>
           </div>
