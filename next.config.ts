@@ -34,6 +34,18 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.hive.blog',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'dgfi96202bcqs.cloudfront.net',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };

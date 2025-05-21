@@ -128,7 +128,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     Your timeline for arrival and initial activities in Balanga City.
                   </p>
                   <div className="relative pl-2 space-y-6">
-                    <div className="absolute left-[7px] top-2 bottom-2 w-0.5 bg-primary/30"></div> {/* Vertical line */}
+                    <div className="absolute left-[7px] top-1/2 -translate-y-1/2 h-full w-0.5 bg-primary/30"></div> {/* Vertical line */}
                     {day1Schedule.map((item, index) => (
                       <div key={index} className="relative flex items-center gap-4">
                         <div className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
@@ -322,6 +322,15 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
           {/* Attractions Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="shadow-xl">
+              <div className="relative h-56 w-full rounded-t-lg overflow-hidden">
+                <Image
+                  src="https://images.hive.blog/1200x630/https://files.peakd.com/file/peakd-hive/sassy.cebuana/23ywu7UzS7NTTmYqA9YuScFYoNibzLfEy1kZ3NQDedrE9hvsCcq8fAwJTDLq3kbpbpmvi.png"
+                  alt="Bataan World War II Museum"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-t-lg"
+                />
+              </div>
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-primary flex items-center">
                   <Landmark className="mr-3 h-6 w-6" />
@@ -329,15 +338,22 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
-                  Explore the historical exhibits and learn about Bataan's significant role during World War II.
-                  More details coming soon.
+                <p className="text-muted-foreground text-sm">
+                  Located in Balanga City, this museum houses artifacts and exhibits detailing Bataan's pivotal role and the heroic stand of Filipino and American soldiers during World War II. It offers a poignant look into the events of the Bataan Death March and the Battle of Bataan.
                 </p>
-                {/* Placeholder for image and more details */}
               </CardContent>
             </Card>
 
             <Card className="shadow-xl">
+              <div className="relative h-56 w-full rounded-t-lg overflow-hidden">
+                <Image
+                  src="https://dgfi96202bcqs.cloudfront.net/1a79e29a-eb07-44d7-99c8-940a8bfaa6be.jpg"
+                  alt="Plaza Mayor De Ciudad de Balanga"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-t-lg"
+                />
+              </div>
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-primary flex items-center">
                   <Footprints className="mr-3 h-6 w-6" />
@@ -345,11 +361,9 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
-                  Experience the charm of Balanga's city center, often likened to Spanish plazas.
-                  More details coming soon.
+                <p className="text-muted-foreground text-sm">
+                  The city's main square, known for its European-inspired architecture, featuring the City Hall and St. Joseph's Cathedral. It's a vibrant hub for locals and tourists, often hosting events and offering a picturesque spot for leisurely strolls.
                 </p>
-                {/* Placeholder for image and more details */}
               </CardContent>
             </Card>
           </div>
