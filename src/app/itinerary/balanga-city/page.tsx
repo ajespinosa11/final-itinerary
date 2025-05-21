@@ -152,14 +152,14 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                   <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden shadow-md">
                     <Image
                       src="https://placehold.co/600x450.png"
-                      alt="Map from Robinson San Fernando, Pampanga to Balanga City"
+                      alt="Route map from Robinsons Starmills Pampanga to Balanga City"
                       layout="fill"
                       objectFit="cover"
-                      data-ai-hint="route map philippines"
+                      data-ai-hint="pampanga balanga map"
                     />
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Illustrative map showing the general route from Robinson San Fernando, Pampanga to Balanga City.
+                    Illustrative map showing the route from Robinsons Starmills Pampanga to Balanga City.
                   </p>
                 </div>
               </div>
