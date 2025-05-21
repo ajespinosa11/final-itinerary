@@ -127,16 +127,16 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                   <div className="relative pl-2 space-y-6">
                     <div className="absolute left-[7px] top-2 bottom-2 w-0.5 bg-primary/30"></div> {/* Vertical line */}
                     {day1Schedule.map((item, index) => (
-                      <div key={index} className="relative flex items-start gap-4">
-                        <div className="absolute left-0 top-1.5 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
-                        <div className="w-40 text-sm font-medium text-muted-foreground shrink-0 pt-1 pl-6"> {/* Time column with pl-6 */}
+                      <div key={index} className="relative flex items-center gap-4"> {/* Changed items-start to items-center */}
+                        <div className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div> {/* Adjusted dot position */}
+                        <div className="w-40 text-sm font-medium text-muted-foreground shrink-0 pl-6"> {/* Time column with pl-6 */}
                           {item.time}
                           {item.subtext && <span className="block text-xs">{item.subtext}</span>}
                         </div>
                         <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
                           <item.icon className="h-5 w-5 text-primary" />
                         </div>
-                        <div className="flex-grow pt-1">
+                        <div className="flex-grow"> {/* Removed pt-1 */}
                           <p className="font-medium text-foreground">{item.activity}</p>
                           {item.description && <p className="text-xs text-muted-foreground">{item.description}</p>}
                         </div>
