@@ -1,3 +1,4 @@
+
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
@@ -43,6 +44,18 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'dgfi96202bcqs.cloudfront.net',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.bworldonline.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'beholdbataan.ph',
         port: '',
         pathname: '/**',
       },

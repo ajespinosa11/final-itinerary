@@ -335,12 +335,11 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                 <Card className="shadow-xl">
                   <div className="relative h-56 w-full rounded-t-lg overflow-hidden">
                     <Image
-                      src="https://placehold.co/600x400.png"
+                      src="https://www.bworldonline.com/wp-content/uploads/2023/06/SM-City-Bataan-facade.jpg"
                       alt="SM City Bataan"
                       layout="fill"
                       objectFit="cover"
                       className="rounded-t-lg"
-                      data-ai-hint="shopping mall"
                     />
                   </div>
                   <CardHeader>
@@ -405,12 +404,11 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                 <Card className="shadow-xl">
                   <div className="relative h-56 w-full rounded-t-lg overflow-hidden">
                     <Image
-                      src="https://placehold.co/600x400.png"
+                      src="https://beholdbataan.ph/wp-content/uploads/2024/06/btc1-1024x576.jpg"
                       alt="Bataan Tourism Center"
                       layout="fill"
                       objectFit="cover"
                       className="rounded-t-lg"
-                      data-ai-hint="tourism center building"
                     />
                   </div>
                   <CardHeader>
