@@ -4,7 +4,7 @@ import {
   ArrowLeft, MapPin, Building, Utensils,
   Clock, Luggage, BedSingle, CheckCircle2, CalendarCheck2,
   BellRing, Coffee, Zap, GlassWater, Wifi, Info, Users, Ruler,
-  Car, Bus, Footprints, Home as HomeIcon, Map, Landmark, ShoppingBag
+  Car, Bus, Footprints, Home as HomeIcon, Map, Landmark, ShoppingBag, Bird, Bike
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: ItineraryPageProps): Promise<
     .join(' ');
   return {
     title: `Itinerary for ${destinationName} | Bataan Explorer`,
-    description: `Plan your Day 1 in ${destinationName}, starting with a stay at The Plaza Hotel.`,
+    description: `Plan your trip to ${destinationName}, starting with a stay at The Plaza Hotel and exploring local attractions.`,
   };
 }
 
@@ -78,13 +78,13 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
 
   const roomPricing = {
     discountBadge: "56% OFF TODAY",
-    originalPrice: "5,800.00",
-    ourPrice: "3,342.56",
-    instantDiscount: "774.36",
-    roomPrice: "2,568.20",
-    taxesAndFees: "565.00",
+    originalPrice: "PHP 5,800.00",
+    ourPrice: "PHP 3,342.56",
+    instantDiscount: "PHP 774.36",
+    roomPrice: "PHP 2,568.20",
+    taxesAndFees: "PHP 565.00",
     bookingFees: "FREE",
-    finalPrice: "3,133.20"
+    finalPrice: "PHP 3,133.20"
   };
 
   const day1Schedule = [
@@ -98,6 +98,15 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
     { time: "3:00 PM - 5:00 PM", activity: "Visit Bataan World War II Museum", description: "Explore local history.", icon: Landmark },
     { time: "5:00 PM - 6:00 PM", activity: "Stroll at Plaza Mayor De Ciudad de Balanga", description: "Experience the city center.", icon: Footprints },
   ];
+
+  const day2Schedule = [
+    { time: "6:30 AM", activity: "Breakfast at The Plaza Hotel", description: "Enjoy your complimentary breakfast.", icon: Utensils },
+    { time: "7:00 AM - 10:30 AM", activity: "Visit Balanga Wetland and Nature Park", description: "Explore the park. Take a local trike (Bike icon for visual) from the hotel. Park opens 5:30 AM - 7:00 PM.", icon: Bird },
+    { time: "10:30 AM", activity: "Return to Hotel", description: "Head back from the park.", icon: HomeIcon },
+    { time: "11:30 AM", activity: "Pack and Prepare for Checkout", description: "Organize your belongings.", icon: Luggage },
+    { time: "12:00 PM", activity: "Hotel Checkout", description: `Complete your checkout process from ${plazaHotelDetails.name}.`, icon: CheckCircle2 },
+  ];
+
 
   return (
     <>
@@ -222,7 +231,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
             </CardContent>
           </Card>
           
-          {/* Schedule Card (Full Width) */}
+          {/* Day 1 Schedule Card (Full Width) */}
           <Card className="shadow-xl w-full">
            <CardHeader>
              <CardTitle className="text-2xl font-semibold text-primary flex items-center">
@@ -392,23 +401,23 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                   <div className="space-y-1 text-sm text-muted-foreground">
                     <div className="flex justify-between">
                       <span>Original price (1 room x 1 night)</span>
-                      <span className="line-through">₱ {roomPricing.originalPrice}</span>
+                      <span className="line-through">{roomPricing.originalPrice}</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Our price</span>
-                      <span className="line-through">₱ {roomPricing.ourPrice}</span>
+                      <span className="line-through">{roomPricing.ourPrice}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-green-600 font-medium">Instant discount</span>
-                      <span className="text-green-600 font-medium">-₱ {roomPricing.instantDiscount}</span>
+                      <span className="text-green-600 font-medium">-{roomPricing.instantDiscount}</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Room price (1 room x 1 night)</span>
-                      <span>₱ {roomPricing.roomPrice}</span>
+                      <span>{roomPricing.roomPrice}</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Taxes and fees</span>
-                      <span>₱ {roomPricing.taxesAndFees}</span>
+                      <span>{roomPricing.taxesAndFees}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-green-600 font-medium">Booking fees</span>
@@ -420,27 +429,48 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     <div className="flex items-center text-lg font-semibold text-foreground">
                       Price <Info className="ml-1 h-4 w-4 text-muted-foreground cursor-pointer" title="Total price for the stay" />
                     </div>
-                    <span className="text-xl font-bold text-primary">₱ {roomPricing.finalPrice}</span>
+                    <span className="text-xl font-bold text-primary">{roomPricing.finalPrice}</span>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </div>
 
-          {/* Placeholder for Day 2, Day 3, etc. */}
-          <div className="p-8 bg-secondary/30 rounded-lg shadow-xl text-center">
-            <p className="text-xl text-foreground font-medium">
-              More Activities for {destinationName} Coming Soon!
-            </p>
-            <p className="mt-2 text-muted-foreground">
-              Detailed plans for subsequent days, including other attractions, dining, and tips, will be added here.
-            </p>
-          </div>
+          {/* Day 2 Schedule Card */}
+          <Card className="shadow-xl w-full">
+            <CardHeader>
+              <CardTitle className="text-2xl font-semibold text-primary flex items-center">
+                <Clock className="mr-3 h-7 w-7 text-accent" /> Day 2 Schedule (June 15)
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="relative pl-2 space-y-6">
+                <div className="absolute left-[7px] top-1/2 -translate-y-1/2 h-full w-0.5 bg-primary/30"></div> {/* Vertical line */}
+                {day2Schedule.map((item, index) => (
+                  <div key={index} className="relative flex items-center gap-4">
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
+                    <div className="w-40 text-sm font-medium text-muted-foreground shrink-0 pl-6">
+                      {item.time}
+                      {/* item.subtext is not used for day 2, but kept for consistency if needed */}
+                    </div>
+                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
+                      <item.icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <div className="flex-grow">
+                      <p className="font-medium text-foreground">{item.activity}</p>
+                      {item.description && <p className="text-xs text-muted-foreground">{item.description}</p>}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </main>
       <Footer />
     </>
   );
 }
+
 
     
