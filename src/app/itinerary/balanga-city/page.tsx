@@ -11,13 +11,14 @@ import { Separator } from '@/components/ui/separator';
 
 interface ItineraryPageProps {
   params: {
-    destinationId: string;
+    // destinationId is not reliably populated from params for this static page
+    // but the prop structure might be expected by Next.js
+    destinationId?: string; 
   };
 }
 
 export async function generateMetadata({ params }: ItineraryPageProps): Promise<Metadata> {
-  // This will correctly be 'balanga-city'
-  const destinationId = params.destinationId;
+  const destinationId = "balanga-city"; // Hardcode for this specific page
   const destinationName = destinationId
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
@@ -29,15 +30,11 @@ export async function generateMetadata({ params }: ItineraryPageProps): Promise<
 }
 
 export default function ItineraryPage({ params }: ItineraryPageProps) {
-  const { destinationId } = params; // e.g., "balanga-city"
+  const destinationId = "balanga-city"; // Hardcode for this specific page
   const destinationName = destinationId
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' '); // e.g., "Balanga City"
-
-  // Placeholder for fetching actual itinerary data based on destinationId
-  // For now, we'll hardcode for Balanga City
-  const isBalangaCity = destinationId === 'balanga-city';
 
   const plazaHotelDetails = {
     name: "The Plaza Hotel - Balanga",
@@ -68,86 +65,72 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
           Itinerary for {destinationName}
         </h1>
 
-        {isBalangaCity ? (
-          <div className="space-y-8">
-            <Card className="shadow-xl">
-              <CardHeader>
-                <CardTitle className="text-2xl font-semibold text-primary flex items-center">
-                  <BedDouble className="mr-3 h-7 w-7" /> Day 1: Arrival and City Exploration
-                </CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  Settle in and get acquainted with the heart of Balanga City.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3 flex items-center">
-                    <Building className="mr-2 h-5 w-5 text-accent" />
-                    Check-in: {plazaHotelDetails.name}
-                  </h3>
-                  <div className="grid md:grid-cols-2 gap-6 items-center">
-                    <div className="relative h-64 w-full rounded-lg overflow-hidden shadow-md">
-                      <Image
-                        src={plazaHotelDetails.imageSrc}
-                        alt={plazaHotelDetails.imageAlt}
-                        layout="fill"
-                        objectFit="cover"
-                        data-ai-hint={plazaHotelDetails.dataAiHint}
-                      />
+        <div className="space-y-8">
+          <Card className="shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-2xl font-semibold text-primary flex items-center">
+                <BedDouble className="mr-3 h-7 w-7" /> Day 1: Arrival and City Exploration
+              </CardTitle>
+              <CardDescription className="text-muted-foreground">
+                Settle in and get acquainted with the heart of Balanga City.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-foreground mb-3 flex items-center">
+                  <Building className="mr-2 h-5 w-5 text-accent" />
+                  Check-in: {plazaHotelDetails.name}
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6 items-center">
+                  <div className="relative h-64 w-full rounded-lg overflow-hidden shadow-md">
+                    <Image
+                      src={plazaHotelDetails.imageSrc}
+                      alt={plazaHotelDetails.imageAlt}
+                      layout="fill"
+                      objectFit="cover"
+                      data-ai-hint={plazaHotelDetails.dataAiHint}
+                    />
+                  </div>
+                  <div className="space-y-3">
+                    <p className="text-muted-foreground text-sm">{plazaHotelDetails.description}</p>
+                    <div>
+                      <h4 className="font-medium text-foreground mb-1">Key Features:</h4>
+                      <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                        {plazaHotelDetails.features.map((feature, index) => (
+                          <li key={index}>{feature}</li>
+                        ))}
+                      </ul>
                     </div>
-                    <div className="space-y-3">
-                      <p className="text-muted-foreground text-sm">{plazaHotelDetails.description}</p>
-                      <div>
-                        <h4 className="font-medium text-foreground mb-1">Key Features:</h4>
-                        <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
-                          {plazaHotelDetails.features.map((feature, index) => (
-                            <li key={index}>{feature}</li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="flex items-start text-sm text-muted-foreground">
-                        <MapPin className="h-4 w-4 mr-2 mt-0.5 shrink-0 text-primary" />
-                        <span>{plazaHotelDetails.address}</span>
-                      </div>
+                    <div className="flex items-start text-sm text-muted-foreground">
+                      <MapPin className="h-4 w-4 mr-2 mt-0.5 shrink-0 text-primary" />
+                      <span>{plazaHotelDetails.address}</span>
                     </div>
                   </div>
                 </div>
-                <Separator className="my-6" />
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center">
-                    <Utensils className="mr-2 h-5 w-5 text-accent" />
-                    Evening Suggestion:
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    After settling in, consider exploring the Plaza Mayor de Ciudad de Balanga in the evening. You can have dinner at the hotel's restaurant or try local eateries nearby.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-            
-            {/* Placeholder for Day 2, Day 3, etc. */}
-            <div className="p-8 bg-secondary/30 rounded-lg shadow-xl text-center">
-              <p className="text-xl text-foreground font-medium">
-                More Activities for {destinationName} Coming Soon!
-              </p>
-              <p className="mt-2 text-muted-foreground">
-                Detailed plans for subsequent days, including other attractions, dining, and tips, will be added here.
-              </p>
-            </div>
-          </div>
-        ) : (
-          // Fallback for other destinations
-          <div className="p-8 bg-secondary/30 rounded-lg shadow-xl">
+              </div>
+              <Separator className="my-6" />
+              <div>
+                <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center">
+                  <Utensils className="mr-2 h-5 w-5 text-accent" />
+                  Evening Suggestion:
+                </h3>
+                <p className="text-muted-foreground text-sm">
+                  After settling in, consider exploring the Plaza Mayor de Ciudad de Balanga in the evening. You can have dinner at the hotel's restaurant or try local eateries nearby.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+          
+          {/* Placeholder for Day 2, Day 3, etc. */}
+          <div className="p-8 bg-secondary/30 rounded-lg shadow-xl text-center">
             <p className="text-xl text-foreground font-medium">
-              Detailed Itinerary for {destinationName} Coming Soon!
+              More Activities for {destinationName} Coming Soon!
             </p>
             <p className="mt-2 text-muted-foreground">
-              This page will soon display a detailed itinerary including suggested activities,
-              timings, and useful tips for your visit to {destinationName}.
-              For now, please check back later or explore other destinations.
+              Detailed plans for subsequent days, including other attractions, dining, and tips, will be added here.
             </p>
           </div>
-        )}
+        </div>
       </main>
       <Footer />
     </>
