@@ -80,7 +80,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
   return (
     <>
       <Header />
-      <main className="flex-grow container mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+      <main className="flex-grow container mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8"> {/* Adjusted max-w for wider layout */}
         <Button variant="outline" asChild className="mb-6 transition-transform hover:scale-105">
           <Link href="/#highlights">
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -92,107 +92,109 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
         </h1>
 
         <div className="space-y-8">
-          <Card className="shadow-xl">
-            <CardHeader>
-              <CardTitle className="text-2xl font-semibold text-primary flex items-center">
-                <Info className="mr-3 h-7 w-7" /> Day 1: Arrival and City Exploration
-              </CardTitle>
-              <CardDescription className="text-muted-foreground">
-                Settle in and get acquainted with the heart of Balanga City. Standard Check-in: {plazaHotelDetails.checkInTime}.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div>
-                <h3 className="text-xl font-semibold text-foreground mb-3 flex items-center">
-                  <Building className="mr-2 h-5 w-5 text-accent" />
-                  Accommodation: {plazaHotelDetails.name}
-                </h3>
-                <div className="grid md:grid-cols-2 gap-6 items-center">
-                  <div className="relative h-64 w-full rounded-lg overflow-hidden shadow-md">
+          <div className="flex flex-col md:flex-row gap-8">
+            <Card className="shadow-xl md:w-1/2">
+              <CardHeader>
+                <CardTitle className="text-2xl font-semibold text-primary flex items-center">
+                  <Info className="mr-3 h-7 w-7" /> Day 1: Arrival and City Exploration
+                </CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  Settle in and get acquainted with the heart of Balanga City. Standard Check-in: {plazaHotelDetails.checkInTime}.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-3 flex items-center">
+                    <Building className="mr-2 h-5 w-5 text-accent" />
+                    Accommodation: {plazaHotelDetails.name}
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-6 items-start"> {/* Changed items-center to items-start */}
+                    <div className="relative h-64 w-full rounded-lg overflow-hidden shadow-md">
+                      <Image
+                        src={plazaHotelDetails.imageSrc}
+                        alt={plazaHotelDetails.imageAlt}
+                        layout="fill"
+                        objectFit="cover"
+                      />
+                    </div>
+                    <div className="space-y-3">
+                      <p className="text-muted-foreground text-sm">{plazaHotelDetails.description}</p>
+                      <div>
+                        <h4 className="font-medium text-foreground mb-1">Key Features:</h4>
+                        <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                          {plazaHotelDetails.features.map((feature, index) => (
+                            <li key={index}>{feature}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="flex items-start text-sm text-muted-foreground">
+                        <MapPin className="h-4 w-4 mr-2 mt-0.5 shrink-0 text-primary" />
+                        <span>{plazaHotelDetails.address}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <Separator className="my-6" />
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center">
+                    <Utensils className="mr-2 h-5 w-5 text-accent" />
+                    Evening Suggestion:
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
+                    After settling in, consider exploring the Plaza Mayor de Ciudad de Balanga in the evening. You can have dinner at the hotel's restaurant or try local eateries nearby.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-xl md:w-1/2">
+              <CardHeader>
+                <CardTitle className="text-xl font-semibold text-primary">Suggested Room at {plazaHotelDetails.name}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-col sm:flex-row gap-4 items-start">
+                  <div className="relative w-full sm:w-1/3 md:w-2/5 aspect-[16/9] rounded-lg overflow-hidden shadow-md flex-shrink-0"> {/* Adjusted md width */}
                     <Image
-                      src={plazaHotelDetails.imageSrc}
-                      alt={plazaHotelDetails.imageAlt}
+                      src={suggestedRoomDetails.imageSrc}
+                      alt={suggestedRoomDetails.imageAlt}
                       layout="fill"
                       objectFit="cover"
                     />
                   </div>
-                  <div className="space-y-3">
-                    <p className="text-muted-foreground text-sm">{plazaHotelDetails.description}</p>
-                    <div>
-                      <h4 className="font-medium text-foreground mb-1">Key Features:</h4>
-                      <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
-                        {plazaHotelDetails.features.map((feature, index) => (
-                          <li key={index}>{feature}</li>
-                        ))}
-                      </ul>
+                  <div className="flex-grow space-y-1 mt-4 sm:mt-0">
+                    <h4 className="text-lg font-bold text-foreground">{suggestedRoomDetails.name}</h4>
+                    <div className="flex items-center text-sm text-muted-foreground space-x-3">
+                      <span className="flex items-center"><Ruler className="mr-1 h-4 w-4"/>{suggestedRoomDetails.size}</span>
+                      <span className="flex items-center"><Users className="mr-1 h-4 w-4"/>{suggestedRoomDetails.occupancy}</span>
                     </div>
-                    <div className="flex items-start text-sm text-muted-foreground">
-                      <MapPin className="h-4 w-4 mr-2 mt-0.5 shrink-0 text-primary" />
-                      <span>{plazaHotelDetails.address}</span>
+                    <p className="text-sm text-muted-foreground">{suggestedRoomDetails.guests}</p>
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      <Badge variant="outline" className="text-green-700 border-green-500 hover:bg-green-50 font-medium">
+                        <Utensils className="mr-1.5 h-4 w-4" />Free Breakfast
+                      </Badge>
+                      <Badge variant="outline" className="text-green-700 border-green-500 hover:bg-green-50 font-medium">
+                        <Wifi className="mr-1.5 h-4 w-4" />Free Wi-Fi
+                      </Badge>
                     </div>
                   </div>
                 </div>
-              </div>
-              <Separator className="my-6" />
-              <div>
-                <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center">
-                  <Utensils className="mr-2 h-5 w-5 text-accent" />
-                  Evening Suggestion:
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  After settling in, consider exploring the Plaza Mayor de Ciudad de Balanga in the evening. You can have dinner at the hotel's restaurant or try local eateries nearby.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
 
-          <Card className="shadow-xl">
-            <CardHeader>
-              <CardTitle className="text-xl font-semibold text-primary">Suggested Room at {plazaHotelDetails.name}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-col sm:flex-row gap-4 items-start">
-                <div className="relative w-full sm:w-1/3 md:w-1/4 aspect-[16/9] rounded-lg overflow-hidden shadow-md flex-shrink-0">
-                  <Image
-                    src={suggestedRoomDetails.imageSrc}
-                    alt={suggestedRoomDetails.imageAlt}
-                    layout="fill"
-                    objectFit="cover"
-                  />
+                <Separator className="my-6" />
+
+                <div>
+                  <h5 className="text-md font-semibold text-foreground mb-3">Room Amenities:</h5>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-muted-foreground">
+                    {suggestedRoomDetails.amenities.map((amenity, index) => (
+                      <li key={index} className={`flex items-center ${amenity.colorClass === 'text-accent' || amenity.colorClass === 'text-green-600' ? amenity.colorClass : 'text-muted-foreground'}`}>
+                        <amenity.icon className={`mr-2 h-4 w-4 shrink-0 ${amenity.colorClass === 'text-primary' ? 'text-primary' : amenity.colorClass === 'text-green-600' ? 'text-green-600' : amenity.colorClass === 'text-accent' ? 'text-accent' : 'text-muted-foreground'}`} />
+                        {amenity.text}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <div className="flex-grow space-y-1 mt-4 sm:mt-0">
-                  <h4 className="text-lg font-bold text-foreground">{suggestedRoomDetails.name}</h4>
-                  <div className="flex items-center text-sm text-muted-foreground space-x-3">
-                    <span className="flex items-center"><Ruler className="mr-1 h-4 w-4"/>{suggestedRoomDetails.size}</span>
-                    <span className="flex items-center"><Users className="mr-1 h-4 w-4"/>{suggestedRoomDetails.occupancy}</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">{suggestedRoomDetails.guests}</p>
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    <Badge variant="outline" className="text-green-700 border-green-500 hover:bg-green-50 font-medium">
-                      <Utensils className="mr-1.5 h-4 w-4" />Free Breakfast
-                    </Badge>
-                    <Badge variant="outline" className="text-green-700 border-green-500 hover:bg-green-50 font-medium">
-                      <Wifi className="mr-1.5 h-4 w-4" />Free Wi-Fi
-                    </Badge>
-                  </div>
-                </div>
-              </div>
-
-              <Separator className="my-6" />
-
-              <div>
-                <h5 className="text-md font-semibold text-foreground mb-3">Room Amenities:</h5>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-muted-foreground">
-                  {suggestedRoomDetails.amenities.map((amenity, index) => (
-                    <li key={index} className={`flex items-center ${amenity.colorClass === 'text-accent' || amenity.colorClass === 'text-green-600' ? amenity.colorClass : 'text-muted-foreground'}`}>
-                      <amenity.icon className={`mr-2 h-4 w-4 shrink-0 ${amenity.colorClass === 'text-primary' ? 'text-primary' : amenity.colorClass === 'text-green-600' ? 'text-green-600' : amenity.colorClass === 'text-accent' ? 'text-accent' : 'text-muted-foreground'}`} />
-                      {amenity.text}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </div>
 
           {/* Placeholder for Day 2, Day 3, etc. */}
           <div className="p-8 bg-secondary/30 rounded-lg shadow-xl text-center">
