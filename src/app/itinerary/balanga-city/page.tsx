@@ -73,7 +73,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
       { text: "Hurry! Our last room for your dates at this price", icon: BellRing, colorClass: "text-accent" },
       { text: "Coffee & tea", icon: Coffee, colorClass: "text-green-600" },
       { text: "Express check-in", icon: Zap, colorClass: "text-green-600" },
-      { text: "Free WiFi", icon: Wifi, colorClass: "text-green-600" }, // Changed to Wifi icon
+      { text: "Free WiFi", icon: Wifi, colorClass: "text-green-600" }, 
       { text: "Drinking water", icon: GlassWater, colorClass: "text-green-600" },
     ]
   };
@@ -117,13 +117,41 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
             <Card className="shadow-xl md:w-1/2">
               <CardHeader>
                 <CardTitle className="text-2xl font-semibold text-primary flex items-center">
-                  <Info className="mr-3 h-7 w-7" /> Day 1: Arrival and City Exploration (June 14)
+                  <Info className="mr-3 h-7 w-7" /> Day 1: Arrival and City Exploration
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
                   Settle in and get acquainted with the heart of Balanga City. Standard Check-in: {plazaHotelDetails.checkInTime}.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center">
+                    <Clock className="mr-2 h-5 w-5 text-accent" />
+                    Day 1 Schedule (June 14)
+                  </h3>
+                  <div className="relative pl-2 space-y-6">
+                    <div className="absolute left-[7px] top-2 bottom-2 w-0.5 bg-primary/30"></div> {/* Vertical line */}
+                    {day1Schedule.map((item, index) => (
+                      <div key={index} className="relative flex items-start gap-4">
+                        <div className="absolute left-0 top-1.5 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
+                        <div className="w-28 text-sm font-medium text-muted-foreground shrink-0 pt-1"> {/* Increased width from w-24 to w-28 */}
+                          {item.time}
+                          {item.subtext && <span className="block text-xs">{item.subtext}</span>}
+                        </div>
+                        <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
+                          <item.icon className="h-5 w-5 text-primary" />
+                        </div>
+                        <div className="flex-grow pt-1">
+                          <p className="font-medium text-foreground">{item.activity}</p>
+                          {item.description && <p className="text-xs text-muted-foreground">{item.description}</p>}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <Separator className="my-6" />
+                
                 <div>
                   <h3 className="text-xl font-semibold text-foreground mb-3 flex items-center">
                     <Building className="mr-2 h-5 w-5 text-accent" />
@@ -156,34 +184,6 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                   </div>
                 </div>
                 
-                <Separator className="my-6" />
-
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center">
-                    <Clock className="mr-2 h-5 w-5 text-accent" />
-                    Day 1 Schedule
-                  </h3>
-                  <div className="relative pl-2 space-y-6">
-                    <div className="absolute left-[7px] top-2 bottom-2 w-0.5 bg-primary/30"></div> {/* Vertical line */}
-                    {day1Schedule.map((item, index) => (
-                      <div key={index} className="relative flex items-start gap-4">
-                        <div className="absolute left-0 top-1.5 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
-                        <div className="w-28 text-sm font-medium text-muted-foreground shrink-0 pt-1">
-                          {item.time}
-                          {item.subtext && <span className="block text-xs">{item.subtext}</span>}
-                        </div>
-                        <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
-                          <item.icon className="h-5 w-5 text-primary" />
-                        </div>
-                        <div className="flex-grow pt-1">
-                          <p className="font-medium text-foreground">{item.activity}</p>
-                          {item.description && <p className="text-xs text-muted-foreground">{item.description}</p>}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
                 <Separator className="my-6" />
                 
                 <div>
