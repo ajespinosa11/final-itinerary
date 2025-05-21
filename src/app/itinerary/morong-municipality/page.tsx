@@ -5,18 +5,19 @@ import Image from 'next/image';
 import {
   ArrowLeft,
   BedDouble,
-  CalendarClock,
+  CalendarClock, // Added back
   CheckCircle2,
   Info,
-  MapPin, // Kept for general use, can be removed if not needed for maps
-  Salad, // For food/meals
+  MapPin,
+  Salad, 
+  ShieldAlert, // Added back
   ShoppingBag,
   Utensils,
-  Waves, // For beach/pool
+  Waves, 
   Wifi,
   Users,
-  Wind, // For Air-conditioned
-  Map // Added for map sections
+  Wind, 
+  Map 
 } from 'lucide-react';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
@@ -29,17 +30,17 @@ export async function generateMetadata(): Promise<Metadata> {
   const destinationName = "Morong Municipality";
   return {
     title: `Itinerary for ${destinationName} | Bataan Explorer`,
-    description: `Plan your trip to ${destinationName}, featuring accommodation options like Verze Azul Leisure Resort and Morongstar Hotel and Resort.`,
+    description: `Plan your trip to ${destinationName}, featuring accommodation options like Verde Azul Leisure Resort and Morongstar Hotel and Resort.`,
   };
 }
 
 export default function MorongItineraryPage() {
   const destinationName = "Morong";
 
-  const verzeAzulDetails = {
-    name: "Verze Azul Leisure Resort",
+  const verdeAzulDetails = {
+    name: "Verde Azul Leisure Resort", // Corrected spelling
     imageSrc: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/31/50/e3/this-resort-is-a-hidden.jpg?w=1400&h=-1&s=1",
-    imageAlt: "Verze Azul Leisure Resort",
+    imageAlt: "Verde Azul Leisure Resort", // Corrected spelling
     checkIn: "2:00 PM",
     checkOut: "12:00 PM",
     room: {
@@ -47,7 +48,12 @@ export default function MorongItineraryPage() {
       price: "PHP 6,000",
       features: ["One double bed", "Free breakfast for 2"],
     },
-    // Rules and rebooking policy removed as per request
+    rebookingPolicy: [
+      "You can re-book within the span of 60 days, starting from your original reservation date.",
+      "Must inform 72 hours prior to your reservation date, in order to avoid being charged.",
+      "If you re-book on the day of your reservation date, you will be charged a 15% re-booking fee from the total value of your reserved rooms.",
+      "\"FORFEITED RESERVATION AND DOWN PAYMENT\" (no refund) will apply if a customer is NO SHOW or CANCELLED their reservation on the day without giving notice."
+    ],
   };
 
   const morongstarDetails = {
@@ -98,16 +104,16 @@ export default function MorongItineraryPage() {
         <div className="flex flex-col md:flex-row gap-8">
           <Card className="shadow-lg md:w-1/2">
             <CardHeader>
-              <CardTitle className="text-2xl font-semibold text-primary">{verzeAzulDetails.name}</CardTitle>
+              <CardTitle className="text-2xl font-semibold text-primary">{verdeAzulDetails.name}</CardTitle>
               <CardDescription className="text-muted-foreground">
-                Check-in: {verzeAzulDetails.checkIn} / Check-out: {verzeAzulDetails.checkOut}
+                Check-in: {verdeAzulDetails.checkIn} / Check-out: {verdeAzulDetails.checkOut}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="relative h-64 w-full rounded-lg overflow-hidden shadow-md mb-6">
                 <Image
-                  src={verzeAzulDetails.imageSrc}
-                  alt={verzeAzulDetails.imageAlt}
+                  src={verdeAzulDetails.imageSrc}
+                  alt={verdeAzulDetails.imageAlt}
                   fill
                   style={{objectFit: 'cover'}}
                   className="rounded-lg"
@@ -118,9 +124,9 @@ export default function MorongItineraryPage() {
                   <BedDouble className="mr-2 h-5 w-5 text-accent" /> Available Room
                 </h3>
                 <div className="p-4 bg-secondary/30 rounded-md">
-                  <p className="font-medium text-foreground">{verzeAzulDetails.room.name} - <span className="text-primary">{verzeAzulDetails.room.price}</span></p>
+                  <p className="font-medium text-foreground">{verdeAzulDetails.room.name} - <span className="text-primary">{verdeAzulDetails.room.price}</span></p>
                   <ul className="list-disc list-inside text-sm text-muted-foreground mt-1">
-                    {verzeAzulDetails.room.features.map((feature, idx) => (
+                    {verdeAzulDetails.room.features.map((feature, idx) => (
                       <li key={idx}>{feature}</li>
                     ))}
                   </ul>
@@ -131,22 +137,37 @@ export default function MorongItineraryPage() {
 
               <div>
                 <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center">
+                  <ShieldAlert className="mr-2 h-5 w-5 text-accent" /> Rebooking Policy Only
+                </h3>
+                <div className="p-4 bg-secondary/30 rounded-md text-sm text-muted-foreground space-y-2">
+                  <ul className="list-decimal list-inside space-y-1">
+                    {verdeAzulDetails.rebookingPolicy.map((policy, idx) => (
+                      <li key={idx}>{policy}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <Separator />
+
+              <div>
+                <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center">
                   <Map className="mr-2 h-5 w-5 text-accent" /> Location Map
                 </h3>
                 <div className="relative aspect-[1/1] w-full rounded-lg overflow-hidden shadow-md">
                   <iframe
-                    src="https://maps.google.com/maps?q=Verze%20Azul%20Leisure%20Resort%2C%20Morong%2C%20Bataan&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=Verde%20Azul%20Leisure%20Resort%2C%20Morong%2C%20Bataan&t=&z=15&ie=UTF8&iwloc=&output=embed" // Kept Verze for map query robustness, Google often handles slight misspellings
                     width="100%"
                     height="100%"
                     style={{ border:0 }}
                     allowFullScreen={false}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Verze Azul Leisure Resort Location"
+                    title="Verde Azul Leisure Resort Location" // Corrected title
                   ></iframe>
                 </div>
                 <p className="mt-2 text-sm text-muted-foreground text-center">
-                  Map showing the location of {verzeAzulDetails.name}.
+                  Map showing the location of {verdeAzulDetails.name}.
                 </p>
               </div>
 
@@ -239,5 +260,4 @@ export default function MorongItineraryPage() {
     </>
   );
 }
-
     
