@@ -4,82 +4,82 @@
 
 @layer base {
   :root {
-    --background: 223 43% 92%; /* #E1E5F2 */
-    --foreground: 200 93% 12%;    /* #022B3A */
+    --background: 140 25% 96%; /* #EEF4ED */
+    --foreground: 212 68% 16%;    /* #0B2545 */
     --card: 0 0% 100%;       /* #FFFFFF */
-    --card-foreground: 200 93% 12%; /* #022B3A */
+    --card-foreground: 212 68% 16%; /* #0B2545 */
     --popover: 0 0% 100%;    /* #FFFFFF */
-    --popover-foreground: 200 93% 12%; /* #022B3A */
-    --primary: 193 63% 34%;      /* #1F7A8C */
-    --primary-foreground: 0 0% 100%; /* #FFFFFF */
-    --secondary: 212 78% 86%;    /* #BFDBF7 */
-    --secondary-foreground: 200 93% 12%; /* #022B3A */
-    --muted: 212 78% 90%;       /* Lighter #BFDBF7 */
-    --muted-foreground: 200 60% 35%; /* Lighter/desaturated #022B3A */
-    --accent: 193 63% 34%;       /* #1F7A8C */
-    --accent-foreground: 0 0% 100%; /* #FFFFFF */
+    --popover-foreground: 212 68% 16%; /* #0B2545 */
+    --primary: 211 71% 26%;      /* #134074 */
+    --primary-foreground: 140 25% 96%; /* #EEF4ED */
+    --secondary: 210 31% 88%;    /* Lighter #8DA9C4 */
+    --secondary-foreground: 212 68% 16%; /* #0B2545 */
+    --muted: 210 31% 94%;       /* Even Lighter #8DA9C4 */
+    --muted-foreground: 216 65% 35%; /* Muted Darker Blue #13315C variant */
+    --accent: 211 71% 26%;       /* #134074 */
+    --accent-foreground: 140 25% 96%; /* #EEF4ED */
     --destructive: 0 72% 51%;  /* Standard Red */
     --destructive-foreground: 0 0% 100%; /* #FFFFFF */
-    --border: 212 78% 80%;       /* Darker #BFDBF7 */
-    --input: 212 78% 80%;        /* Darker #BFDBF7 (or #FFFFFF with this border) */
-    --ring: 193 63% 34%;         /* #1F7A8C */
+    --border: 210 31% 82%;       /* #8DA9C4 slightly desaturated/lighter for border */
+    --input: 210 31% 82%;        /* #8DA9C4 slightly desaturated/lighter for input */
+    --ring: 211 71% 26%;         /* #134074 */
     --radius: 0.5rem;
 
     /* Sidebar colors adjusted to match the new theme */
-    --sidebar-background: 223 43% 92%; /* #E1E5F2 */
-    --sidebar-foreground: 200 93% 12%;    /* #022B3A */
-    --sidebar-primary: 193 63% 34%;      /* #1F7A8C */
-    --sidebar-primary-foreground: 0 0% 100%; /* #FFFFFF */
-    --sidebar-accent: 193 63% 34%;       /* #1F7A8C */
-    --sidebar-accent-foreground: 0 0% 100%; /* #FFFFFF */
-    --sidebar-border: 212 78% 80%;       /* Darker #BFDBF7 */
-    --sidebar-ring: 193 63% 34%;         /* #1F7A8C */
+    --sidebar-background: 140 25% 96%; /* #EEF4ED */
+    --sidebar-foreground: 212 68% 16%;    /* #0B2545 */
+    --sidebar-primary: 211 71% 26%;      /* #134074 */
+    --sidebar-primary-foreground: 140 25% 96%; /* #EEF4ED */
+    --sidebar-accent: 211 71% 26%;       /* #134074 */
+    --sidebar-accent-foreground: 140 25% 96%; /* #EEF4ED */
+    --sidebar-border: 210 31% 82%;
+    --sidebar-ring: 211 71% 26%;
 
-    /* Chart colors can be updated if specific new chart colors are desired */
-    --chart-1: 193 63% 34%; /* Primary Teal */
-    --chart-2: 212 78% 60%; /* Darker Light Blue */
-    --chart-3: 200 93% 25%; /* Mid-Dark Teal/Blue */
-    --chart-4: 193 63% 50%; /* Lighter Primary Teal */
-    --chart-5: 212 78% 75%; /* Lighter Light Blue */
+    /* Chart colors */
+    --chart-1: 211 71% 26%; /* #134074 */
+    --chart-2: 210 31% 66%; /* #8DA9C4 */
+    --chart-3: 216 65% 22%; /* #13315C */
+    --chart-4: 211 71% 46%; /* Lighter #134074 */
+    --chart-5: 210 31% 76%; /* Lighter #8DA9C4 */
   }
 
   .dark {
-    --background: 200 93% 12%;    /* #022B3A */
-    --foreground: 223 43% 92%; /* #E1E5F2 */
-    --card: 200 80% 15%;          /* Slightly Lighter Dark Blue/Teal */
-    --card-foreground: 223 43% 92%; /* #E1E5F2 */
-    --popover: 200 80% 15%;       /* Slightly Lighter Dark Blue/Teal */
-    --popover-foreground: 223 43% 92%; /* #E1E5F2 */
-    --primary: 193 63% 34%;      /* #1F7A8C */
-    --primary-foreground: 0 0% 100%; /* #FFFFFF */
-    --secondary: 193 63% 25%;     /* Darker Teal */
-    --secondary-foreground: 223 43% 92%; /* #E1E5F2 */
-    --muted: 200 93% 10%;         /* Even Darker Blue/Teal */
-    --muted-foreground: 212 78% 70%; /* Lighter #BFDBF7 for muted text */
-    --accent: 193 63% 34%;       /* #1F7A8C */
-    --accent-foreground: 0 0% 100%; /* #FFFFFF */
-    --destructive: 0 72% 51%;  /* Standard Red */
+    --background: 212 68% 16%;    /* #0B2545 */
+    --foreground: 140 25% 96%; /* #EEF4ED */
+    --card: 216 65% 22%;          /* #13315C */
+    --card-foreground: 140 25% 96%; /* #EEF4ED */
+    --popover: 216 65% 22%;       /* #13315C */
+    --popover-foreground: 140 25% 96%; /* #EEF4ED */
+    --primary: 210 31% 66%;      /* #8DA9C4 (Light steel blue for primary on dark) */
+    --primary-foreground: 212 68% 10%; /* Very dark blue for text on primary */
+    --secondary: 211 71% 26%;     /* #134074 */
+    --secondary-foreground: 140 25% 96%; /* #EEF4ED */
+    --muted: 216 65% 20%;         /* Slightly lighter #13315C for muted bg */
+    --muted-foreground: 210 31% 55%; /* Muted #8DA9C4 */
+    --accent: 210 31% 66%;       /* #8DA9C4 */
+    --accent-foreground: 212 68% 10%; /* Very dark blue for text on accent */
+    --destructive: 0 63% 51%;  /* Standard Red */
     --destructive-foreground: 0 0% 100%; /* #FFFFFF */
-    --border: 193 63% 20%;        /* Dark Teal related to card */
-    --input: 193 63% 20%;         /* Dark Teal related to card */
-    --ring: 193 63% 34%;         /* #1F7A8C */
+    --border: 211 71% 20%;        /* Darker variant of #134074 */
+    --input: 211 71% 20%;
+    --ring: 210 31% 66%;         /* #8DA9C4 */
 
     /* Dark Sidebar colors adjusted */
-    --sidebar-background: 200 93% 12%;    /* #022B3A */
-    --sidebar-foreground: 223 43% 92%; /* #E1E5F2 */
-    --sidebar-primary: 193 63% 34%;      /* #1F7A8C */
-    --sidebar-primary-foreground: 0 0% 100%; /* #FFFFFF */
-    --sidebar-accent: 193 63% 34%;       /* #1F7A8C */
-    --sidebar-accent-foreground: 0 0% 100%; /* #FFFFFF */
-    --sidebar-border: 193 63% 20%;        /* Dark Teal related to card */
-    --sidebar-ring: 193 63% 34%;         /* #1F7A8C */
+    --sidebar-background: 212 68% 16%;    /* #0B2545 */
+    --sidebar-foreground: 140 25% 96%; /* #EEF4ED */
+    --sidebar-primary: 210 31% 66%;      /* #8DA9C4 */
+    --sidebar-primary-foreground: 212 68% 10%;
+    --sidebar-accent: 210 31% 66%;       /* #8DA9C4 */
+    --sidebar-accent-foreground: 212 68% 10%;
+    --sidebar-border: 211 71% 20%;
+    --sidebar-ring: 210 31% 66%;
 
-    /* Chart colors can be updated if specific new chart colors are desired */
-    --chart-1: 193 63% 34%;
-    --chart-2: 212 78% 70%;
-    --chart-3: 200 93% 40%;
-    --chart-4: 193 63% 50%;
-    --chart-5: 212 78% 80%;
+    /* Chart colors */
+    --chart-1: 211 71% 40%; 
+    --chart-2: 210 31% 66%; 
+    --chart-3: 216 65% 35%; 
+    --chart-4: 211 71% 50%; 
+    --chart-5: 210 31% 75%;
   }
 }
 
