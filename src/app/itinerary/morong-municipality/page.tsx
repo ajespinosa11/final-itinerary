@@ -5,7 +5,6 @@ import Image from 'next/image';
 import {
   ArrowLeft,
   BedDouble,
-  CalendarClock,
   CheckCircle2,
   Info,
   MapPin,
@@ -22,7 +21,18 @@ import {
   Car,
   Home as HomeIcon,
   Footprints,
-  Luggage
+  Luggage,
+  CalendarClock,
+  Ban,
+  Flame,
+  Dog,
+  ParkingCircle,
+  Sun,
+  GlassWater,
+  Briefcase,
+  ChevronRight,
+  Sparkles,
+  XCircle
 } from 'lucide-react';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
@@ -39,6 +49,25 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+interface ResortRule {
+  text: string;
+  type: 'allowed' | 'disallowed' | 'info';
+  icon?: React.ElementType;
+}
+
+const getRuleIcon = (rule: ResortRule) => {
+  if (rule.icon) return rule.icon;
+  switch (rule.type) {
+    case 'allowed':
+      return CheckCircle2;
+    case 'disallowed':
+      return Ban;
+    case 'info':
+    default:
+      return Info;
+  }
+};
+
 export default function MorongItineraryPage() {
   const destinationName = "Morong";
 
@@ -54,7 +83,7 @@ export default function MorongItineraryPage() {
     { time: "06:00 AM - 07:00 AM", activity: "Breakfast", description: "Enjoy breakfast at the resort.", icon: Utensils },
     { time: "07:00 AM - 09:00 AM", activity: "Beach Walk", description: "Take a refreshing walk along the beach.", icon: Footprints },
     { time: "09:00 AM - 11:00 AM", activity: "Packing Things Up", description: "Prepare for checkout.", icon: Luggage },
-    { time: "11:00 AM", activity: "Depart from Resort", description: "Begin your journey from Morong.", icon: Car },
+    { time: "11:00 AM", activity: "Depart from Resort", description: "Depart from Resort.", icon: Car },
   ];
 
   const verdeAzulDetails = {
@@ -213,20 +242,19 @@ export default function MorongItineraryPage() {
               <div className="md:w-2/5 space-y-4">
                 <h3 className="text-lg font-semibold text-foreground flex items-center">
                   <Waves className="mr-2 h-5 w-5 text-primary" />
-                  Morning Beach Activities
+                  Morong Beach & Pawikan Sighting
                 </h3>
                 <div className="relative aspect-[1/1] w-full rounded-lg overflow-hidden shadow-md">
                   <Image
-                    src="https://placehold.co/600x450.png"
-                    alt="Morong Beach"
-                    data-ai-hint="beach morong"
+                    src="https://bataan.gov.ph/wp-content/smush-webp/2021/10/pawikan-morong-municipality-image.jpg.webp"
+                    alt="Pawikan Conservation Center area in Morong"
                     fill
                     style={{objectFit: 'cover'}}
                     className="rounded-lg"
                   />
                 </div>
                 <p className="text-sm text-muted-foreground text-center">
-                  Enjoy the beautiful beaches of Morong.
+                  Morong is known for its serene beaches, perfect for a morning walk, and opportunities to learn about marine life at the Pawikan Conservation Center.
                 </p>
               </div>
             </div>
