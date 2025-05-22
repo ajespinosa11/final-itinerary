@@ -265,19 +265,19 @@ export default function MorongItineraryPage() {
               <div className="md:w-2/5 space-y-4">
                 <h3 className="text-lg font-semibold text-foreground flex items-center">
                   <Waves className="mr-2 h-5 w-5 text-primary" />
-                  Morong Beach & Pawikan Sighting
+                  Morong Beach
                 </h3>
                 <div className="relative aspect-[1/1] w-full rounded-lg overflow-hidden shadow-md">
                   <Image
                     src="https://bataan.gov.ph/wp-content/smush-webp/2021/10/pawikan-morong-municipality-image.jpg.webp"
-                    alt="Pawikan Conservation Center area in Morong"
+                    alt="Beach in Morong"
                     fill
                     style={{objectFit: 'cover'}}
                     className="rounded-lg"
                   />
                 </div>
                 <p className="text-sm text-muted-foreground text-center">
-                  Morong is known for its serene beaches, perfect for a morning walk, and opportunities to learn about marine life at the Pawikan Conservation Center.
+                  Morong is known for its serene beaches, perfect for a morning walk.
                 </p>
               </div>
             </div>
@@ -427,19 +427,6 @@ export default function MorongItineraryPage() {
 
             </CardContent>
           </Card>
-        </div>
-
-        <div className="space-y-8 mt-8">
-           <div className="p-8 bg-secondary/30 rounded-lg shadow-xl">
-            <p className="text-xl text-foreground font-medium">
-              More Itinerary Details for {destinationName} Coming Soon!
-            </p>
-            <p className="mt-2 text-muted-foreground">
-              This page will soon display a detailed day-by-day itinerary including suggested activities,
-              timings, and useful tips for your visit to {destinationName}.
-              For now, please check back later or explore other destinations.
-            </p>
-          </div>
         </div>
       </main>
       <Footer />
