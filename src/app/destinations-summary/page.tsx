@@ -16,12 +16,12 @@ export default function DestinationsSummaryPage() {
   const summaryDestinations = [
     {
       name: 'Balanga City',
-      shortDescription: 'The capital of Bataan, offering a blend of historical significance, urban development, and natural spots. Explore historical landmarks, parks, and enjoy local cuisine.',
+      shortDescription: 'Balanga City, the vibrant capital of Bataan, serves as a significant center for commerce, education, and provincial governance. It masterfully blends urban development with a deep respect for its rich historical legacy, evident in its well-preserved landmarks. Visitors can immerse themselves in history at sites like the Balanga Cathedral and the World War II Museum or enjoy the city\'s modern amenities and parks. The city also offers a diverse culinary scene, reflecting its cultural dynamism. Its central location makes it an excellent starting point for exploring the wider wonders of Bataan province.',
       id: 'balanga-city',
     },
     {
       name: 'Morong',
-      shortDescription: 'A coastal municipality known for its beautiful beaches, resorts, and the Pawikan Conservation Center. Ideal for relaxation and nature-based activities.',
+      shortDescription: 'Morong is a charming coastal municipality in Bataan, celebrated for its stunning stretch of beaches that invite relaxation and water activities. It is home to numerous resorts catering to various preferences, from luxury stays to more budget-friendly options. A key attraction is the Pawikan Conservation Center, dedicated to the protection of marine turtles, offering an educational experience for visitors. Beyond its beautiful coastline, Morong\'s landscape supports eco-tourism and provides a tranquil escape from urban life. This makes it a perfect destination for those seeking a peaceful retreat combined with opportunities to connect with nature.',
       id: 'morong-municipality',
     },
   ];

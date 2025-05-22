@@ -18,7 +18,10 @@ export default function HeroSection() {
 
   useEffect(() => {
     // Open the dialog automatically when the component mounts
-    setIsInvitationDialogOpen(true);
+    const timer = setTimeout(() => {
+      setIsInvitationDialogOpen(true);
+    }, 500); // Slight delay to ensure page is stable
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -55,11 +58,7 @@ export default function HeroSection() {
       </section>
 
       <Dialog open={isInvitationDialogOpen} onOpenChange={setIsInvitationDialogOpen}>
-        {/* DialogTrigger is technically not needed for auto-open, but Dialog component might expect it.
-            Alternatively, manage open state completely externally if Dialog allows.
-            For ShadCN, onOpenChange handles closing via X or overlay click.
-        */}
-        <DialogContent className="sm:max-w-[600px]">
+        <DialogContent className="sm:max-w-[600px] bg-secondary">
           <InvitationDialogContent />
         </DialogContent>
       </Dialog>
