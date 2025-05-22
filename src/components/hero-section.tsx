@@ -1,6 +1,15 @@
+
+'use client';
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import InvitationDialogContent from './invitation-dialog-content';
 
 export default function HeroSection() {
   return (
@@ -28,9 +37,16 @@ export default function HeroSection() {
           <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg transition-transform hover:scale-105">
             <Link href="#highlights">Explore Destinations</Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="shadow-lg transition-transform hover:scale-105">
-            <Link href="#plans">View Travel Plans</Link>
-          </Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="outline" size="lg" className="shadow-lg transition-transform hover:scale-105 hover:bg-accent hover:text-accent-foreground border-primary text-primary">
+                View Travel Plans
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[600px]">
+              <InvitationDialogContent />
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </section>
