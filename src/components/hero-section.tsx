@@ -8,8 +8,6 @@ import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
-  // DialogTrigger, // Not used directly for auto-popup
-  // DialogClose, // Used inside InvitationDialogContent
 } from '@/components/ui/dialog';
 import InvitationDialogContent from './invitation-dialog-content';
 
@@ -83,7 +81,7 @@ export default function HeroSection() {
       </section>
 
       <Dialog open={isInvitationDialogOpen} onOpenChange={setIsInvitationDialogOpen}>
-        <DialogContent className="w-[90vw] max-w-sm sm:max-w-md md:max-w-[600px] bg-secondary max-h-[85vh] overflow-y-auto">
+        <DialogContent className="p-6 border w-[90vw] max-w-sm sm:max-w-md md:max-w-[600px] bg-secondary max-h-[85vh] overflow-y-auto">
           <InvitationDialogContent />
         </DialogContent>
       </Dialog>
