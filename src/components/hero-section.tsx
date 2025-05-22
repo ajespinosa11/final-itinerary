@@ -53,10 +53,11 @@ export default function HeroSection() {
               key={image.src}
               src={image.src}
               alt={image.alt}
-              layout="fill"
-              objectFit="cover"
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                index === currentImageIndex ? 'opacity-70' : 'opacity-0'
+              fill
+              style={{ objectFit: 'cover' }}
+              sizes="100vw"
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-[0.75] ${
+                index === currentImageIndex ? 'opacity-75' : 'opacity-0'
               }`}
               priority={index === 0} // Prioritize the first image for LCP
             />
@@ -82,7 +83,7 @@ export default function HeroSection() {
       </section>
 
       <Dialog open={isInvitationDialogOpen} onOpenChange={setIsInvitationDialogOpen}>
-        <DialogContent className="sm:max-w-[600px] bg-secondary">
+        <DialogContent className="sm:max-w-[600px] bg-secondary max-h-[85vh] overflow-y-auto">
           <InvitationDialogContent />
         </DialogContent>
       </Dialog>
