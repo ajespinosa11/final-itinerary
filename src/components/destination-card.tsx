@@ -58,13 +58,13 @@ export default function DestinationCard({ destination }: DestinationCardProps) {
   };
 
   return (
-    <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
       <div className="relative h-60 w-full">
         <Image
           src={destination.imageSrc}
           alt={destination.imageAlt}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{objectFit: 'cover'}}
           data-ai-hint={destination.dataAiHint}
         />
       </div>
