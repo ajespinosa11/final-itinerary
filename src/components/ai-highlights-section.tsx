@@ -58,7 +58,7 @@ async function HighlightsForDestination({ destinationName }: { destinationName: 
 export default async function AiHighlightsSection() {
   return (
     <section id="ai-highlights" className="py-16 sm:py-24 bg-background">
-      <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-5xl px-6 sm:px-8 lg:px-10">
         <div className="mb-8">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Destination Insights

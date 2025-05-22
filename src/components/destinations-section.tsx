@@ -36,7 +36,7 @@ const destinations: Destination[] = [
 export default function DestinationsSection() {
   return (
     <section id="highlights" className="py-16 sm:py-24 bg-background">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="text-center mb-12">
           <MapPin className="mx-auto h-12 w-12 text-primary mb-4" />
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">

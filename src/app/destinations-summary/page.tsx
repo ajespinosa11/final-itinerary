@@ -29,7 +29,7 @@ export default function DestinationsSummaryPage() {
   return (
     <>
       <Header />
-      <main className="flex-grow container mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+      <main className="flex-grow container mx-auto max-w-4xl px-6 py-8 sm:px-8 lg:px-10">
         <Button variant="outline" asChild className="mb-6 transition-transform hover:scale-105">
           <Link href="/">
             <ArrowLeft className="mr-2 h-4 w-4" />
