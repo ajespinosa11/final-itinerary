@@ -254,7 +254,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                           {item.subtext && <span className="block text-xs">{item.subtext}</span>}
                         </div>
                         <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
-                          <item.icon className="h-5 w-5 text-primary" />
+                          <item.icon className="h-5 w-5 text-accent" />
                         </div>
                         <div className="flex-grow">
                           <p className="font-medium text-foreground">{item.activity}</p>
@@ -454,7 +454,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                           {item.time}
                         </div>
                         <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
-                          <item.icon className="h-5 w-5 text-primary" />
+                          <item.icon className="h-5 w-5 text-accent" />
                         </div>
                         <div className="flex-grow">
                           <p className="font-medium text-foreground">{item.activity}</p>
