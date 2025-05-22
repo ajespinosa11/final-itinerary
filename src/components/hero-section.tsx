@@ -67,7 +67,7 @@ export default function HeroSection() {
             Discover the Wonders of <span className="text-primary">Bataan</span>
           </h1>
           <p className="mt-6 text-base leading-7 text-muted-foreground sm:text-lg md:text-xl">
-            Embark on an unforgettable journey through historic landmarks, breathtaking landscapes, and vibrant culture. Plan your perfect Bataan adventure with us.
+            Embark on an unforgettable journey through historic landmarks, breathtaking landscapes, and vibrant culture.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg">
