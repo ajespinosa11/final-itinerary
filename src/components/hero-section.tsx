@@ -56,7 +56,7 @@ export default function HeroSection() {
               layout="fill"
               objectFit="cover"
               className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                index === currentImageIndex ? 'opacity-30' : 'opacity-0'
+                index === currentImageIndex ? 'opacity-50' : 'opacity-0'
               }`}
               priority={index === 0} // Prioritize the first image for LCP
             />
