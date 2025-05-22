@@ -18,9 +18,11 @@ import {
   Users,
   Wind,
   Map,
-  Clock, 
-  Car,   
-  Home as HomeIcon 
+  Clock,
+  Car,
+  Home as HomeIcon,
+  Footprints,
+  Luggage
 } from 'lucide-react';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
@@ -46,6 +48,13 @@ export default function MorongItineraryPage() {
     { time: "1:30 PM - 2:00 PM", activity: "Arrival and Check-in at Chosen Resort", description: "Settle into your accommodation in Morong.", icon: HomeIcon },
     { time: "2:00 PM - 3:00 PM", activity: "Rest and Light Meal at Resort", description: "Unpack and have a quick bite.", icon: BedDouble },
     { time: "3:00 PM - 6:00 PM", activity: "Beach Stroll & Picture Taking", description: "Enjoy the coastline and capture memories.", icon: Waves },
+  ];
+
+  const day2MorongSchedule = [
+    { time: "06:00 AM - 07:00 AM", activity: "Breakfast", description: "Enjoy breakfast at the resort.", icon: Utensils },
+    { time: "07:00 AM - 09:00 AM", activity: "Beach Walk", description: "Take a refreshing walk along the beach.", icon: Footprints },
+    { time: "09:00 AM - 11:00 AM", activity: "Packing Things Up", description: "Prepare for checkout.", icon: Luggage },
+    { time: "11:00 AM", activity: "Depart from Resort", description: "Begin your journey from Morong.", icon: Car },
   ];
 
   const verdeAzulDetails = {
@@ -161,13 +170,68 @@ export default function MorongItineraryPage() {
                       title="Route from Balanga to Morong, Bataan"
                     ></iframe>
                   </div>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground text-center">
                     Live map showing the route from Balanga City to Morong Municipality, Bataan.
                   </p>
                 </div>
               </div>
             </CardContent>
           </Card>
+
+        {/* Day 2 Schedule Card */}
+        <Card className="shadow-xl w-full mb-8">
+          <CardHeader>
+            <CardTitle className="text-2xl font-semibold text-primary flex items-center">
+              <Clock className="mr-3 h-7 w-7 text-accent" /> Day 2 Schedule (June 16) - Beach & Departure
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-col md:flex-row gap-8">
+              <div className="md:w-3/5 space-y-4">
+                <p className="text-sm text-muted-foreground">
+                  Your timeline for morning activities and departure from Morong.
+                </p>
+                <div className="relative pl-2 space-y-6">
+                  <div className="absolute left-[7px] top-1/2 -translate-y-1/2 h-full w-0.5 bg-primary/30"></div> {/* Vertical line */}
+                  {day2MorongSchedule.map((item, index) => (
+                    <div key={index} className="relative flex items-center gap-4">
+                      <div className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
+                      <div className="w-40 text-sm font-medium text-muted-foreground shrink-0 pl-6">
+                        {item.time}
+                      </div>
+                      <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
+                        <item.icon className="h-5 w-5 text-primary" />
+                      </div>
+                      <div className="flex-grow">
+                        <p className="font-medium text-foreground">{item.activity}</p>
+                        {item.description && <p className="text-xs text-muted-foreground">{item.description}</p>}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="md:w-2/5 space-y-4">
+                <h3 className="text-lg font-semibold text-foreground flex items-center">
+                  <Waves className="mr-2 h-5 w-5 text-primary" />
+                  Morning Beach Activities
+                </h3>
+                <div className="relative aspect-[1/1] w-full rounded-lg overflow-hidden shadow-md">
+                  <Image
+                    src="https://placehold.co/600x450.png"
+                    alt="Morong Beach"
+                    data-ai-hint="beach morong"
+                    fill
+                    style={{objectFit: 'cover'}}
+                    className="rounded-lg"
+                  />
+                </div>
+                <p className="text-sm text-muted-foreground text-center">
+                  Enjoy the beautiful beaches of Morong.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
         <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl mb-8 text-center">
           Suggested Accommodation in {destinationName}
@@ -331,3 +395,4 @@ export default function MorongItineraryPage() {
     </>
   );
 }
+
