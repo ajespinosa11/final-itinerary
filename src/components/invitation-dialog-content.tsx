@@ -15,35 +15,31 @@ export default function InvitationDialogContent() {
       <DialogHeader>
         <DialogTitle className="flex items-center text-primary">
           <Mail className="mr-2 h-5 w-5" />
-          An Invitation to Explore Bataan!
+          An Invitation to an Unforgettable Escape
         </DialogTitle>
         <DialogDescription className="text-muted-foreground">
-          Share this with a friend to plan your Bataan adventure.
+          A special journey awaits.
         </DialogDescription>
       </DialogHeader>
       <div className="prose prose-sm max-w-none text-foreground py-4">
-        <p>Dearest [Friend's Name],</p>
+        <p>My Dearest [Friend's Name],</p>
         <br />
-        <p>I hope this letter finds you well!</p>
         <p>
-          I'm so excited to invite you on an adventure to the beautiful
-          province of Bataan from <strong>June 14th to June 16th</strong>! I've been wanting to explore its rich history and
-          stunning natural landscapes, and I immediately thought of sharing
-          this experience with you.
+          I find myself brimming with excitement as I pen this invitation, hoping to entice you on a rather special adventure I've been planning.
+          From <strong>June 14th to June 16th</strong>, I envision us escaping to the captivating province of Bataan, a place I believe holds wonders for us to discover together.
         </p>
         <p>
-          I've been envisioning our trip: starting in Bataan's vibrant capital city, we could immerse ourselves in its historical significance and enjoy some of its modern comforts. Think fascinating stories from the past and maybe a bit of city exploration.
+          Imagine us, first, immersed in a locale where history breathes through charming cityscapes, and where the echoes of significant moments blend seamlessly with vibrant, modern life. We could wander its historic heart, uncovering stories etched in its very fabric, and perhaps indulge in some delightful urban comforts.
         </p>
         <p>
-          Then, for a complete change of scenery, we could head to a picturesque coastal town in Morong. Imagine relaxing by the sea, enjoying the beautiful beaches, and just soaking in the tranquil atmosphere. It would be the perfect way to unwind and appreciate Bataan's natural beauty.
+          Then, picture a gentle transition to serene coastlines, where the soft murmur of waves against sun-drenched shores offers a perfect symphony for relaxation. It promises a blissful retreat, a chance to connect with nature's tranquil beauty and simply be.
         </p>
         <p>
-          The dates are set for June 14th to 16th, which I hope works for you! It
-          would be wonderful to have you join me for a memorable getaway.
+          This journey, with its blend of rich heritage and peaceful seaside vistas, is something I've been dreaming of, and the thought of sharing it with you makes it all the more special. It would truly mean the world to me if you could join.
         </p>
-        <p>Let me know if you're in, and we can look forward to it!</p>
+        <p>Do let me know if this little escapade calls to you. I am already anticipating the wonderful memories we might create.</p>
         <br />
-        <p>Warmly,</p>
+        <p>With heartfelt anticipation,</p>
         <p>[Your Name]</p>
       </div>
       <DialogFooter>
