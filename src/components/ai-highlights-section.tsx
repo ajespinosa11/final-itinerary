@@ -16,13 +16,13 @@ async function HighlightsForDestination({ destinationName }: { destinationName: 
   }
 
   return (
-    <Card className="flex-1 min-w-[300px] max-w-md shadow-xl bg-card hover:shadow-2xl transition-shadow duration-300">
+    <Card className="flex-1 min-w-[350px] max-w-lg shadow-xl bg-card hover:shadow-2xl transition-shadow duration-300">
       <CardHeader>
         <CardTitle className="flex items-center text-primary text-xl">
-          <Sparkles className="mr-3 h-6 w-6 text-accent" />
-          {destinationName}
+          {/* <Sparkles className="mr-3 h-6 w-6 text-accent" /> Removed icon from card title */}
+          Key Highlights for {destinationName}
         </CardTitle>
-        <CardDescription>AI-Generated Key Highlights</CardDescription>
+        <CardDescription>Concise insights for your visit.</CardDescription>
       </CardHeader>
       <CardContent>
         {error && (
@@ -63,10 +63,10 @@ export default async function AiHighlightsSection() {
         <div className="text-center mb-16">
           <Sparkles className="mx-auto h-12 w-12 text-primary mb-4" />
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            AI-Powered Destination Insights
+            Destination Insights
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover unique insights and must-see spots for Bataan's key municipalities, curated by AI.
+            Discover unique insights and must-see spots for Bataan's key municipalities.
           </p>
         </div>
         <div className="flex flex-col md:flex-row flex-wrap justify-center items-start gap-8">
