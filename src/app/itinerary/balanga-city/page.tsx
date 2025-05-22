@@ -112,7 +112,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
     <>
       <Header />
       <main className="flex-grow container mx-auto max-w-7xl px-6 py-8 sm:px-8 lg:px-10">
-        <Button variant="outline" asChild className="mb-6 transition-transform hover:scale-105">
+        <Button variant="outline" asChild className="mb-6">
           <Link href="/#highlights">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Destinations
@@ -124,7 +124,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
 
         <div className="space-y-8">
           {/* Attractions Section */}
-          <Card className="shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 w-full">
+          <Card className="shadow-xl w-full">
             <CardHeader>
               <CardTitle className="text-2xl font-semibold text-primary flex items-center">
                 <MapPin className="mr-3 h-7 w-7 text-accent" />
@@ -136,7 +136,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-                <Card className="shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <Card className="shadow-xl">
                   <div className="relative h-56 w-full rounded-t-lg overflow-hidden">
                     <Image
                       src="https://www.bworldonline.com/wp-content/uploads/2023/06/SM-City-Bataan-facade.jpg"
@@ -159,7 +159,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                   </CardContent>
                 </Card>
 
-                <Card className="shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <Card className="shadow-xl">
                   <div className="relative h-56 w-full rounded-t-lg overflow-hidden">
                     <Image
                       src="https://images.hive.blog/1200x630/https://files.peakd.com/file/peakd-hive/sassy.cebuana/23ywu7UzS7NTTmYqA9YuScFYoNibzLfEy1kZ3NQDedrE9hvsCcq8fAwJTDLq3kbpbpmvi.png"
@@ -182,7 +182,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                   </CardContent>
                 </Card>
 
-                <Card className="shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <Card className="shadow-xl">
                   <div className="relative h-56 w-full rounded-t-lg overflow-hidden">
                     <Image
                       src="https://dgfi96202bcqs.cloudfront.net/1a79e29a-eb07-44d7-99c8-940a8bfaa6be.jpg"
@@ -205,7 +205,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                   </CardContent>
                 </Card>
 
-                <Card className="shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <Card className="shadow-xl">
                   <div className="relative h-56 w-full rounded-t-lg overflow-hidden">
                     <Image
                       src="https://bataan.gov.ph/wp-content/smush-webp/2021/09/wetlandpark.jpg.webp"
@@ -287,7 +287,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
           </Card>
 
           <div className="flex flex-col md:flex-row gap-8">
-            <Card className="shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 md:w-1/2">
+            <Card className="shadow-xl md:w-1/2">
               <CardHeader>
                 <CardTitle className="text-2xl font-semibold text-primary flex items-center">
                   <Building className="mr-3 h-7 w-7" /> Your Stay: {plazaHotelDetails.name}
@@ -340,7 +340,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
               </CardContent>
             </Card>
 
-            <Card className="shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 md:w-1/2">
+            <Card className="shadow-xl md:w-1/2">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-primary">Suggested Room at {plazaHotelDetails.name}</CardTitle>
               </CardHeader>

@@ -140,7 +140,7 @@ export default function MorongItineraryPage() {
     <>
       <Header />
       <main className="flex-grow container mx-auto max-w-7xl px-6 py-8 sm:px-8 lg:px-10">
-        <Button variant="outline" asChild className="mb-6 transition-transform hover:scale-105">
+        <Button variant="outline" asChild className="mb-6">
           <Link href="/#highlights">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Destinations
@@ -275,7 +275,7 @@ export default function MorongItineraryPage() {
           Suggested Accommodation in Morong
         </h2>
         <div className="flex flex-col md:flex-row gap-8">
-          <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 md:w-1/2">
+          <Card className="shadow-lg md:w-1/2">
             <CardHeader>
               <CardTitle className="text-2xl font-semibold text-primary">{verdeAzulDetails.name}</CardTitle>
               <CardDescription className="text-muted-foreground">
@@ -347,7 +347,7 @@ export default function MorongItineraryPage() {
             </CardContent>
           </Card>
 
-          <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 md:w-1/2">
+          <Card className="shadow-lg md:w-1/2">
             <CardHeader>
               <CardTitle className="text-2xl font-semibold text-primary">{morongstarDetails.name}</CardTitle>
               <CardDescription className="text-muted-foreground">

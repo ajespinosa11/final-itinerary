@@ -70,10 +70,10 @@ export default function HeroSection() {
             Embark on an unforgettable journey through historic landmarks, breathtaking landscapes, and vibrant culture. Plan your perfect Bataan adventure with us.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg transition-transform hover:scale-105">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg">
               <Link href="#highlights">Explore Destinations</Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="shadow-lg transition-transform hover:scale-105 hover:bg-accent hover:text-accent-foreground border-primary text-primary">
+            <Button asChild variant="outline" size="lg" className="shadow-lg hover:bg-accent hover:text-accent-foreground border-primary text-primary">
               <Link href="/destinations-summary">View Travel Plans</Link>
             </Button>
           </div>

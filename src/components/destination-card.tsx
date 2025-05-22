@@ -58,7 +58,7 @@ export default function DestinationCard({ destination }: DestinationCardProps) {
   };
 
   return (
-    <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+    <Card className="flex flex-col overflow-hidden shadow-lg">
       <div className="relative h-60 w-full">
         <Image
           src={destination.imageSrc}
@@ -138,7 +138,7 @@ export default function DestinationCard({ destination }: DestinationCardProps) {
         </Accordion>
       </CardContent>
       <CardFooter>
-        <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105">
+        <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
           <Link href={`/itinerary/${destination.id}`}>Check Itinerary</Link>
         </Button>
       </CardFooter>

@@ -16,7 +16,7 @@ async function HighlightsForDestination({ destinationName }: { destinationName: 
   }
 
   return (
-    <Card className="w-full shadow-xl bg-card hover:shadow-2xl transition-shadow duration-300">
+    <Card className="w-full shadow-xl bg-card">
       <CardHeader>
         <CardTitle className="flex items-center text-primary text-xl">
           Key Highlights for {destinationName}

@@ -30,7 +30,7 @@ export default function DestinationsSummaryPage() {
     <>
       <Header />
       <main className="flex-grow container mx-auto max-w-4xl px-6 py-8 sm:px-8 lg:px-10">
-        <Button variant="outline" asChild className="mb-6 transition-transform hover:scale-105">
+        <Button variant="outline" asChild className="mb-6">
           <Link href="/">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Home
@@ -41,7 +41,7 @@ export default function DestinationsSummaryPage() {
         </h1>
         <div className="space-y-8">
           {summaryDestinations.map((dest) => (
-            <Card key={dest.id} className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <Card key={dest.id} className="shadow-lg">
               <CardHeader>
                 <CardTitle className="text-2xl font-semibold text-primary flex items-center">
                   <MapPin className="mr-3 h-6 w-6 text-accent" />
@@ -52,7 +52,7 @@ export default function DestinationsSummaryPage() {
                 <CardDescription className="text-muted-foreground text-base">
                   {dest.shortDescription}
                 </CardDescription>
-                <Button asChild className="mt-4 bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105">
+                <Button asChild className="mt-4 bg-primary hover:bg-primary/90 text-primary-foreground">
                   <Link href={`/itinerary/${dest.id}`}>View {dest.name} Itinerary</Link>
                 </Button>
               </CardContent>
