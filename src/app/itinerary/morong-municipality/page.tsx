@@ -195,7 +195,7 @@ export default function MorongItineraryPage() {
                           {item.time}
                         </div>
                         <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
-                          <item.icon className="h-5 w-5 text-primary" />
+                          <item.icon className="h-5 w-5 text-accent" />
                         </div>
                         <div className="flex-grow">
                           <p className="font-medium text-foreground">{item.activity}</p>
@@ -252,7 +252,7 @@ export default function MorongItineraryPage() {
                         {item.time}
                       </div>
                       <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
-                        <item.icon className="h-5 w-5 text-primary" />
+                        <item.icon className="h-5 w-5 text-accent" />
                       </div>
                       <div className="flex-grow">
                         <p className="font-medium text-foreground">{item.activity}</p>
@@ -270,7 +270,7 @@ export default function MorongItineraryPage() {
                 <div className="relative aspect-[1/1] w-full rounded-lg overflow-hidden shadow-md">
                   <Image
                     src="https://bataan.gov.ph/wp-content/smush-webp/2021/10/pawikan-morong-municipality-image.jpg.webp"
-                    alt="Beach in Morong"
+                    alt="Pawikan Conservation Center area in Morong"
                     fill
                     style={{objectFit: 'cover'}}
                     className="rounded-lg"
@@ -433,3 +433,6 @@ export default function MorongItineraryPage() {
     </>
   );
 }
+
+
+    
