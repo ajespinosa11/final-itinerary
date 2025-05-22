@@ -4,36 +4,36 @@
 
 @layer base {
   :root {
-    --background: 69 79% 97%; /* #F1FAEE */
-    --foreground: 218 63% 23%; /* #1D3557 */
-    --card: 69 79% 97%; /* #F1FAEE */
-    --card-foreground: 218 63% 23%; /* #1D3557 */
-    --popover: 69 79% 97%; /* #F1FAEE */
-    --popover-foreground: 218 63% 23%; /* #1D3557 */
-    --primary: 206 38% 44%; /* #457B9D */
-    --primary-foreground: 69 79% 97%; /* #F1FAEE */
-    --secondary: 185 34% 76%; /* #A8DADC */
-    --secondary-foreground: 218 63% 23%; /* #1D3557 */
-    --muted: 185 34% 76%; /* #A8DADC */
-    --muted-foreground: 218 63% 23%; /* #1D3557 */
-    --accent: 354 85% 60%; /* #E63946 */
-    --accent-foreground: 69 79% 97%; /* #F1FAEE */
-    --destructive: 354 85% 60%; /* #E63946 */
-    --destructive-foreground: 69 79% 97%; /* #F1FAEE */
-    --border: 185 34% 76%; /* #A8DADC */
-    --input: 185 34% 76%; /* #A8DADC */
-    --ring: 206 38% 44%; /* #457B9D */
+    --background: 206 27% 94%; /* #EDF2F4 */
+    --foreground: 235 21% 21%; /* #2B2D42 */
+    --card: 206 27% 94%; /* #EDF2F4 */
+    --card-foreground: 235 21% 21%; /* #2B2D42 */
+    --popover: 206 27% 94%; /* #EDF2F4 */
+    --popover-foreground: 235 21% 21%; /* #2B2D42 */
+    --primary: 216 14% 61%; /* #8D99AE */
+    --primary-foreground: 206 27% 94%; /* #EDF2F4 - Light text on Mid Blue/Gray for contrast */
+    --secondary: 206 27% 88%; /* Slightly darker/desaturated #EDF2F4 for secondary backgrounds */
+    --secondary-foreground: 235 21% 21%; /* #2B2D42 */
+    --muted: 206 27% 85%; /* Lighter secondary for muted backgrounds */
+    --muted-foreground: 216 14% 45%; /* Darker Mid Blue/Gray for muted text */
+    --accent: 354 86% 54%; /* #EF233C */
+    --accent-foreground: 206 27% 94%; /* #EDF2F4 */
+    --destructive: 349 97% 43%; /* #D90429 */
+    --destructive-foreground: 206 27% 94%; /* #EDF2F4 */
+    --border: 216 14% 80%; /* Lighter shade of Mid Blue/Gray for borders */
+    --input: 216 14% 80%; /* Lighter shade of Mid Blue/Gray for input borders */
+    --ring: 216 14% 61%; /* #8D99AE */
     --radius: 0.5rem;
 
     /* Sidebar colors adjusted to match the new theme */
-    --sidebar-background: 69 79% 97%; /* #F1FAEE */
-    --sidebar-foreground: 218 63% 23%; /* #1D3557 */
-    --sidebar-primary: 206 38% 44%; /* #457B9D */
-    --sidebar-primary-foreground: 69 79% 97%; /* #F1FAEE */
-    --sidebar-accent: 354 85% 60%; /* #E63946 */
-    --sidebar-accent-foreground: 69 79% 97%; /* #F1FAEE */
-    --sidebar-border: 185 34% 76%; /* #A8DADC */
-    --sidebar-ring: 206 38% 44%; /* #457B9D */
+    --sidebar-background: 206 27% 94%; /* #EDF2F4 */
+    --sidebar-foreground: 235 21% 21%; /* #2B2D42 */
+    --sidebar-primary: 216 14% 61%; /* #8D99AE */
+    --sidebar-primary-foreground: 206 27% 94%; /* #EDF2F4 */
+    --sidebar-accent: 354 86% 54%; /* #EF233C */
+    --sidebar-accent-foreground: 206 27% 94%; /* #EDF2F4 */
+    --sidebar-border: 216 14% 80%; /* Lighter shade of Mid Blue/Gray */
+    --sidebar-ring: 216 14% 61%; /* #8D99AE */
 
     /* Chart colors kept as they are */
     --chart-1: 12 76% 61%;
@@ -44,35 +44,35 @@
   }
 
   .dark {
-    --background: 218 63% 23%; /* #1D3557 */
-    --foreground: 69 79% 97%; /* #F1FAEE */
-    --card: 218 60% 25%; /* Slightly lighter dark blue */
-    --card-foreground: 69 79% 97%; /* #F1FAEE */
-    --popover: 218 60% 25%; /* Slightly lighter dark blue */
-    --popover-foreground: 69 79% 97%; /* #F1FAEE */
-    --primary: 206 38% 50%; /* Derived from #457B9D */
-    --primary-foreground: 218 63% 15%; /* Darker dark blue for contrast */
-    --secondary: 185 30% 60%; /* Slightly less saturated light blue */
-    --secondary-foreground: 69 79% 97%; /* #F1FAEE */
-    --muted: 206 30% 30%; /* Darker muted blue */
-    --muted-foreground: 185 34% 76%; /* #A8DADC */
-    --accent: 354 85% 60%; /* #E63946 */
-    --accent-foreground: 69 79% 97%; /* #F1FAEE */
-    --destructive: 354 85% 60%; /* #E63946 */
-    --destructive-foreground: 69 79% 97%; /* #F1FAEE */
-    --border: 206 30% 30%; /* Darker muted blue */
-    --input: 206 30% 30%; /* Darker muted blue */
-    --ring: 206 38% 50%; /* Primary color */
+    --background: 235 21% 21%; /* #2B2D42 */
+    --foreground: 206 27% 94%; /* #EDF2F4 */
+    --card: 235 21% 25%; /* Slightly lighter #2B2D42 for dark cards */
+    --card-foreground: 206 27% 94%; /* #EDF2F4 */
+    --popover: 235 21% 25%; /* Slightly lighter #2B2D42 */
+    --popover-foreground: 206 27% 94%; /* #EDF2F4 */
+    --primary: 216 14% 61%; /* #8D99AE */
+    --primary-foreground: 235 21% 15%; /* Darker #2B2D42 for text on primary */
+    --secondary: 235 21% 30%; /* Darker secondary background */
+    --secondary-foreground: 206 27% 94%; /* #EDF2F4 */
+    --muted: 235 21% 28%; /* Slightly darker than secondary for muted backgrounds */
+    --muted-foreground: 216 14% 70%; /* Lighter Mid Blue/Gray for muted text */
+    --accent: 354 86% 54%; /* #EF233C */
+    --accent-foreground: 206 27% 94%; /* #EDF2F4 */
+    --destructive: 349 97% 43%; /* #D90429 */
+    --destructive-foreground: 206 27% 94%; /* #EDF2F4 */
+    --border: 216 14% 35%; /* Darker shade of Mid Blue/Gray for borders */
+    --input: 216 14% 35%; /* Darker shade of Mid Blue/Gray for input borders */
+    --ring: 216 14% 61%; /* #8D99AE */
 
     /* Dark Sidebar colors adjusted */
-    --sidebar-background: 218 60% 20%; /* Slightly darker dark blue */
-    --sidebar-foreground: 69 79% 97%; /* #F1FAEE */
-    --sidebar-primary: 206 38% 50%; /* Derived from #457B9D */
-    --sidebar-primary-foreground: 218 63% 15%; /* Darker dark blue for contrast */
-    --sidebar-accent: 354 85% 60%; /* #E63946 */
-    --sidebar-accent-foreground: 69 79% 97%; /* #F1FAEE */
-    --sidebar-border: 206 30% 28%; /* Darker muted blue */
-    --sidebar-ring: 206 38% 50%; /* Primary color */
+    --sidebar-background: 235 21% 21%; /* #2B2D42 */
+    --sidebar-foreground: 206 27% 94%; /* #EDF2F4 */
+    --sidebar-primary: 216 14% 61%; /* #8D99AE */
+    --sidebar-primary-foreground: 235 21% 15%; /* Darker #2B2D42 */
+    --sidebar-accent: 354 86% 54%; /* #EF233C */
+    --sidebar-accent-foreground: 206 27% 94%; /* #EDF2F4 */
+    --sidebar-border: 216 14% 35%; /* Darker Mid Blue/Gray */
+    --sidebar-ring: 216 14% 61%; /* #8D99AE */
 
     /* Chart colors kept as they are */
     --chart-1: 12 76% 61%;
