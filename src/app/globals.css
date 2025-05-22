@@ -4,38 +4,38 @@
 
 @layer base {
   :root {
-    --background: 43 59% 88%; /* #F2E8CF */
-    --foreground: 134 29% 30%; /* #386641 */
-    --card: 43 59% 88%; /* #F2E8CF */
-    --card-foreground: 134 29% 30%; /* #386641 */
-    --popover: 43 59% 88%; /* #F2E8CF */
-    --popover-foreground: 134 29% 30%; /* #386641 */
-    --primary: 93 34% 45%; /* #6A994E */
-    --primary-foreground: 43 59% 88%; /* #F2E8CF */
-    --secondary: 78 48% 57%; /* #A7C957 */
-    --secondary-foreground: 134 29% 25%; /* Darker #386641 for text on light green */
-    --muted: 43 59% 85%; /* Lighter #F2E8CF */
-    --muted-foreground: 93 34% 35%; /* Darker #6A994E */
-    --accent: 358 46% 51%; /* #BC4749 */
-    --accent-foreground: 43 59% 88%; /* #F2E8CF */
-    --destructive: 358 46% 51%; /* #BC4749 */
-    --destructive-foreground: 43 59% 88%; /* #F2E8CF */
-    --border: 93 34% 65%; /* Lighter shade of Medium Green #6A994E for borders */
-    --input: 93 34% 65%; /* Lighter shade of Medium Green #6A994E for input borders */
-    --ring: 93 34% 45%; /* #6A994E */
+    --background: 43 100% 97%; /* #FFFBF2 */
+    --foreground: 35 4% 24%; /* #403D39 */
+    --card: 43 100% 97%; /* #FFFBF2 */
+    --card-foreground: 35 4% 24%; /* #403D39 */
+    --popover: 43 100% 97%; /* #FFFBF2 */
+    --popover-foreground: 35 4% 24%; /* #403D39 */
+    --primary: 17 83% 54%; /* #EB5E28 */
+    --primary-foreground: 43 100% 97%; /* #FFFBF2 */
+    --secondary: 40 12% 77%; /* #CCC5B9 */
+    --secondary-foreground: 35 4% 24%; /* #403D39 */
+    --muted: 40 12% 90%; /* Lighter #CCC5B9 */
+    --muted-foreground: 35 4% 35%; /* Lighter #403D39 */
+    --accent: 17 83% 54%; /* #EB5E28 */
+    --accent-foreground: 43 100% 97%; /* #FFFBF2 */
+    --destructive: 17 83% 54%; /* #EB5E28 */
+    --destructive-foreground: 43 100% 97%; /* #FFFBF2 */
+    --border: 40 12% 77%; /* #CCC5B9 */
+    --input: 40 12% 77%; /* #CCC5B9 */
+    --ring: 17 83% 54%; /* #EB5E28 */
     --radius: 0.5rem;
 
     /* Sidebar colors adjusted to match the new theme */
-    --sidebar-background: 43 59% 88%; /* #F2E8CF */
-    --sidebar-foreground: 134 29% 30%; /* #386641 */
-    --sidebar-primary: 93 34% 45%; /* #6A994E */
-    --sidebar-primary-foreground: 43 59% 88%; /* #F2E8CF */
-    --sidebar-accent: 358 46% 51%; /* #BC4749 */
-    --sidebar-accent-foreground: 43 59% 88%; /* #F2E8CF */
-    --sidebar-border: 93 34% 65%; /* Lighter shade of Medium Green */
-    --sidebar-ring: 93 34% 45%; /* #6A994E */
+    --sidebar-background: 43 100% 97%; /* #FFFBF2 */
+    --sidebar-foreground: 35 4% 24%; /* #403D39 */
+    --sidebar-primary: 17 83% 54%; /* #EB5E28 */
+    --sidebar-primary-foreground: 43 100% 97%; /* #FFFBF2 */
+    --sidebar-accent: 17 83% 54%; /* #EB5E28 */
+    --sidebar-accent-foreground: 43 100% 97%; /* #FFFBF2 */
+    --sidebar-border: 40 12% 77%; /* #CCC5B9 */
+    --sidebar-ring: 17 83% 54%; /* #EB5E28 */
 
-    /* Chart colors kept as they are */
+    /* Chart colors kept as they are for now, can be updated if needed */
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -44,35 +44,35 @@
   }
 
   .dark {
-    --background: 134 29% 30%; /* #386641 */
-    --foreground: 43 59% 88%; /* #F2E8CF */
-    --card: 134 29% 35%; /* Slightly lighter #386641 for dark cards */
-    --card-foreground: 43 59% 88%; /* #F2E8CF */
-    --popover: 134 29% 35%; /* Slightly lighter #386641 */
-    --popover-foreground: 43 59% 88%; /* #F2E8CF */
-    --primary: 93 34% 45%; /* #6A994E */
-    --primary-foreground: 43 59% 88%; /* #F2E8CF */
-    --secondary: 78 48% 47%; /* Darker #A7C957 for dark theme secondary bg */
-    --secondary-foreground: 43 59% 88%; /* #F2E8CF for text on darker light green */
-    --muted: 134 29% 25%; /* Darker #386641 */
-    --muted-foreground: 43 59% 70%; /* Lighter #F2E8CF */
-    --accent: 358 46% 51%; /* #BC4749 */
-    --accent-foreground: 43 59% 88%; /* #F2E8CF */
-    --destructive: 358 46% 51%; /* #BC4749 */
-    --destructive-foreground: 43 59% 88%; /* #F2E8CF */
-    --border: 93 34% 35%; /* Darker shade of Medium Green #6A994E for borders */
-    --input: 93 34% 35%; /* Darker shade of Medium Green #6A994E for input borders */
-    --ring: 93 34% 45%; /* #6A994E */
+    --background: 30 3% 14%; /* #252422 */
+    --foreground: 43 100% 97%; /* #FFFBF2 */
+    --card: 35 4% 24%; /* #403D39 */
+    --card-foreground: 43 100% 97%; /* #FFFBF2 */
+    --popover: 35 4% 24%; /* #403D39 */
+    --popover-foreground: 43 100% 97%; /* #FFFBF2 */
+    --primary: 17 83% 54%; /* #EB5E28 */
+    --primary-foreground: 43 100% 97%; /* #FFFBF2 */
+    --secondary: 35 4% 20%; /* Slightly lighter than card for dark secondary */
+    --secondary-foreground: 43 100% 97%; /* #FFFBF2 */
+    --muted: 30 3% 18%; /* Slightly lighter #252422 */
+    --muted-foreground: 40 12% 77%; /* #CCC5B9 */
+    --accent: 17 83% 54%; /* #EB5E28 */
+    --accent-foreground: 43 100% 97%; /* #FFFBF2 */
+    --destructive: 17 83% 54%; /* #EB5E28 */
+    --destructive-foreground: 43 100% 97%; /* #FFFBF2 */
+    --border: 35 4% 24%; /* #403D39 */
+    --input: 35 4% 24%; /* #403D39 */
+    --ring: 17 83% 54%; /* #EB5E28 */
 
     /* Dark Sidebar colors adjusted */
-    --sidebar-background: 134 29% 30%; /* #386641 */
-    --sidebar-foreground: 43 59% 88%; /* #F2E8CF */
-    --sidebar-primary: 93 34% 45%; /* #6A994E */
-    --sidebar-primary-foreground: 43 59% 88%; /* #F2E8CF */
-    --sidebar-accent: 358 46% 51%; /* #BC4749 */
-    --sidebar-accent-foreground: 43 59% 88%; /* #F2E8CF */
-    --sidebar-border: 93 34% 35%; /* Darker Medium Green */
-    --sidebar-ring: 93 34% 45%; /* #6A994E */
+    --sidebar-background: 30 3% 14%; /* #252422 */
+    --sidebar-foreground: 43 100% 97%; /* #FFFBF2 */
+    --sidebar-primary: 17 83% 54%; /* #EB5E28 */
+    --sidebar-primary-foreground: 43 100% 97%; /* #FFFBF2 */
+    --sidebar-accent: 17 83% 54%; /* #EB5E28 */
+    --sidebar-accent-foreground: 43 100% 97%; /* #FFFBF2 */
+    --sidebar-border: 35 4% 24%; /* #403D39 */
+    --sidebar-ring: 17 83% 54%; /* #EB5E28 */
 
     /* Chart colors kept as they are */
     --chart-1: 12 76% 61%;
