@@ -231,7 +231,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
             </CardContent>
           </Card>
           
-          <Card className="shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 w-full">
+          <Card className="shadow-xl w-full">
            <CardHeader>
              <CardTitle className="text-2xl font-semibold text-primary flex items-center">
                 <Clock className="mr-3 h-7 w-7 text-accent" /> Day 1 Schedule (June 14)
@@ -428,7 +428,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
             </Card>
           </div>
 
-          <Card className="shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 w-full">
+          <Card className="shadow-xl w-full">
             <CardHeader>
               <CardTitle className="text-2xl font-semibold text-primary flex items-center">
                 <Clock className="mr-3 h-7 w-7 text-accent" /> Day 2 Schedule (June 15)

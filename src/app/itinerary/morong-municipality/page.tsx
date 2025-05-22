@@ -165,7 +165,7 @@ export default function MorongItineraryPage() {
         </div>
 
         {/* Day 1 Schedule Card */}
-        <Card className="shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 w-full mb-8">
+        <Card className="shadow-xl w-full mb-8">
            <CardHeader>
              <CardTitle className="text-2xl font-semibold text-primary flex items-center">
                 <Clock className="mr-3 h-7 w-7 text-accent" /> Day 1 Schedule (June 15) - Morong Arrival & Beach
@@ -220,7 +220,7 @@ export default function MorongItineraryPage() {
           </Card>
 
         {/* Day 2 Schedule Card */}
-        <Card className="shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 w-full mb-8">
+        <Card className="shadow-xl w-full mb-8">
           <CardHeader>
             <CardTitle className="text-2xl font-semibold text-primary flex items-center">
               <Clock className="mr-3 h-7 w-7 text-accent" /> Day 2 Schedule (June 16) - Beach & Departure
@@ -420,3 +420,4 @@ export default function MorongItineraryPage() {
     </>
   );
 }
+
