@@ -76,6 +76,12 @@ const nextConfig: NextConfig = {
         hostname: 'mediaim.expedia.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'iamtravelinglight.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

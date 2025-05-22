@@ -8,13 +8,22 @@ import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
-  DialogTrigger, // Though not used to trigger manually, Dialog needs it or DialogClose
-  DialogClose, // Added for completeness if needed inside InvitationDialogContent
+  // DialogTrigger, // Not used directly for auto-popup
+  // DialogClose, // Used inside InvitationDialogContent
 } from '@/components/ui/dialog';
 import InvitationDialogContent from './invitation-dialog-content';
 
+const slideshowImages = [
+  { src: "https://bataan.gov.ph/wp-content/smush-webp/2021/09/45561_Balanga_History_MtSamat.jpg.webp", alt: "Mount Samat National Shrine in Bataan" },
+  { src: "https://bataan.gov.ph/wp-content/smush-webp/2021/12/Bataan_Mariveles_2.jpg.webp", alt: "Coastal view in Mariveles, Bataan" },
+  { src: "https://iamtravelinglight.com/wp-content/uploads/2018/05/cover-photo2.jpg?w=584", alt: "Scenic Bataan landscape with Las Casas Filipinas de Acuzar in view" },
+];
+
+const SLIDESHOW_INTERVAL = 5000; // 5 seconds
+
 export default function HeroSection() {
   const [isInvitationDialogOpen, setIsInvitationDialogOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     // Open the dialog automatically when the component mounts
@@ -24,19 +33,34 @@ export default function HeroSection() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Slideshow logic
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        (prevIndex + 1) % slideshowImages.length
+      );
+    }, SLIDESHOW_INTERVAL);
+
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+  }, []);
+
   return (
     <>
-      <section className="relative py-20 md:py-32 bg-secondary/30">
+      <section className="relative py-20 md:py-32 bg-secondary/30 overflow-hidden">
         <div className="absolute inset-0">
-          <Image
-            src="https://placehold.co/1920x1080.png"
-            alt="Scenic view of Bataan"
-            layout="fill"
-            objectFit="cover"
-            className="opacity-30"
-            data-ai-hint="landscape nature"
-            priority
-          />
+          {slideshowImages.map((image, index) => (
+            <Image
+              key={image.src}
+              src={image.src}
+              alt={image.alt}
+              layout="fill"
+              objectFit="cover"
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                index === currentImageIndex ? 'opacity-30' : 'opacity-0'
+              }`}
+              priority={index === 0} // Prioritize the first image for LCP
+            />
+          ))}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
         </div>
         <div className="container relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
