@@ -33,6 +33,14 @@ export async function generateMetadata({ params }: ItineraryPageProps): Promise<
   };
 }
 
+const montageImages = [
+  { src: "https://mediaim.expedia.com/destination/9/b543ead1026500e146d98335c3cddf75.jpg", alt: "Bataan Montage Image 1" },
+  { src: "https://mediaim.expedia.com/destination/9/35f960a2db723efa2fc4bccea71d4804.jpg", alt: "Bataan Montage Image 2" },
+  { src: "https://mediaim.expedia.com/destination/2/f010be995f59ba59a59c1dccae024dad.jpg", alt: "Bataan Montage Image 3" },
+  { src: "https://mediaim.expedia.com/destination/2/2f84ab5c2e60465b84affca9cf9cc034.jpg", alt: "Bataan Montage Image 4" },
+  { src: "https://mediaim.expedia.com/destination/2/be7ab04c4fa7ab7779f91f101f6595a3.jpg", alt: "Bataan Montage Image 5" },
+];
+
 export default function ItineraryPage({ params }: ItineraryPageProps) {
   const destinationId = "balanga-city";
   const destinationName = destinationId
@@ -79,7 +87,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
   const roomPricing = {
     discountBadge: "54% OFF TODAY",
     originalPrice: "PHP 5,800.00",
-    ourPrice: "PHP 3,342.56", // This value is typically not displayed, but kept for data consistency
+    ourPrice: "PHP 3,342.56", 
     instantDiscount: "PHP 774.36",
     roomPrice: "PHP 2,568.20",
     taxesAndFees: "PHP 565.00",
@@ -121,6 +129,20 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-8">
           Itinerary for {destinationName}
         </h1>
+
+        {/* Photo Montage Section */}
+        <div className="mb-8 space-y-2">
+          <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-lg">
+            <Image src={montageImages[0].src} alt={montageImages[0].alt} layout="fill" objectFit="cover" />
+          </div>
+          <div className="grid grid-cols-2 gap-2">
+            {montageImages.slice(1).map((img, index) => (
+              <div key={index} className="relative aspect-video rounded-lg overflow-hidden shadow-md">
+                <Image src={img.src} alt={img.alt} layout="fill" objectFit="cover" />
+              </div>
+            ))}
+          </div>
+        </div>
 
         <div className="space-y-8">
           {/* Attractions Section */}
@@ -404,10 +426,6 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                       <span className="line-through">{roomPricing.originalPrice}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Our price</span>
-                      <span className="line-through">{roomPricing.ourPrice}</span>
-                    </div>
-                    <div className="flex justify-between">
                       <span className="text-green-600 font-medium">Instant discount</span>
                       <span className="text-green-600 font-medium">-{roomPricing.instantDiscount}</span>
                     </div>
@@ -498,5 +516,3 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
     </>
   );
 }
-
-    
