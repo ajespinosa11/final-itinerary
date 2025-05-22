@@ -2,7 +2,7 @@
 import { generateDestinationHighlights, type GenerateHighlightsOutput } from '@/ai/flows/generate-destination-highlights';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Sparkles, ListChecks, AlertTriangle, Loader2 } from 'lucide-react';
+import { ListChecks, AlertTriangle, Loader2 } from 'lucide-react';
 
 async function HighlightsForDestination({ destinationName }: { destinationName: string }) {
   let highlightsOutput: GenerateHighlightsOutput | null = null;
@@ -16,10 +16,9 @@ async function HighlightsForDestination({ destinationName }: { destinationName: 
   }
 
   return (
-    <Card className="flex-1 min-w-[350px] max-w-lg shadow-xl bg-card hover:shadow-2xl transition-shadow duration-300">
+    <Card className="w-full shadow-xl bg-card hover:shadow-2xl transition-shadow duration-300">
       <CardHeader>
         <CardTitle className="flex items-center text-primary text-xl">
-          {/* <Sparkles className="mr-3 h-6 w-6 text-accent" /> Removed icon from card title */}
           Key Highlights for {destinationName}
         </CardTitle>
         <CardDescription>Concise insights for your visit.</CardDescription>
@@ -60,16 +59,12 @@ export default async function AiHighlightsSection() {
   return (
     <section id="ai-highlights" className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <Sparkles className="mx-auto h-12 w-12 text-primary mb-4" />
+        <div className="mb-8">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Destination Insights
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover unique insights and must-see spots for Bataan's key municipalities.
-          </p>
         </div>
-        <div className="flex flex-col md:flex-row flex-wrap justify-center items-start gap-8">
+        <div className="space-y-8">
            <HighlightsForDestination destinationName="Balanga City" />
            <HighlightsForDestination destinationName="Morong Municipality" />
         </div>
