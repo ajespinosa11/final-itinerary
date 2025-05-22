@@ -79,7 +79,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
   const roomPricing = {
     discountBadge: "54% OFF TODAY",
     originalPrice: "PHP 5,800.00",
-    ourPrice: "PHP 3,342.56", 
+    ourPrice: "PHP 3,342.56",
     instantDiscount: "PHP 774.36",
     roomPrice: "PHP 2,568.20",
     taxesAndFees: "PHP 565.00",
@@ -101,7 +101,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
 
   const day2Schedule = [
     { time: "6:30 AM", activity: "Breakfast at The Plaza Hotel", description: "Enjoy your complimentary breakfast.", icon: Utensils },
-    { time: "7:00 AM - 10:30 AM", activity: "Visit Balanga Wetland and Nature Park", description: "Explore the park. Take a local trike (Bike icon for visual) from the hotel. Park opens 5:30 AM - 7:00 PM.", icon: Bird },
+    { time: "7:00 AM - 10:30 AM", activity: "Visit Balanga Wetland and Nature Park", description: "Explore the park. Take a local trike. Park opens 5:30 AM - 7:00 PM.", icon: Bird },
     { time: "10:30 AM", activity: "Return to Hotel", description: "Head back from the park.", icon: HomeIcon },
     { time: "11:30 AM", activity: "Pack and Prepare for Checkout", description: "Organize your belongings.", icon: Luggage },
     { time: "12:00 PM", activity: "Hotel Checkout", description: `Complete your checkout process from ${plazaHotelDetails.name}.`, icon: CheckCircle2 },
@@ -231,15 +231,13 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
             </CardContent>
           </Card>
           
-          {/* Day 1 Schedule Card (Full Width) */}
           <Card className="shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 w-full">
            <CardHeader>
              <CardTitle className="text-2xl font-semibold text-primary flex items-center">
                 <Clock className="mr-3 h-7 w-7 text-accent" /> Day 1 Schedule (June 14)
               </CardTitle>
             </CardHeader>
-            <CardContent>
-             <div className="flex flex-col md:flex-row gap-8">
+            <CardContent className="flex flex-col md:flex-row gap-8">
                 <div className="md:w-3/5 space-y-4">
                    <p className="text-sm text-muted-foreground">
                     Your timeline for arrival and initial activities in Balanga City.
@@ -256,7 +254,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                         <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
                           <item.icon className="h-5 w-5 text-accent" />
                         </div>
-                        <div className="flex-grow">
+                        <div className="flex-grow min-w-0">
                           <p className="font-medium text-foreground">{item.activity}</p>
                           {item.description && <p className="text-xs text-muted-foreground">{item.description}</p>}
                         </div>
@@ -285,11 +283,9 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     Live map showing the route from Robinsons Starmills Pampanga, San Fernando to Balanga City, Bataan.
                   </p>
                 </div>
-              </div>
             </CardContent>
           </Card>
 
-          {/* Accommodation and Suggested Room Cards (Side-by-Side) */}
           <div className="flex flex-col md:flex-row gap-8">
             <Card className="shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 md:w-1/2">
               <CardHeader>
@@ -432,15 +428,13 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
             </Card>
           </div>
 
-          {/* Day 2 Schedule Card */}
           <Card className="shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 w-full">
             <CardHeader>
               <CardTitle className="text-2xl font-semibold text-primary flex items-center">
                 <Clock className="mr-3 h-7 w-7 text-accent" /> Day 2 Schedule (June 15)
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="flex flex-col md:flex-row gap-8">
+            <CardContent className="flex flex-col md:flex-row gap-8">
                 <div className="md:w-3/5 space-y-4">
                   <p className="text-sm text-muted-foreground">
                     Timeline for your second day, focusing on nature and departure.
@@ -456,7 +450,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                         <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
                           <item.icon className="h-5 w-5 text-accent" />
                         </div>
-                        <div className="flex-grow">
+                        <div className="flex-grow min-w-0">
                           <p className="font-medium text-foreground">{item.activity}</p>
                           {item.description && <p className="text-xs text-muted-foreground">{item.description}</p>}
                         </div>
@@ -485,7 +479,6 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     Live map showing the route from The Plaza Hotel to Balanga Wetland and Nature Park.
                   </p>
                 </div>
-              </div>
             </CardContent>
           </Card>
         </div>

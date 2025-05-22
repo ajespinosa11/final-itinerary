@@ -23,21 +23,12 @@ import {
   Footprints,
   Luggage,
   CalendarClock,
-  Ban,
-  Flame,
-  Dog,
-  ParkingCircle,
-  Sun,
-  GlassWater,
-  Briefcase,
-  ChevronRight,
-  Sparkles,
-  XCircle
+  Ban
 } from 'lucide-react';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 
@@ -162,12 +153,12 @@ export default function MorongItineraryPage() {
         {/* Photo Montage Section */}
         <div className="mb-8 space-y-2">
           <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-lg">
-            <Image src={montageImages[0].src} alt={montageImages[0].alt} layout="fill" objectFit="cover" />
+            <Image src={montageImages[0].src} alt={montageImages[0].alt} fill style={{objectFit:"cover"}} />
           </div>
           <div className="grid grid-cols-2 gap-2">
             {montageImages.slice(1).map((img, index) => (
               <div key={index} className="relative aspect-video rounded-lg overflow-hidden shadow-md">
-                <Image src={img.src} alt={img.alt} layout="fill" objectFit="cover" />
+                <Image src={img.src} alt={img.alt} fill style={{objectFit:"cover"}}/>
               </div>
             ))}
           </div>
@@ -180,8 +171,7 @@ export default function MorongItineraryPage() {
                 <Clock className="mr-3 h-7 w-7 text-accent" /> Day 1 Schedule (June 15) - Morong Arrival & Beach
               </CardTitle>
             </CardHeader>
-            <CardContent>
-             <div className="flex flex-col md:flex-row gap-8">
+            <CardContent className="flex flex-col md:flex-row gap-8">
                 <div className="md:w-3/5 space-y-4">
                   <p className="text-sm text-muted-foreground">
                     Your timeline for arrival and initial activities in Morong.
@@ -197,7 +187,7 @@ export default function MorongItineraryPage() {
                         <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
                           <item.icon className="h-5 w-5 text-accent" />
                         </div>
-                        <div className="flex-grow">
+                        <div className="flex-grow min-w-0">
                           <p className="font-medium text-foreground">{item.activity}</p>
                           {item.description && <p className="text-xs text-muted-foreground">{item.description}</p>}
                         </div>
@@ -226,7 +216,6 @@ export default function MorongItineraryPage() {
                     Live map showing the route from Balanga City to Morong Municipality, Bataan.
                   </p>
                 </div>
-              </div>
             </CardContent>
           </Card>
 
@@ -237,8 +226,7 @@ export default function MorongItineraryPage() {
               <Clock className="mr-3 h-7 w-7 text-accent" /> Day 2 Schedule (June 16) - Beach & Departure
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="flex flex-col md:flex-row gap-8">
+          <CardContent className="flex flex-col md:flex-row gap-8">
               <div className="md:w-3/5 space-y-4">
                 <p className="text-sm text-muted-foreground">
                   Your timeline for morning activities and departure from Morong.
@@ -254,7 +242,7 @@ export default function MorongItineraryPage() {
                       <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0 ml-2 mr-2">
                         <item.icon className="h-5 w-5 text-accent" />
                       </div>
-                      <div className="flex-grow">
+                      <div className="flex-grow min-w-0">
                         <p className="font-medium text-foreground">{item.activity}</p>
                         {item.description && <p className="text-xs text-muted-foreground">{item.description}</p>}
                       </div>
@@ -280,12 +268,11 @@ export default function MorongItineraryPage() {
                   Morong is known for its serene beaches, perfect for a morning walk.
                 </p>
               </div>
-            </div>
           </CardContent>
         </Card>
 
         <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl mb-8 text-center">
-          Suggested Accommodation in {destinationName}
+          Suggested Accommodation in Morong
         </h2>
         <div className="flex flex-col md:flex-row gap-8">
           <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 md:w-1/2">
@@ -433,5 +420,3 @@ export default function MorongItineraryPage() {
     </>
   );
 }
-
-    
