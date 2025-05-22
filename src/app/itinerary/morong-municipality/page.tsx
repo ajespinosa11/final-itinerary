@@ -68,6 +68,15 @@ const getRuleIcon = (rule: ResortRule) => {
   }
 };
 
+const montageImages = [
+  { src: "https://mediaim.expedia.com/destination/9/b543ead1026500e146d98335c3cddf75.jpg", alt: "Bataan Montage Image 1" },
+  { src: "https://mediaim.expedia.com/destination/9/35f960a2db723efa2fc4bccea71d4804.jpg", alt: "Bataan Montage Image 2" },
+  { src: "https://mediaim.expedia.com/destination/2/f010be995f59ba59a59c1dccae024dad.jpg", alt: "Bataan Montage Image 3" },
+  { src: "https://mediaim.expedia.com/destination/2/2f84ab5c2e60465b84affca9cf9cc034.jpg", alt: "Bataan Montage Image 4" },
+  { src: "https://mediaim.expedia.com/destination/2/be7ab04c4fa7ab7779f91f101f6595a3.jpg", alt: "Bataan Montage Image 5" },
+];
+
+
 export default function MorongItineraryPage() {
   const destinationName = "Morong";
 
@@ -149,6 +158,20 @@ export default function MorongItineraryPage() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-8">
           Itinerary for {destinationName}, Bataan
         </h1>
+
+        {/* Photo Montage Section */}
+        <div className="mb-8 space-y-2">
+          <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-lg">
+            <Image src={montageImages[0].src} alt={montageImages[0].alt} layout="fill" objectFit="cover" />
+          </div>
+          <div className="grid grid-cols-2 gap-2">
+            {montageImages.slice(1).map((img, index) => (
+              <div key={index} className="relative aspect-video rounded-lg overflow-hidden shadow-md">
+                <Image src={img.src} alt={img.alt} layout="fill" objectFit="cover" />
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Day 1 Schedule Card */}
         <Card className="shadow-xl w-full mb-8">
@@ -423,4 +446,3 @@ export default function MorongItineraryPage() {
     </>
   );
 }
-
