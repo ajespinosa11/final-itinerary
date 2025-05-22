@@ -15,29 +15,29 @@ export default function InvitationDialogContent() {
       <DialogHeader>
         <DialogTitle className="flex items-center text-primary">
           <Mail className="mr-2 h-5 w-5" />
-          An Invitation to an Unforgettable Escape
+          An Invitation for You
         </DialogTitle>
         <DialogDescription className="text-muted-foreground">
-          A special journey awaits.
+          A little adventure I hope we can share.
         </DialogDescription>
       </DialogHeader>
       <div className="prose prose-sm max-w-none text-foreground py-4">
         <p>My Dearest [Friend's Name],</p>
         <br />
         <p>
-          I find myself brimming with excitement as I pen this invitation, hoping to entice you on a rather special adventure I've been planning.
-          From <strong>June 14th to June 16th</strong>, I envision us escaping to the captivating province of Bataan, a place I believe holds wonders for us to discover together.
+          I find myself thinking of a special journey, one I hope we can take together.
+          From <strong>June 14th to June 16th</strong>, I picture us exploring the quiet beauty of Bataan.
         </p>
         <p>
-          Imagine us, first, immersed in a locale where history breathes through charming cityscapes, and where the echoes of significant moments blend seamlessly with vibrant, modern life. We could wander its historic heart, uncovering stories etched in its very fabric, and perhaps indulge in some delightful urban comforts.
+          Imagine us first in a city where history whispers from old walls and charming squares. We could walk its streets, feeling the stories of the past, and then perhaps enjoy the simple warmth of its present-day life.
         </p>
         <p>
-          Then, picture a gentle transition to serene coastlines, where the soft murmur of waves against sun-drenched shores offers a perfect symphony for relaxation. It promises a blissful retreat, a chance to connect with nature's tranquil beauty and simply be.
+          Then, let's dream of the coast, where the land meets the sea. We could find peaceful shores, listen to the gentle rhythm of the waves, and let the calm of the ocean refresh our spirits. It would be a quiet escape, a chance to simply be.
         </p>
         <p>
-          This journey, with its blend of rich heritage and peaceful seaside vistas, is something I've been dreaming of, and the thought of sharing it with you makes it all the more special. It would truly mean the world to me if you could join.
+          This thought, of discovering such places—a city with a soul and a seaside that soothes—feels all the more wonderful if you are there. Sharing this with you would make the memories truly shine.
         </p>
-        <p>Do let me know if this little escapade calls to you. I am already anticipating the wonderful memories we might create.</p>
+        <p>What do you think of this little plan? Knowing you might join fills me with a quiet joy.</p>
         <br />
         <p>With heartfelt anticipation,</p>
         <p>[Your Name]</p>
