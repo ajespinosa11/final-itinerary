@@ -65,11 +65,10 @@ export default function DestinationCard({ destination }: DestinationCardProps) {
           alt={destination.imageAlt}
           fill
           style={{objectFit: 'cover'}}
-          data-ai-hint={destination.dataAiHint}
         />
       </div>
       <CardHeader>
-        <CardTitle className="text-2xl font-semibold text-foreground">{destination.name}</CardTitle>
+        <CardTitle className="text-xl font-semibold text-foreground sm:text-2xl">{destination.name}</CardTitle>
         <CardDescription className="text-muted-foreground min-h-[3rem]">{destination.shortDescription}</CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
@@ -100,7 +99,7 @@ export default function DestinationCard({ destination }: DestinationCardProps) {
                     ) : (
                       <Sparkles className="mr-2 h-4 w-4" />
                     )}
-                    {isLoadingSummary ? 'Generating Summary...' : 'Generate AI Review Summary'}
+                    {isLoadingSummary ? 'Generating Summary...' : 'Generate Review Summary'}
                   </Button>
                   {isLoadingSummary && (
                     <div className="space-y-2">
@@ -118,7 +117,7 @@ export default function DestinationCard({ destination }: DestinationCardProps) {
                   {summary && (
                     <Alert variant="default" className="bg-secondary/50">
                       <Sparkles className="h-4 w-4 text-primary" />
-                      <AlertTitle className="text-primary">AI Generated Summary</AlertTitle>
+                      <AlertTitle className="text-primary">Summary</AlertTitle>
                       <AlertDescription className="text-foreground">{summary}</AlertDescription>
                     </Alert>
                   )}

@@ -33,14 +33,14 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
   return (
     <>
       <Header />
-      <main className="flex-grow container mx-auto max-w-4xl px-6 py-8 sm:px-8 lg:px-10">
-        <Button variant="outline" asChild className="mb-6 transition-transform hover:scale-105">
+      <main className="flex-grow container mx-auto max-w-4xl px-4 py-8 sm:px-6 md:px-8">
+        <Button variant="outline" asChild className="mb-6">
           <Link href="/#highlights">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Destinations
           </Link>
         </Button>
-        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-6">
+        <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl mb-6">
           Itinerary for {destinationName}
         </h1>
         <div className="p-8 bg-secondary/30 rounded-lg shadow-xl">

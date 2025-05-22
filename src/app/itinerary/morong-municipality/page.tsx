@@ -139,14 +139,14 @@ export default function MorongItineraryPage() {
   return (
     <>
       <Header />
-      <main className="flex-grow container mx-auto max-w-7xl px-6 py-8 sm:px-8 lg:px-10">
+      <main className="flex-grow container mx-auto max-w-7xl px-4 py-8 sm:px-6 md:px-8">
         <Button variant="outline" asChild className="mb-6">
           <Link href="/#highlights">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Destinations
           </Link>
         </Button>
-        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-8">
+        <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl mb-8">
           Itinerary for {destinationName}, Bataan
         </h1>
 
@@ -167,7 +167,7 @@ export default function MorongItineraryPage() {
         {/* Day 1 Schedule Card */}
         <Card className="shadow-xl w-full mb-8">
            <CardHeader>
-             <CardTitle className="text-2xl font-semibold text-primary flex items-center">
+             <CardTitle className="text-xl font-semibold text-primary flex items-center sm:text-2xl">
                 <Clock className="mr-3 h-7 w-7 text-accent" /> Day 1 Schedule (June 15) - Morong Arrival & Beach
               </CardTitle>
             </CardHeader>
@@ -222,7 +222,7 @@ export default function MorongItineraryPage() {
         {/* Day 2 Schedule Card */}
         <Card className="shadow-xl w-full mb-8">
           <CardHeader>
-            <CardTitle className="text-2xl font-semibold text-primary flex items-center">
+            <CardTitle className="text-xl font-semibold text-primary flex items-center sm:text-2xl">
               <Clock className="mr-3 h-7 w-7 text-accent" /> Day 2 Schedule (June 16) - Beach & Departure
             </CardTitle>
           </CardHeader>
@@ -271,13 +271,13 @@ export default function MorongItineraryPage() {
           </CardContent>
         </Card>
 
-        <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl mb-8 text-center">
+        <h2 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl md:text-3xl mb-8 text-center">
           Suggested Accommodation in Morong
         </h2>
         <div className="flex flex-col md:flex-row gap-8">
           <Card className="shadow-lg md:w-1/2">
             <CardHeader>
-              <CardTitle className="text-2xl font-semibold text-primary">{verdeAzulDetails.name}</CardTitle>
+              <CardTitle className="text-xl font-semibold text-primary sm:text-2xl">{verdeAzulDetails.name}</CardTitle>
               <CardDescription className="text-muted-foreground">
                 Check-in: {verdeAzulDetails.checkIn} / Check-out: {verdeAzulDetails.checkOut}
               </CardDescription>
@@ -349,7 +349,7 @@ export default function MorongItineraryPage() {
 
           <Card className="shadow-lg md:w-1/2">
             <CardHeader>
-              <CardTitle className="text-2xl font-semibold text-primary">{morongstarDetails.name}</CardTitle>
+              <CardTitle className="text-xl font-semibold text-primary sm:text-2xl">{morongstarDetails.name}</CardTitle>
               <CardDescription className="text-muted-foreground">
                 Check-in: {morongstarDetails.checkIn} / Check-out: {morongstarDetails.checkOut}
               </CardDescription>
@@ -420,4 +420,3 @@ export default function MorongItineraryPage() {
     </>
   );
 }
-

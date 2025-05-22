@@ -18,7 +18,7 @@ async function HighlightsForDestination({ destinationName }: { destinationName: 
   return (
     <Card className="w-full shadow-xl bg-card">
       <CardHeader>
-        <CardTitle className="flex items-center text-primary text-xl">
+        <CardTitle className="flex items-center text-primary text-lg sm:text-xl">
           Key Highlights for {destinationName}
         </CardTitle>
         <CardDescription>Concise insights for your visit.</CardDescription>
@@ -58,9 +58,9 @@ async function HighlightsForDestination({ destinationName }: { destinationName: 
 export default async function AiHighlightsSection() {
   return (
     <section id="ai-highlights" className="py-16 sm:py-24 bg-background">
-      <div className="container mx-auto max-w-5xl px-6 sm:px-8 lg:px-10">
+      <div className="container mx-auto max-w-5xl px-4 sm:px-6 md:px-8">
         <div className="mb-8">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl">
             Destination Insights
           </h2>
         </div>

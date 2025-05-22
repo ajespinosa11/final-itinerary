@@ -111,22 +111,21 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
   return (
     <>
       <Header />
-      <main className="flex-grow container mx-auto max-w-7xl px-6 py-8 sm:px-8 lg:px-10">
+      <main className="flex-grow container mx-auto max-w-7xl px-4 py-8 sm:px-6 md:px-8">
         <Button variant="outline" asChild className="mb-6">
           <Link href="/#highlights">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Destinations
           </Link>
         </Button>
-        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-8">
+        <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl mb-8">
           Itinerary for {destinationName}
         </h1>
 
         <div className="space-y-8">
-          {/* Attractions Section */}
           <Card className="shadow-xl w-full">
             <CardHeader>
-              <CardTitle className="text-2xl font-semibold text-primary flex items-center">
+              <CardTitle className="text-xl font-semibold text-primary flex items-center sm:text-2xl">
                 <MapPin className="mr-3 h-7 w-7 text-accent" />
                 Places to go in Balanga
               </CardTitle>
@@ -147,7 +146,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     />
                   </div>
                   <CardHeader>
-                    <CardTitle className="text-xl font-semibold text-primary flex items-center">
+                    <CardTitle className="text-lg font-semibold text-primary flex items-center sm:text-xl">
                       <ShoppingBag className="mr-3 h-6 w-6" />
                       SM City Bataan
                     </CardTitle>
@@ -170,7 +169,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     />
                   </div>
                   <CardHeader>
-                    <CardTitle className="text-xl font-semibold text-primary flex items-center">
+                    <CardTitle className="text-lg font-semibold text-primary flex items-center sm:text-xl">
                       <Landmark className="mr-3 h-6 w-6" />
                       Bataan World War II Museum
                     </CardTitle>
@@ -193,7 +192,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     />
                   </div>
                   <CardHeader>
-                    <CardTitle className="text-xl font-semibold text-primary flex items-center">
+                    <CardTitle className="text-lg font-semibold text-primary flex items-center sm:text-xl">
                       <Footprints className="mr-3 h-6 w-6" />
                       Plaza Mayor De Ciudad de Balanga
                     </CardTitle>
@@ -216,7 +215,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                     />
                   </div>
                   <CardHeader>
-                    <CardTitle className="text-xl font-semibold text-primary flex items-center">
+                    <CardTitle className="text-lg font-semibold text-primary flex items-center sm:text-xl">
                       <Bird className="mr-3 h-6 w-6" />
                       Balanga Wetland and Nature Park
                     </CardTitle>
@@ -233,7 +232,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
           
           <Card className="shadow-xl w-full">
            <CardHeader>
-             <CardTitle className="text-2xl font-semibold text-primary flex items-center">
+             <CardTitle className="text-xl font-semibold text-primary flex items-center sm:text-2xl">
                 <Clock className="mr-3 h-7 w-7 text-accent" /> Day 1 Schedule (June 14)
               </CardTitle>
             </CardHeader>
@@ -289,7 +288,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
           <div className="flex flex-col md:flex-row gap-8">
             <Card className="shadow-xl md:w-1/2">
               <CardHeader>
-                <CardTitle className="text-2xl font-semibold text-primary flex items-center">
+                <CardTitle className="text-xl font-semibold text-primary flex items-center sm:text-2xl">
                   <Building className="mr-3 h-7 w-7" /> Your Stay: {plazaHotelDetails.name}
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
@@ -298,7 +297,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3 flex items-center">
+                  <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center sm:text-xl">
                     Accommodation Details
                   </h3>
                   <div className="grid md:grid-cols-2 gap-6 items-start">
@@ -329,7 +328,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
                 </div>
                 <Separator />
                 <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center">
+                  <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center sm:text-xl">
                     <Utensils className="mr-2 h-5 w-5 text-accent" />
                     Evening Suggestion:
                   </h3>
@@ -342,7 +341,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
 
             <Card className="shadow-xl md:w-1/2">
               <CardHeader>
-                <CardTitle className="text-xl font-semibold text-primary">Suggested Room at {plazaHotelDetails.name}</CardTitle>
+                <CardTitle className="text-lg font-semibold text-primary sm:text-xl">Suggested Room at {plazaHotelDetails.name}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-col sm:flex-row gap-4 items-start">
@@ -430,7 +429,7 @@ export default function ItineraryPage({ params }: ItineraryPageProps) {
 
           <Card className="shadow-xl w-full">
             <CardHeader>
-              <CardTitle className="text-2xl font-semibold text-primary flex items-center">
+              <CardTitle className="text-xl font-semibold text-primary flex items-center sm:text-2xl">
                 <Clock className="mr-3 h-7 w-7 text-accent" /> Day 2 Schedule (June 15)
               </CardTitle>
             </CardHeader>

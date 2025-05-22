@@ -62,11 +62,11 @@ export default function HeroSection() {
           ))}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
         </div>
-        <div className="container relative mx-auto max-w-4xl px-6 text-center sm:px-8 lg:px-10">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
+        <div className="container relative mx-auto max-w-4xl px-4 text-center sm:px-6 md:px-8">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
             Discover the Wonders of <span className="text-primary">Bataan</span>
           </h1>
-          <p className="mt-6 text-lg leading-8 text-muted-foreground md:text-xl">
+          <p className="mt-6 text-base leading-7 text-muted-foreground sm:text-lg md:text-xl">
             Embark on an unforgettable journey through historic landmarks, breathtaking landscapes, and vibrant culture. Plan your perfect Bataan adventure with us.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
