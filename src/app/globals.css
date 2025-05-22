@@ -4,36 +4,36 @@
 
 @layer base {
   :root {
-    --background: 206 27% 94%; /* #EDF2F4 */
-    --foreground: 235 21% 21%; /* #2B2D42 */
-    --card: 206 27% 94%; /* #EDF2F4 */
-    --card-foreground: 235 21% 21%; /* #2B2D42 */
-    --popover: 206 27% 94%; /* #EDF2F4 */
-    --popover-foreground: 235 21% 21%; /* #2B2D42 */
-    --primary: 216 14% 61%; /* #8D99AE */
-    --primary-foreground: 206 27% 94%; /* #EDF2F4 - Light text on Mid Blue/Gray for contrast */
-    --secondary: 206 27% 88%; /* Slightly darker/desaturated #EDF2F4 for secondary backgrounds */
-    --secondary-foreground: 235 21% 21%; /* #2B2D42 */
-    --muted: 206 27% 85%; /* Lighter secondary for muted backgrounds */
-    --muted-foreground: 216 14% 45%; /* Darker Mid Blue/Gray for muted text */
-    --accent: 354 86% 54%; /* #EF233C */
-    --accent-foreground: 206 27% 94%; /* #EDF2F4 */
-    --destructive: 349 97% 43%; /* #D90429 */
-    --destructive-foreground: 206 27% 94%; /* #EDF2F4 */
-    --border: 216 14% 80%; /* Lighter shade of Mid Blue/Gray for borders */
-    --input: 216 14% 80%; /* Lighter shade of Mid Blue/Gray for input borders */
-    --ring: 216 14% 61%; /* #8D99AE */
+    --background: 43 59% 88%; /* #F2E8CF */
+    --foreground: 134 29% 30%; /* #386641 */
+    --card: 43 59% 88%; /* #F2E8CF */
+    --card-foreground: 134 29% 30%; /* #386641 */
+    --popover: 43 59% 88%; /* #F2E8CF */
+    --popover-foreground: 134 29% 30%; /* #386641 */
+    --primary: 93 34% 45%; /* #6A994E */
+    --primary-foreground: 43 59% 88%; /* #F2E8CF */
+    --secondary: 78 48% 57%; /* #A7C957 */
+    --secondary-foreground: 134 29% 25%; /* Darker #386641 for text on light green */
+    --muted: 43 59% 85%; /* Lighter #F2E8CF */
+    --muted-foreground: 93 34% 35%; /* Darker #6A994E */
+    --accent: 358 46% 51%; /* #BC4749 */
+    --accent-foreground: 43 59% 88%; /* #F2E8CF */
+    --destructive: 358 46% 51%; /* #BC4749 */
+    --destructive-foreground: 43 59% 88%; /* #F2E8CF */
+    --border: 93 34% 65%; /* Lighter shade of Medium Green #6A994E for borders */
+    --input: 93 34% 65%; /* Lighter shade of Medium Green #6A994E for input borders */
+    --ring: 93 34% 45%; /* #6A994E */
     --radius: 0.5rem;
 
     /* Sidebar colors adjusted to match the new theme */
-    --sidebar-background: 206 27% 94%; /* #EDF2F4 */
-    --sidebar-foreground: 235 21% 21%; /* #2B2D42 */
-    --sidebar-primary: 216 14% 61%; /* #8D99AE */
-    --sidebar-primary-foreground: 206 27% 94%; /* #EDF2F4 */
-    --sidebar-accent: 354 86% 54%; /* #EF233C */
-    --sidebar-accent-foreground: 206 27% 94%; /* #EDF2F4 */
-    --sidebar-border: 216 14% 80%; /* Lighter shade of Mid Blue/Gray */
-    --sidebar-ring: 216 14% 61%; /* #8D99AE */
+    --sidebar-background: 43 59% 88%; /* #F2E8CF */
+    --sidebar-foreground: 134 29% 30%; /* #386641 */
+    --sidebar-primary: 93 34% 45%; /* #6A994E */
+    --sidebar-primary-foreground: 43 59% 88%; /* #F2E8CF */
+    --sidebar-accent: 358 46% 51%; /* #BC4749 */
+    --sidebar-accent-foreground: 43 59% 88%; /* #F2E8CF */
+    --sidebar-border: 93 34% 65%; /* Lighter shade of Medium Green */
+    --sidebar-ring: 93 34% 45%; /* #6A994E */
 
     /* Chart colors kept as they are */
     --chart-1: 12 76% 61%;
@@ -44,35 +44,35 @@
   }
 
   .dark {
-    --background: 235 21% 21%; /* #2B2D42 */
-    --foreground: 206 27% 94%; /* #EDF2F4 */
-    --card: 235 21% 25%; /* Slightly lighter #2B2D42 for dark cards */
-    --card-foreground: 206 27% 94%; /* #EDF2F4 */
-    --popover: 235 21% 25%; /* Slightly lighter #2B2D42 */
-    --popover-foreground: 206 27% 94%; /* #EDF2F4 */
-    --primary: 216 14% 61%; /* #8D99AE */
-    --primary-foreground: 235 21% 15%; /* Darker #2B2D42 for text on primary */
-    --secondary: 235 21% 30%; /* Darker secondary background */
-    --secondary-foreground: 206 27% 94%; /* #EDF2F4 */
-    --muted: 235 21% 28%; /* Slightly darker than secondary for muted backgrounds */
-    --muted-foreground: 216 14% 70%; /* Lighter Mid Blue/Gray for muted text */
-    --accent: 354 86% 54%; /* #EF233C */
-    --accent-foreground: 206 27% 94%; /* #EDF2F4 */
-    --destructive: 349 97% 43%; /* #D90429 */
-    --destructive-foreground: 206 27% 94%; /* #EDF2F4 */
-    --border: 216 14% 35%; /* Darker shade of Mid Blue/Gray for borders */
-    --input: 216 14% 35%; /* Darker shade of Mid Blue/Gray for input borders */
-    --ring: 216 14% 61%; /* #8D99AE */
+    --background: 134 29% 30%; /* #386641 */
+    --foreground: 43 59% 88%; /* #F2E8CF */
+    --card: 134 29% 35%; /* Slightly lighter #386641 for dark cards */
+    --card-foreground: 43 59% 88%; /* #F2E8CF */
+    --popover: 134 29% 35%; /* Slightly lighter #386641 */
+    --popover-foreground: 43 59% 88%; /* #F2E8CF */
+    --primary: 93 34% 45%; /* #6A994E */
+    --primary-foreground: 43 59% 88%; /* #F2E8CF */
+    --secondary: 78 48% 47%; /* Darker #A7C957 for dark theme secondary bg */
+    --secondary-foreground: 43 59% 88%; /* #F2E8CF for text on darker light green */
+    --muted: 134 29% 25%; /* Darker #386641 */
+    --muted-foreground: 43 59% 70%; /* Lighter #F2E8CF */
+    --accent: 358 46% 51%; /* #BC4749 */
+    --accent-foreground: 43 59% 88%; /* #F2E8CF */
+    --destructive: 358 46% 51%; /* #BC4749 */
+    --destructive-foreground: 43 59% 88%; /* #F2E8CF */
+    --border: 93 34% 35%; /* Darker shade of Medium Green #6A994E for borders */
+    --input: 93 34% 35%; /* Darker shade of Medium Green #6A994E for input borders */
+    --ring: 93 34% 45%; /* #6A994E */
 
     /* Dark Sidebar colors adjusted */
-    --sidebar-background: 235 21% 21%; /* #2B2D42 */
-    --sidebar-foreground: 206 27% 94%; /* #EDF2F4 */
-    --sidebar-primary: 216 14% 61%; /* #8D99AE */
-    --sidebar-primary-foreground: 235 21% 15%; /* Darker #2B2D42 */
-    --sidebar-accent: 354 86% 54%; /* #EF233C */
-    --sidebar-accent-foreground: 206 27% 94%; /* #EDF2F4 */
-    --sidebar-border: 216 14% 35%; /* Darker Mid Blue/Gray */
-    --sidebar-ring: 216 14% 61%; /* #8D99AE */
+    --sidebar-background: 134 29% 30%; /* #386641 */
+    --sidebar-foreground: 43 59% 88%; /* #F2E8CF */
+    --sidebar-primary: 93 34% 45%; /* #6A994E */
+    --sidebar-primary-foreground: 43 59% 88%; /* #F2E8CF */
+    --sidebar-accent: 358 46% 51%; /* #BC4749 */
+    --sidebar-accent-foreground: 43 59% 88%; /* #F2E8CF */
+    --sidebar-border: 93 34% 35%; /* Darker Medium Green */
+    --sidebar-ring: 93 34% 45%; /* #6A994E */
 
     /* Chart colors kept as they are */
     --chart-1: 12 76% 61%;
