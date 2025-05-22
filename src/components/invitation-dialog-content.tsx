@@ -22,7 +22,7 @@ export default function InvitationDialogContent() {
         </DialogDescription>
       </DialogHeader>
       <div className="prose prose-sm max-w-none text-foreground py-4">
-        <p>My Dearest [Friend's Name],</p>
+        <p>My Dearest Yashy,</p>
         <br />
         <p>
           I find myself thinking of a special journey, one I hope we can take together.
@@ -40,7 +40,7 @@ export default function InvitationDialogContent() {
         <p>What do you think of this little plan? Knowing you might join fills me with a quiet joy.</p>
         <br />
         <p>With heartfelt anticipation,</p>
-        <p>[Your Name]</p>
+        <p>Sine Cera</p>
       </div>
       <DialogFooter>
         <DialogClose asChild>
