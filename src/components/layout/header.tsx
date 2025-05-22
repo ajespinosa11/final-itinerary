@@ -7,8 +7,7 @@ import { Menu, MountainSnow } from 'lucide-react';
 export default function Header() {
   const navItems = [
     { label: 'Highlights', href: '#highlights' },
-    // { label: 'Travel Plans', href: '#plans' }, // Removed as section no longer exists
-    { label: 'Itinerary', href: '#itinerary' },
+    // { label: 'Itinerary', href: '#itinerary' }, // Removed
   ];
 
   return (
