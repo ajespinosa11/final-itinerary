@@ -29,15 +29,13 @@ export default function InvitationDialogContent() {
           I'm so excited to invite you on an adventure to the beautiful
           province of Bataan. I've been wanting to explore its rich history and
           stunning natural landscapes, and I immediately thought of sharing
-          this experience with you.
+          this experience with you. I've even started to sketch out a potential itinerary!
         </p>
         <p>
-          Bataan offers such a diverse range of attractions – from
-          significant historical landmarks like the Mount Samat National Shrine
-          to serene beaches in Morong and the unique heritage houses at Las
-          Casas Filipinas de Acuzar. We could spend our days learning about
-          its pivotal role in history, relaxing by the sea, or even trekking
-          through lush nature parks.
+          We could start in <strong>Balanga City</strong>. Imagine us checking into The Plaza Hotel, right in the heart of the city. From there, we could explore the historic Plaza Mayor de Ciudad de Balanga and delve into history at the Bataan World War II Museum. For a touch of nature, the Balanga Wetland and Nature Park offers a chance to see diverse birdlife, and there's always SM City Bataan for any essentials or a quick bite.
+        </p>
+        <p>
+          Then, for a change of pace, we could head to <strong>Morong</strong>. Picture us relaxing on its beautiful beaches! We could stay at a lovely place like Verde Azul Leisure Resort or Morongstar Hotel and Resort, enjoying the coastal charm and maybe even just strolling along the shore and taking in the sea breeze.
         </p>
         <p>
           I was thinking we could plan a trip around [Suggest a month or
@@ -46,7 +44,7 @@ export default function InvitationDialogContent() {
           that work best for both of us.
         </p>
         <p>
-          Imagine the stories we'll create and the memories we'll make! It
+          Imagine the stories we'll create and the memories we'll make, from historical explorations to seaside relaxation! It
           would be wonderful to have you join me.
         </p>
         <p>Let me know what you think, and we can start planning the details.</p>
